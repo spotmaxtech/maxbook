@@ -1,6 +1,6 @@
 # Table of contents
 
-* [关于SpotMax文档](README.md)
+* [欢迎](README.md)
 
 ## 了解SpotMax
 

@@ -1,4 +1,4 @@
-# 关于SpotMax文档
+# 欢迎
 
 ## Getting Super Powers
 
