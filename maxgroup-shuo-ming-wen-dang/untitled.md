@@ -1,4 +1,4 @@
-# 关于SpotMax文档
+# MaxGroup使用说明
 
 ## Getting Super Powers
 
