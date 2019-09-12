@@ -4,11 +4,11 @@
 
 ## 了解SpotMax
 
-* [SpotMax是什么？](le-jie-spotmax/untitled.md)
+* [SpotMax是什么？](le-jie-spotmax/introduction.md)
 
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
-* [How to use spotmax](maxgroup-shuo-ming-wen-dang/untitled.md)
+* [How to use spotmax](maxgroup-shuo-ming-wen-dang/howto.md)
 
 ## Kubernetes
 
