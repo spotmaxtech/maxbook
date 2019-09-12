@@ -1,0 +1,307 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    400a7269-2999-4098-807b-6dc8f362931f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 250
+        'y': 90
+      z: 1
+      embeds: []
+    eede54fe-bb75-44f8-bad4-c3224c60f580:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 90
+      z: 1
+      embeds: []
+    50c8b752-4a28-4844-acaa-accc7f7b042c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 20
+        'y': 270
+      z: 1
+      embeds: []
+    b53a1079-94f5-46a8-a368-603484847ee9:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 250
+        'y': 190
+      z: 1
+      embeds: []
+    7d58a46b-75c3-4089-a4d8-9a0bb20c2712:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 20
+        'y': 90
+      z: 1
+      embeds: []
+      dependson:
+        - eede54fe-bb75-44f8-bad4-c3224c60f580
+    bf49f8c8-3358-44b7-8896-68ee74f80745:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 20
+        'y': 180
+      z: 1
+      embeds: []
+    ef9ca94b-8115-4146-b058-ee2ceaf4f6b7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 180
+      z: 1
+      embeds: []
+      dependson:
+        - bf49f8c8-3358-44b7-8896-68ee74f80745
+    f040f809-5b6d-4a76-bf5f-a2d147be32e6:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 270
+      z: 1
+      embeds: []
+      dependson:
+        - ef9ca94b-8115-4146-b058-ee2ceaf4f6b7
+    d043518b-25ef-427f-a304-5c12a53f5a09:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 250
+        'y': 270
+      z: 1
+      embeds: []
+      isassociatedwith:
+        - ef9ca94b-8115-4146-b058-ee2ceaf4f6b7
+Parameters:
+  BucketName:
+    Description: Create an S3 bucket for the spotmax use to store license and config file
+    Type: String
+  KeyName:
+    Description: The EC2 Key Pair to allow SSH access to the instances
+    Type: 'AWS::EC2::KeyPair::KeyName'
+  ImageId:
+    Type: 'AWS::EC2::Image::Id'
+    Description: >-
+      Find the latest AMI id here - https://aws.amazon.com/marketplace - search
+      spotmax
+  SecurityGroup:
+    Description: The security group of the instance,that you can connect to your instance
+    Type: 'AWS::EC2::SecurityGroup::Id'
+  InstanceType:
+    Description: EC2 instance type for the spot instances.
+    Type: String
+    Default: m4.large
+    AllowedValues:
+      - t2.small
+      - t2.medium
+      - t2.large
+      - t2.xlarge
+      - t2.2xlarge
+      - m3.medium
+      - m3.large
+      - m3.xlarge
+      - m3.2xlarge
+      - m4.large
+      - m4.xlarge
+      - m4.2xlarge
+      - m4.4xlarge
+      - m4.10xlarge
+      - m5.large
+      - m5.xlarge
+      - m5.2xlarge
+      - m5.4xlarge
+      - m5.12xlarge
+      - m5.24xlarge
+      - c4.large
+      - c4.xlarge
+      - c4.2xlarge
+      - c4.4xlarge
+      - c4.8xlarge
+      - c5.large
+      - c5.xlarge
+      - c5.2xlarge
+      - c5.4xlarge
+      - c5.9xlarge
+      - c5.18xlarge
+      - i3.large
+      - i3.xlarge
+      - i3.2xlarge
+      - i3.4xlarge
+      - i3.8xlarge
+      - i3.16xlarge
+      - r3.xlarge
+      - r3.2xlarge
+      - r3.4xlarge
+      - r3.8xlarge
+      - r4.large
+      - r4.xlarge
+      - r4.2xlarge
+      - r4.4xlarge
+      - r4.8xlarge
+      - r4.16xlarge
+      - x1.16xlarge
+      - x1.32xlarge
+      - p2.xlarge
+      - p2.8xlarge
+      - p2.16xlarge
+      - p3.2xlarge
+      - p3.8xlarge
+      - p3.16xlarge
+    ConstraintDescription: Must be a valid EC2 instance type
+Resources:
+  SQSQPAGLN:
+    Type: 'AWS::SQS::QueuePolicy'
+    Properties:
+      PolicyDocument:
+        Id: MyQueuePolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: Allow-User-SendMessage
+            Effect: Allow
+            Action:
+              - 'sqs:SendMessage'
+            Resource: '*'
+      Queues:
+        - !Ref InterruptionNotice
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7d58a46b-75c3-4089-a4d8-9a0bb20c2712
+    DependsOn:
+      - InterruptionNotice
+  InterruptionNotice:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: spot-interruption-notice
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: eede54fe-bb75-44f8-bad4-c3224c60f580
+  dettachEvent:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: dettach-event
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b53a1079-94f5-46a8-a368-603484847ee9
+  PreactTermination:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: preact-termination
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 50c8b752-4a28-4844-acaa-accc7f7b042c
+  Interruption:
+    Type: 'AWS::Events::Rule'
+    Properties:
+      Description: spot insterruption event send message to sqs
+      EventPattern:
+        source:
+          - aws.ec2
+        detail-type:
+          - EC2 Spot Instance Interruption Warning
+      Name: Interrupiton
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt InterruptionNotice.Arn
+          Id: SpotInterruption
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 400a7269-2999-4098-807b-6dc8f362931f
+    DependsOn:
+      - InterruptionNotice
+  S3Create:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref BucketName
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bf49f8c8-3358-44b7-8896-68ee74f80745
+  InstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      Path: /
+      Roles:
+        - !Ref SpotmaxRole
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: d043518b-25ef-427f-a304-5c12a53f5a09
+  maxGroupServer:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref ImageId
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      IamInstanceProfile: !Ref InstanceProfile
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      UserData:
+        Fn::Base64:
+          !Sub |
+
+            #!/bin/bash
+            cd /usr/local/spotmax 
+            sh -x init.spotmax.sh ${InterruptionNotice} ${dettachEvent} ${PreactTermination} ${BucketName}
+            rm -f license.txt service_config.json
+            echo "./spotmax -b ${BucketName} -r ${AWS::Region} &> spotmax.log &" >start.sh
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: f040f809-5b6d-4a76-bf5f-a2d147be32e6
+    DependsOn:
+      - SpotmaxRole
+  SpotmaxRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      Policies:
+        - PolicyName: spotmax_access
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'ec2:*'
+                  - 'elasticloadbalancing:*'
+                  - 'cloudwatch:*'
+                  - 'autoscaling:*'
+                  - 'sqs:*'
+                  - 'events:*'
+                Resource: '*'
+        - PolicyName: spotmax_s3_access
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:*'
+                Resource: !Sub 'arn:aws:s3:::${BucketName}/*'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ef9ca94b-8115-4146-b058-ee2ceaf4f6b7
+    DependsOn:
+      - S3Create

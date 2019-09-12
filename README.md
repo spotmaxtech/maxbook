@@ -1,4 +1,8 @@
-# 欢迎
+---
+description: Welcome to spotmax document center
+---
+
+# Welcome
 
 ## Getting Super Powers
 

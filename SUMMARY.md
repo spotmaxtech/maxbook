@@ -1,6 +1,6 @@
 # Table of contents
 
-* [欢迎](README.md)
+* [Welcome](README.md)
 
 ## 了解SpotMax
 
@@ -8,7 +8,7 @@
 
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
-* [MaxGroup使用说明](maxgroup-shuo-ming-wen-dang/untitled.md)
+* [How to use spotmax](maxgroup-shuo-ming-wen-dang/untitled.md)
 
 ## Kubernetes
 
