@@ -1,6 +1,6 @@
 # 使用文档
 
-## autoscaling配置
+## 1.autoscaling配置
 
 max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_group进行的一系列操作都依附于autoscaling，因此autoscaling的配置尤为重要，当前的autoscaling启动方式有两种，**启动配置**和**启动模板**，启动配置方式不适合使用多spot机型组合模式，因此，使用max\_group需要使用**启动模板**的方式启动autoscaling。
 
