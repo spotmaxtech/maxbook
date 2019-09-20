@@ -8,7 +8,8 @@
 
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
-* [How to use spotmax](maxgroup-shuo-ming-wen-dang/howto.md)
+* [使用文档](maxgroup-shuo-ming-wen-dang/howto/README.md)
+  * [Untitled](maxgroup-shuo-ming-wen-dang/howto/untitled.md)
 
 ## Kubernetes
 
