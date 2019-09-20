@@ -1,40 +1,40 @@
 # 使用文档
 
-## 1.autoscaling配置
+## autoscaling配置
 
 max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_group进行的一系列操作都依附于autoscaling，因此autoscaling的配置尤为重要，当前的autoscaling启动方式有两种，**启动配置**和**启动模板**，启动配置方式不适合使用多spot机型组合模式，因此，使用max\_group需要使用**启动模板**的方式启动autoscaling。
 
 创建**启动模板**
 
-![](../../.gitbook/assets/image.png)
+![](../.gitbook/assets/image.png)
 
 #### 注意：启动模板中无法定义vpc和子网，但可以选择安全组，在选择安全组时，一定要选择将要在autoscaling使用的vpc相同的安全组。
 
 创建**autoscaling**
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 其余配置与常规autoscaling配置相同。
 
 已有autoscaling但使用了启动配置创建的autoscaling可以在编辑中修改为启动模板。
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ## max\_group依赖环境配置
 
-{% file src="../../.gitbook/assets/spotmax\_init \(1\).yml" caption="spotmax\_init.yml" %}
+{% file src="../.gitbook/assets/spotmax\_init \(1\).yml" caption="spotmax\_init.yml" %}
 
 上面附件提供了配置max\_group的依赖环境，使用aws的cloudformation安装即可。
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
-![](../../.gitbook/assets/1568270337543.jpg)
+![](../.gitbook/assets/1568270337543.jpg)
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%284%29.png)
 
 连续**下一步**，直到**创建堆栈**
 
@@ -163,7 +163,7 @@ INFO[0001]unified_instance_manager.go:306 gitlab.mobvista.com/spotmax/max_group.
 
 新创建一个镜像，镜像要求有两个EBS，一个根卷，一个外挂附属卷。
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 系统中，将另一块盘mount到指定目录，示例如下：
 
