@@ -1,28 +1,28 @@
 # 使用文档
 
-## 1.autoscaling配置
+## autoscaling配置
 
 max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_group进行的一系列操作都依附于autoscaling，因此autoscaling的配置尤为重要，当前的autoscaling启动方式有两种，**启动配置**和**启动模板**，启动配置方式不适合使用多spot机型组合模式，因此，使用max\_group需要使用**启动模板**的方式启动autoscaling。
 
 创建**启动模板**
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
 #### 注意：启动模板中无法定义vpc和子网，但可以选择安全组，在选择安全组时，一定要选择将要在autoscaling使用的vpc相同的安全组。
 
 创建**autoscaling**
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
+
+![](../.gitbook/assets/image%20%289%29.png)
 
 ![](../.gitbook/assets/image%20%283%29.png)
-
-![](../.gitbook/assets/image%20%282%29.png)
 
 其余配置与常规autoscaling配置相同。
 
 已有autoscaling但使用了启动配置创建的autoscaling可以在编辑中修改为启动模板。
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 ## max\_group依赖环境配置
 
@@ -30,11 +30,11 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 上面附件提供了配置max\_group的依赖环境，使用aws的cloudformation安装即可。
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 ![](../.gitbook/assets/1568270337543.jpg)
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 连续**下一步**，直到**创建堆栈**
 
@@ -163,7 +163,7 @@ INFO[0001]unified_instance_manager.go:306 gitlab.mobvista.com/spotmax/max_group.
 
 新创建一个镜像，镜像要求有两个EBS，一个根卷，一个外挂附属卷。
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 
 系统中，将另一块盘mount到指定目录，示例如下：
 
@@ -188,6 +188,36 @@ $ crontab -l
 #### 基于新镜像制作模板并创建autoscaling
 
 镜像制作完成后，基于两个EBS镜像，制作启动模板，制作方法跟教程开始制作模板相同。完成后，基于新镜像创建或修改autoscaling使用新的启动模板。
+
+**注意：max\_group只能进行aws层面磁盘转移，系统内部的mount无法进行，这里推荐使用模板中的高级选项的data来植入一个脚本实现mount转移。这里采用了 tag功能，因此给模板内实例需要有get tag的IAM role。**
+
+![](../.gitbook/assets/image%20%286%29.png)
+
+![](../.gitbook/assets/image%20%287%29.png)
+
+```text
+#!/bin/bash
+EC2_REGION=`curl -s http://169.254.169.254/latest/dynamic/instance-identity/document|grep region|awk -F\" '{print $4}'`
+INSTANCE_ID="`curl -s http://169.254.169.254/latest/meta-data/instance-id`"
+TARGET_DIR="/data"
+aws ec2 describe-tags --filters "Name=resource-id,Values=$INSTANCE_ID" --region $EC2_REGION --output=text|grep spotmax:group &>/dev/null
+if [ $? -eq 0 ] ;then
+    while true
+    do
+        sleep 1
+        lsblk |grep xvdz &>/dev/null
+        if [ $? -eq 0 ] ;then
+            df -h |grep $TARGET_DIR &>/dev/null
+            if [ $? -eq 0 ] ;then
+                umount $TARGET_DIR
+            else 
+                mount /dev/xvdz1 $TARGET_DIR
+                break
+            fi
+        fi
+    done
+fi
+```
 
 #### 修改max\_group配置并上传s3后重启服务
 
@@ -273,6 +303,36 @@ EKS用户基于autoscaling也可以使用max\_group应对spot被竞走情况，s
 | persistence\_dev | if you have and extra EBS don't want delete,use this option can remove EBS to an new startup instance |
 | consul\_port | if you use consul,type port number here |
 | k8s\_node\_drain\_option | if you use autoscaling for K8S,this option set true |
+
+### 手动验证
+
+利用spot的fleet增加和减少instance数量可以触发interrupt事件，因此使用fleet来手动验证interrupt后，max\_group的工作情况。
+
+#### 创建fleet
+
+![](../.gitbook/assets/image.png)
+
+![](../.gitbook/assets/image%20%2814%29.png)
+
+![](../.gitbook/assets/image%20%288%29.png)
+
+创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
+
+![](../.gitbook/assets/image%20%2812%29.png)
+
+![](../.gitbook/assets/image%20%285%29.png)
+
+附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
+
+![](../.gitbook/assets/image%20%2817%29.png)
+
+![](../.gitbook/assets/image%20%284%29.png)
+
+提交以后，max\_group就开始工作了，等待instance replace结束，可以在autoscaling的**活动历史记录**中查看替换详情
+
+![](../.gitbook/assets/image%20%2811%29.png)
+
+
 
 ## 结语
 
