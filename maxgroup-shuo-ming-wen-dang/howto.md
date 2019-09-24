@@ -46,7 +46,7 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 ## 安装max\_group
 
-{% file src="../.gitbook/assets/max\_group.zip" caption="max\_group.zip" %}
+{% file src="../.gitbook/assets/max\_group \(1\).zip" caption="max\_group.zip" %}
 
 max\_group为已编译完成的二进制包，无系统环境依赖，下载附件并解压，将得到二进制文件max\_group和conf目录并包含license.txt、seelog.xml和
 
