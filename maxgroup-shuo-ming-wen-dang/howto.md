@@ -26,7 +26,7 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 ## max\_group依赖环境配置
 
-{% file src="../.gitbook/assets/spotmax\_init \(1\).yml" caption="spotmax\_init.yml" %}
+{% file src="../.gitbook/assets/spotmax\_init.yml" caption="spotmax\_init.yml" %}
 
 上面附件提供了配置max\_group的依赖环境，使用aws的cloudformation安装即可。
 
