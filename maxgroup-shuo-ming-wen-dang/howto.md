@@ -107,7 +107,8 @@ $ cat service_config.json
 修改完成配置文件，将配置文件service\_config.json和经过spotmax授权的license.txt两个文件，上传至提供的s3 bucket。
 
 ```
-$ aws s3 cp service_config.json license.txt s3://YOUR-BUCKET/
+$ aws s3 cp service_config.json  s3://YOUR-BUCKET/
+$ aws s3 cp license.txt s3://YOUR-BUCKET/
 ```
 
 ## 启动max\_group
