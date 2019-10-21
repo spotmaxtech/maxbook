@@ -8,7 +8,7 @@
 
 ## Cloud University
 
-* [Kubernetes最佳实践](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
+* [Kubernetes Workshop](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
   * [基础篇](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/README.md)
     * [使用Kubernetes](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/shi-yong-kubernetes.md)
   * [实战篇](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/README.md)
