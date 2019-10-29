@@ -10,10 +10,6 @@
 
 * [Kubernetes Workshop](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
   * [基础篇](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/README.md)
-    * [容器化课程综述](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/rong-qi-hua-ke-cheng-zong-shu.md)
-    * [Kubernetes的需求](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kubernetes-de-xu-qiu.md)
-    * [Container技术的出现](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/container-ji-shu-de-chu-xian.md)
-    * [Kubernetes介绍](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kubernetes-jie-shao.md)
     * [开始使用Docker](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-docker.md)
     * [开始使用Kubernetes](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-kubernetes.md)
     * [开始使用Helm/Charts](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-helmcharts.md)
