@@ -23,3 +23,7 @@
     * [Deployment: 声明式地升级应用](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/deployment-sheng-ming-shi-di-sheng-ji-ying-yong.md)
     * [StatefulSet：部署有状态的多副本应用](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/statefulset-bu-shu-you-zhuang-tai-de-duo-fu-ben-ying-yong.md)
 
+## 在云端 <a id="zhi-shi-fen-xiang"></a>
+
+* [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
+
