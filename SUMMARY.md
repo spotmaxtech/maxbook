@@ -9,6 +9,7 @@
   * [核心功能](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/he-xin-gong-neng.md)
   * [产品架构](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/chan-pin-jia-gou.md)
   * [产品优势](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/chan-pin-you-shi.md)
+  * [定价策略](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/ding-jia-ce-lve.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [使用文档](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/howto.md)
   * [AWS](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/aws.md)
@@ -19,8 +20,12 @@
 
 ## KMAX
 
-* [产品简介](kmax/kuai-su-ru-men.md)
-* [定价策略](kmax/chan-pin-jian-jie.md)
+* [产品简介](kmax/kuai-su-ru-men/README.md)
+  * [什么是KMAX](kmax/kuai-su-ru-men/shen-me-shi-kmax.md)
+  * [核心功能](kmax/kuai-su-ru-men/he-xin-gong-neng.md)
+  * [产品架构](kmax/kuai-su-ru-men/chan-pin-jia-gou.md)
+  * [产品优势](kmax/kuai-su-ru-men/chan-pin-you-shi.md)
+  * [定价策略](kmax/kuai-su-ru-men/ding-jia-ce-lve.md)
 * [快速入门](kmax/ding-jia-ce-lve.md)
 * [常见问题](kmax/chan-pin-jia-gou.md)
 * [相关协议](kmax/xiang-guan-xie-yi.md)
