@@ -11,7 +11,7 @@
   * [产品优势](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-you-shi.md)
   * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
-  * [使用流程](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/shi-yong-liu-cheng.md)
+  * [流程介绍](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/shi-yong-liu-cheng.md)
   * [使用文档](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/howto.md)
   * [AWS](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/aws/README.md)
     * [准备工作](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/aws/zhun-bei-gong-zuo/README.md)
