@@ -6,35 +6,35 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 创建**启动模板**
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 #### 注意：启动模板中无法定义vpc和子网，但可以选择安全组，在选择安全组时，一定要选择将要在autoscaling使用的vpc相同的安全组。
 
 创建**autoscaling**
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 其余配置与常规autoscaling配置相同。
 
 已有autoscaling但使用了启动配置创建的autoscaling可以在编辑中修改为启动模板。
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 ## max\_group依赖环境配置
 
-{% file src="../../.gitbook/assets/spotmax\_init.yml" caption="spotmax\_init.yml" %}
+{% file src="../.gitbook/assets/spotmax\_init.yml" caption="spotmax\_init.yml" %}
 
 上面附件提供了配置max\_group的依赖环境，使用aws的cloudformation安装即可。
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%284%29.png)
 
-![](../../.gitbook/assets/1568270337543.jpg)
+![](../.gitbook/assets/1568270337543.jpg)
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 
 连续**下一步**，直到**创建堆栈**
 
@@ -46,7 +46,7 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 ## 安装max\_group
 
-{% file src="../../.gitbook/assets/max\_group \(1\).zip" caption="max\_group.zip" %}
+{% file src="../.gitbook/assets/max\_group \(1\).zip" caption="max\_group.zip" %}
 
 max\_group为已编译完成的二进制包，无系统环境依赖，下载附件并解压，将得到二进制文件max\_group和conf目录并包含license.txt、seelog.xml和
 
@@ -166,7 +166,7 @@ INFO[0001]unified_instance_manager.go:306 gitlab.mobvista.com/spotmax/max_group.
 
 新创建一个镜像，镜像要求有两个EBS，一个根卷，一个外挂附属卷。
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 系统中，将另一块盘mount到指定目录，示例如下：
 
@@ -194,9 +194,9 @@ $ crontab -l
 
 **注意：max\_group只能进行aws层面磁盘转移，系统内部的mount无法进行，这里推荐使用模板中的高级选项的data来植入一个脚本实现mount转移。这里采用了 tag功能，因此给模板内实例需要有get tag的IAM role。**
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 ```text
 #!/bin/bash
@@ -313,27 +313,27 @@ EKS用户基于autoscaling也可以使用max\_group应对spot被竞走情况，s
 
 #### 创建fleet
 
-![](../../.gitbook/assets/image.png)
+![](../.gitbook/assets/image.png)
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
-![](../../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
 
-![](../../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2825%29.png)
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 提交以后，max\_group就开始工作了，等待instance replace结束，可以在autoscaling的**活动历史记录**中查看替换详情
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 
 
