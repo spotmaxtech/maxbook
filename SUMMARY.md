@@ -4,12 +4,12 @@
 
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
-* [产品简介](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/README.md)
-  * [什么是MaxGroup](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/shen-me-shi-maxgroup.md)
-  * [核心功能](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/he-xin-gong-neng.md)
-  * [产品架构](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/chan-pin-jia-gou.md)
-  * [产品优势](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/chan-pin-you-shi.md)
-  * [定价策略](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/ding-jia-ce-lve.md)
+* [产品简介](maxgroup-shuo-ming-wen-dang/introduction/README.md)
+  * [什么是MaxGroup](maxgroup-shuo-ming-wen-dang/introduction/shen-me-shi-maxgroup.md)
+  * [核心功能](maxgroup-shuo-ming-wen-dang/introduction/he-xin-gong-neng.md)
+  * [产品架构](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-jia-gou.md)
+  * [产品优势](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-you-shi.md)
+  * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [使用流程](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/shi-yong-liu-cheng.md)
   * [使用文档](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/howto.md)
