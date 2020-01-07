@@ -4,21 +4,28 @@
 
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
-* [产品简介](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie.md)
-* [产品架构](maxgroup-shuo-ming-wen-dang/chan-pin-jia-gou.md)
+* [产品简介](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/README.md)
+  * [什么是MaxGroup](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/shen-me-shi-maxgroup.md)
+  * [核心功能](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/he-xin-gong-neng.md)
+  * [产品架构](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/chan-pin-jia-gou.md)
+  * [产品优势](maxgroup-shuo-ming-wen-dang/chan-pin-jian-jie/chan-pin-you-shi.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [使用文档](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/howto.md)
   * [AWS](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/aws.md)
   * [阿里云](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/e-li-yun.md)
+* [最佳实践](maxgroup-shuo-ming-wen-dang/chan-pin-jia-gou.md)
+* [常见问题](maxgroup-shuo-ming-wen-dang/chang-jian-wen-ti.md)
+* [相关协议](maxgroup-shuo-ming-wen-dang/xiang-guan-xie-yi.md)
 
 ## KMAX
 
-* [产品简介](kmax/chan-pin-jian-jie.md)
-* [产品架构](kmax/chan-pin-jia-gou.md)
-* [定价策略](kmax/ding-jia-ce-lve.md)
-* [快速入门](kmax/kuai-su-ru-men.md)
+* [产品简介](kmax/kuai-su-ru-men.md)
+* [定价策略](kmax/chan-pin-jian-jie.md)
+* [快速入门](kmax/ding-jia-ce-lve.md)
+* [常见问题](kmax/chan-pin-jia-gou.md)
+* [相关协议](kmax/xiang-guan-xie-yi.md)
 
-## 技术咨询与培训
+## 云原生咨询与培训 <a id="ji-shu-zi-xun-yu-pei-xun"></a>
 
 * [高可用架构咨询](ji-shu-zi-xun-yu-pei-xun/gao-ke-yong-jia-gou-zi-xun.md)
 * [弹性集群管理咨询](ji-shu-zi-xun-yu-pei-xun/tan-xing-ji-qun-guan-li-zi-xun.md)
