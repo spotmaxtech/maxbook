@@ -6,7 +6,7 @@
 
 上面附件提供了配置MaxGroup的依赖环境，使用AWS的CloudFormation安装即可。
 
-![](../../../../.gitbook/assets/image%20%289%29.png)
+![](../../../../.gitbook/assets/image%20%2810%29.png)
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-![](../../../../.gitbook/assets/image%20%2827%29.png)
+![](../../../../.gitbook/assets/image%20%2829%29.png)
 
 ### 权限配置
 
