@@ -52,7 +52,7 @@
 
 ## Cloud University
 
-* [Kubernetes Workshop](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
+* [Kubernetes 工作坊](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
   * [基础篇](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/README.md)
     * [开始使用Docker](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-docker.md)
     * [开始使用Kubernetes](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-kubernetes.md)
