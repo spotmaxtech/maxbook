@@ -1,2 +1,0 @@
-# MaxGroup配置
-
