@@ -8,7 +8,6 @@
   * [相关概念](maxgroup-shuo-ming-wen-dang/introduction/shen-me-shi-maxgroup.md)
   * [核心功能](maxgroup-shuo-ming-wen-dang/introduction/he-xin-gong-neng.md)
   * [产品架构](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-jia-gou.md)
-  * [产品优势](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-you-shi.md)
   * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [流程介绍](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/shi-yong-liu-cheng.md)
@@ -30,9 +29,8 @@
 
 * [产品简介](kmax/kuai-su-ru-men/README.md)
   * [相关概念](kmax/kuai-su-ru-men/shen-me-shi-kmax.md)
-  * [核心功能](kmax/kuai-su-ru-men/he-xin-gong-neng.md)
+  * [产品优势](kmax/kuai-su-ru-men/he-xin-gong-neng.md)
   * [产品架构](kmax/kuai-su-ru-men/chan-pin-jia-gou.md)
-  * [产品优势](kmax/kuai-su-ru-men/chan-pin-you-shi.md)
   * [定价策略](kmax/kuai-su-ru-men/ding-jia-ce-lve.md)
 * [快速入门](kmax/ding-jia-ce-lve.md)
 * [常见问题](kmax/chan-pin-jia-gou.md)
