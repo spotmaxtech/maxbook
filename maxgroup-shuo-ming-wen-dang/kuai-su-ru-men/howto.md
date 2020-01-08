@@ -12,7 +12,7 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 创建**autoscaling**
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 ![](../../.gitbook/assets/image%20%2814%29.png)
 
@@ -22,7 +22,7 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 已有autoscaling但使用了启动配置创建的autoscaling可以在编辑中修改为启动模板。
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 ## max\_group依赖环境配置
 
@@ -34,7 +34,7 @@ max\_group基于aws autoscaling工作，spot实例触发interrupt后，max\_grou
 
 ![](../../.gitbook/assets/1568270337543.jpg)
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
 连续**下一步**，直到**创建堆栈**
 
@@ -166,7 +166,7 @@ INFO[0001]unified_instance_manager.go:306 gitlab.mobvista.com/spotmax/max_group.
 
 新创建一个镜像，镜像要求有两个EBS，一个根卷，一个外挂附属卷。
 
-![](../../.gitbook/assets/image%20%2825%29.png)
+![](../../.gitbook/assets/image%20%2826%29.png)
 
 系统中，将另一块盘mount到指定目录，示例如下：
 
@@ -315,25 +315,25 @@ EKS用户基于autoscaling也可以使用max\_group应对spot被竞走情况，s
 
 ![](../../.gitbook/assets/image.png)
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
 ![](../../.gitbook/assets/image%20%2812%29.png)
 
 创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 ![](../../.gitbook/assets/image%20%288%29.png)
 
 附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](../../.gitbook/assets/image%20%2828%29.png)
 
 ![](../../.gitbook/assets/image%20%287%29.png)
 
 提交以后，max\_group就开始工作了，等待instance replace结束，可以在autoscaling的**活动历史记录**中查看替换详情
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 
 
