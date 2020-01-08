@@ -72,11 +72,11 @@ docker built -t <kubia可以起个名字> .
 
 看到制作过程，根据网络情况拉取node环境有快慢，耐心
 
-![](../../../.gitbook/assets/image%20%2816%29.png)
+![](../../../.gitbook/assets/image%20%2819%29.png)
 
 完成后，运行 docker images 能找到刚制作好的镜像，还挺大的是吧
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/image%20%282%29.png)
 
 运行一下容器镜像
 
@@ -96,7 +96,7 @@ docker run --rm --name kubia-container -p 8080:8080 -d luksa/kubia
 
 开另一个控制台，访问一下8080试试吧
 
-![](../../../.gitbook/assets/image%20%2839%29.png)
+![](../../../.gitbook/assets/image%20%2842%29.png)
 
 ## 探索运行容器的内部
 
@@ -115,7 +115,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](../../../.gitbook/assets/image%20%2843%29.png)
+![](../../../.gitbook/assets/image%20%2846%29.png)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
