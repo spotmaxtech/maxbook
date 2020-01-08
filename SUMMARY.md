@@ -6,7 +6,7 @@
 
 * [产品简介](maxgroup-shuo-ming-wen-dang/introduction/README.md)
   * [相关概念](maxgroup-shuo-ming-wen-dang/introduction/shen-me-shi-maxgroup.md)
-  * [核心功能](maxgroup-shuo-ming-wen-dang/introduction/he-xin-gong-neng.md)
+  * [产品优势](maxgroup-shuo-ming-wen-dang/introduction/he-xin-gong-neng.md)
   * [产品架构](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-jia-gou.md)
   * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
