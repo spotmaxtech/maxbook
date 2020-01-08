@@ -4,17 +4,17 @@
 
 如果您已掌握创建AWS AutoScalingGroup的方式，可以跳过以下步骤，直接阅读[依赖环境配置](https://docs.spotmaxtech.com/maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/aws/zhun-bei-gong-zuo/yi-lai-huan-jing-pei-zhi)
 
-#### 创建启动模板
+### 创建启动模板
 
 
 
 ![](../../../../.gitbook/assets/image%20%286%29.png)
 
 {% hint style="warning" %}
-启动模板中无法定义vpc和子网，但可以选择安全组，在选择安全组时，一定要选择将要在autoscaling使用的vpc相同的安全组。
+启动模板中无法定义vpc和子网，但可以选择安全组，在选择安全组时，一定要选择将要在AutoScalingGroup使用的vpc相同的安全组。
 {% endhint %}
 
-#### 创建AutoScalingGroup
+### 创建AutoScalingGroup
 
 
 
