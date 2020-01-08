@@ -5,7 +5,7 @@
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
 * [产品简介](maxgroup-shuo-ming-wen-dang/introduction/README.md)
-  * [什么是MaxGroup](maxgroup-shuo-ming-wen-dang/introduction/shen-me-shi-maxgroup.md)
+  * [相关概念](maxgroup-shuo-ming-wen-dang/introduction/shen-me-shi-maxgroup.md)
   * [核心功能](maxgroup-shuo-ming-wen-dang/introduction/he-xin-gong-neng.md)
   * [产品架构](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-jia-gou.md)
   * [产品优势](maxgroup-shuo-ming-wen-dang/introduction/chan-pin-you-shi.md)
@@ -34,7 +34,7 @@
 ## KMAX
 
 * [产品简介](kmax/kuai-su-ru-men/README.md)
-  * [什么是KMAX](kmax/kuai-su-ru-men/shen-me-shi-kmax.md)
+  * [相关概念](kmax/kuai-su-ru-men/shen-me-shi-kmax.md)
   * [核心功能](kmax/kuai-su-ru-men/he-xin-gong-neng.md)
   * [产品架构](kmax/kuai-su-ru-men/chan-pin-jia-gou.md)
   * [产品优势](kmax/kuai-su-ru-men/chan-pin-you-shi.md)
