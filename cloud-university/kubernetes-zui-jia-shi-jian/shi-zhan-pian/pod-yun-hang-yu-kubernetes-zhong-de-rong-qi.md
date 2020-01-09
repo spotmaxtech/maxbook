@@ -141,7 +141,7 @@ kubectl delete namespace custom-namespace
 此实验容易在多人环境中名字冲突，大家可以尝试自定义命名空间。如果理解了，也可以不用做，毕竟命名空间操作的时候并不多。
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%284%29.png)
+![](../../../.gitbook/assets/image%20%285%29.png)
 
 ## 给pod打上标签
 
