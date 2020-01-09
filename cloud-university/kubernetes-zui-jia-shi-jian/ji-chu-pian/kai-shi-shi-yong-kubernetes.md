@@ -14,7 +14,7 @@
 kubectl get nodes
 ```
 
-![](../../../.gitbook/assets/image%20%2839%29.png)
+![](../../../.gitbook/assets/image%20%2840%29.png)
 
 {% hint style="info" %}
 给 kubectl 做一下alias吧，后续我们使用k
@@ -125,7 +125,7 @@ kubectl get pods -o wide
 
 提示登陆，请选择令牌
 
-![](../../../.gitbook/assets/image%20%2842%29.png)
+![](../../../.gitbook/assets/image%20%2843%29.png)
 
 这里令牌是一个用户的口令，使用正确的令牌就能代表一个用户登陆了。请按照下述命令获取它的令牌
 
