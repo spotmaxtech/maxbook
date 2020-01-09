@@ -72,7 +72,7 @@ docker built -t <kubia可以起个名字> .
 
 看到制作过程，根据网络情况拉取node环境有快慢，耐心
 
-![](../../../.gitbook/assets/image%20%2819%29.png)
+![](../../../.gitbook/assets/image%20%2820%29.png)
 
 完成后，运行 docker images 能找到刚制作好的镜像，还挺大的是吧
 
@@ -96,7 +96,7 @@ docker run --rm --name kubia-container -p 8080:8080 -d luksa/kubia
 
 开另一个控制台，访问一下8080试试吧
 
-![](../../../.gitbook/assets/image%20%2843%29.png)
+![](../../../.gitbook/assets/image%20%2846%29.png)
 
 ## 探索运行容器的内部
 
@@ -115,7 +115,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](../../../.gitbook/assets/image%20%2847%29.png)
+![](../../../.gitbook/assets/image%20%2850%29.png)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
@@ -143,4 +143,12 @@ docker push luksa/kubia
 ```
 
 这里课件已经推送好了，后续大家可以直接使用，不用二遍事了：）
+
+## 思考题
+
+> * 请问docker构建镜像时那个文件叫什么名字？（扩展，可以换名字么？）
+> * busybox这个镜像是做什么用的？
+> * 临时测试一个容器，用完自动销毁使用什么参数？
+
+
 
