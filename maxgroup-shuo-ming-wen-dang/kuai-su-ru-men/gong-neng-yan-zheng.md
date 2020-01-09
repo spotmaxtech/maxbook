@@ -8,19 +8,19 @@
 
 ![](../../.gitbook/assets/image.png)
 
-![](../../.gitbook/assets/image%20%2856%29.png)
+![](../../.gitbook/assets/image%20%2857%29.png)
 
 ![](../../.gitbook/assets/image%20%2829%29.png)
 
 创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 ![](../../.gitbook/assets/image%20%2820%29.png)
 
 附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
 
-![](../../.gitbook/assets/image%20%2861%29.png)
+![](../../.gitbook/assets/image%20%2862%29.png)
 
 ![](../../.gitbook/assets/image%20%2819%29.png)
 

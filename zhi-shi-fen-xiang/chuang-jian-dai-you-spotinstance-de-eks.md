@@ -48,7 +48,7 @@ Node IAM Role，如：eks-demo-node
 
 在页面找到CloudFormation模版
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2845%29.png)
 
 填写信息注意以下几点
 
