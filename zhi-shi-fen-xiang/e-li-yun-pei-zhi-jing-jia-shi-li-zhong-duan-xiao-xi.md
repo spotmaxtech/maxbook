@@ -20,7 +20,7 @@
 
 勾选时注意选择好是MNS队列接收，这块注意好，没有难度
 
-![](../.gitbook/assets/image%20%2849%29.png)
+![](../.gitbook/assets/image%20%2850%29.png)
 
 ![](../.gitbook/assets/image%20%287%29.png)
 
