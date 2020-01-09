@@ -1,6 +1,6 @@
 # 功能验证
 
-### 手动验证
+### AWS
 
 利用spot的fleet增加和减少instance数量可以触发interrupt事件，因此使用fleet来手动验证interrupt后，max\_group的工作情况。
 
