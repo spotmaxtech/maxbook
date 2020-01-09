@@ -8,7 +8,7 @@
 
 
 
-![](../../../../.gitbook/assets/image%20%2810%29.png)
+![](../../../../.gitbook/assets/image%20%2811%29.png)
 
 {% hint style="warning" %}
 启动模板中无法定义vpc和子网，但可以选择安全组，在选择安全组时，一定要选择将要在AutoScalingGroup使用的vpc相同的安全组。
@@ -18,13 +18,13 @@
 
 
 
-![](../../../../.gitbook/assets/image%20%2841%29.png)
+![](../../../../.gitbook/assets/image%20%2845%29.png)
 
 
 
-![](../../../../.gitbook/assets/image%20%2828%29.png)
+![](../../../../.gitbook/assets/image%20%2830%29.png)
 
-![](../../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../../.gitbook/assets/image%20%2816%29.png)
 
 其余配置与常规AutoScalingGroup配置相同。
 
@@ -32,5 +32,5 @@
 
 
 
-![](../../../../.gitbook/assets/image%20%2848%29.png)
+![](../../../../.gitbook/assets/image%20%2852%29.png)
 
