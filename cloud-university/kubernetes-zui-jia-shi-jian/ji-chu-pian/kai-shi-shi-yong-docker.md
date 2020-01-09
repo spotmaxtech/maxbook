@@ -96,7 +96,7 @@ docker run --rm --name kubia-container -p 8080:8080 -d luksa/kubia
 
 开另一个控制台，访问一下8080试试吧
 
-![](../../../.gitbook/assets/image%20%2850%29.png)
+![](../../../.gitbook/assets/image%20%2851%29.png)
 
 ## 探索运行容器的内部
 
@@ -115,7 +115,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](../../../.gitbook/assets/image%20%2854%29.png)
+![](../../../.gitbook/assets/image%20%2855%29.png)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
