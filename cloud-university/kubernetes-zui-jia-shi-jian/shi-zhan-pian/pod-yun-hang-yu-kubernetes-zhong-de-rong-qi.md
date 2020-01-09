@@ -244,34 +244,83 @@ kubia-manual   1/1     Running   0          63m
 ## 将pod部署到指定节点
 
 {% hint style="success" %}
-这个非常重要，我们经常会用到，要掌握。因为我们每个团队有各自的节点，不要互相争抢。
+这个操作非常重要，我们经常会用到。因为我们每个团队有各自的节点，可以避免互相争抢。
 {% endhint %}
 
+首先我们先看看节点上的标签
 
+```text
+$ k get node --show-labels
+NAME                       STATUS   ROLES    AGE    VERSION            LABELS
+cn-hongkong.10.32.100.46   Ready    <none>   6d4h   v1.14.8-aliyun.1   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=ecs.n2.medium,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=cn-hongkong,failure-domain.beta.kubernetes.io/zone=cn-hongkong-c,k8s.aliyun.com=true,k8s.io/cluster-autoscaler=true,kubernetes.io/arch=amd64,kubernetes.io/hostname=cn-hongkong.10.32.100.46,kubernetes.io/os=linux,node.spotmax/spec=2c4g,node.spotmax/team=dsp,node.spotmax/type=spot,policy=release,workload_type=spot
+cn-hongkong.10.32.100.47   Ready    <none>   3d3h   v1.14.8-aliyun.1   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=ecs.n2.medium,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=cn-hongkong,failure-domain.beta.kubernetes.io/zone=cn-hongkong-c,k8s.aliyun.com=true,k8s.io/cluster-autoscaler=true,kubernetes.io/arch=amd64,kubernetes.io/hostname=cn-hongkong.10.32.100.47,kubernetes.io/os=linux,node.spotmax/spec=2c4g,node.spotmax/team=adn,node.spotmax/type=spot,policy=release,workload_type=spot
+cn-hongkong.10.32.100.48   Ready    <none>   2d     v1.14.8-aliyun.1   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=ecs.n2.medium,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=cn-hongkong,failure-domain.beta.kubernetes.io/zone=cn-hongkong-c,k8s.aliyun.com=true,k8s.io/cluster-autoscaler=true,kubernetes.io/arch=amd64,kubernetes.io/hostname=cn-hongkong.10.32.100.48,kubernetes.io/os=linux,node.spotmax/spec=2c4g,node.spotmax/team=3s,node.spotmax/type=spot,policy=release,workload_type=spot
+```
+
+还是比较多的，我们结合内部需要，定制了我们关心标签
+
+```text
+$ k get node -L node.spotmax/spec,node.spotmax/team,node.spotmax/type                                                                                                        130 ↵
+NAME                       STATUS   ROLES    AGE    VERSION            SPEC   TEAM   TYPE
+cn-hongkong.10.32.100.46   Ready    <none>   6d8h   v1.14.8-aliyun.1   2c4g   dsp    spot
+cn-hongkong.10.32.100.47   Ready    <none>   3d7h   v1.14.8-aliyun.1   2c4g   adn    spot
+cn-hongkong.10.32.100.48   Ready    <none>   2d3h   v1.14.8-aliyun.1   2c4g   3s     spot
+```
+
+现在让我们部署到 node.spotmax/team=dsp 节点上
+
+```yaml
+# cat kubia-dsp.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-dsp
+spec:
+  nodeSelector:
+    node.spotmax/team: "dsp"
+  containers:
+  - image: luksa/kubia
+    name: kubia
+```
+
+创建并查看
+
+```bash
+$ kubectl create -f kubia-dsp.yaml
+pod/kubia-dsp created
+
+# 还记得查看pod在哪个节点么？
+$ kubectl get pod/kubia-dsp -o wide
+NAME        READY   STATUS    RESTARTS   AGE     IP             NODE                       NOMINATED NODE   READINESS GATES
+kubia-dsp   1/1     Running   0          2m29s   172.21.3.141   cn-hongkong.10.32.100.46   <none>           <none>
+```
 
 ## 停止和删除pod
 
-```text
-$ kubectl delete po cat-manual-v2
-$ kubectl delete ns custom-namespace
+很多种方法，可以根据自己需要删除
+
+```bash
+# 指定具体pod名字
+$ kubectl delete pod kubia-manual
+
+# 指定标签，删除所有符合的
 $ kubectl delete po -l creation_method=manual
+
+# --all 所有的pod
 $ kubectl delete po --all
+
+# 删除命名空间的所有资源（几乎）
 $ kubectl delete all --all
 ```
 
-> 小结
->
-> * 如何决定是否应将某些容器组合在一个pod中。
-> * pod 可以运行多个进程， 这和非容器世界中的物理主机类似。
-> * 可以编写 YAML 或 JSON 描述文件用于创建 pod, 然后查看 pod 的规格及其
->
->   当前状态。
->
-> * 使用标签来组织 pod, 并且 一 次在多个 pod 上执行操作。
-> * 可以使用节点标签将pod 只调度到提供某些指定特性的节点上。
-> * 注解允许入们、 工具或库将更大的数据块附加到 pod。
-> * 命名空间可用千允 许不同团队使 用同 一 集 群， 就像它 们使 用单独的Kubemetes 集群一样。
-> * 使用 kubectl explain 命令快速查看任何 Kubernetes 资源的信息。
+OK！大家到这里就完成了关于pod的所有实验，是很重要的一个内容，打交道最多的概念。
+
+加油！我们进入更有趣的环节！
+
+## 思考题
+
+> * 标签是用来做什么的？
+> * 命名空间和标签在筛选资源方面有什么不同？
 
 
 
