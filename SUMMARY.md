@@ -11,7 +11,6 @@
   * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [流程介绍](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/shi-yong-liu-cheng.md)
-  * [使用文档](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/howto.md)
   * [准备工作](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/README.md)
     * [阿里云](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/README.md)
       * [伸缩组配置](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/yi-lai-huan-jing-pei-zhi.md)

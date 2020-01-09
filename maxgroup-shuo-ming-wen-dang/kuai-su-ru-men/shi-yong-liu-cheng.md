@@ -4,16 +4,14 @@
 
 完整的MaxGroup使用流程包含以下步骤
 
-![](../../.gitbook/assets/image%20%282%29.png)
-
-
+![](../../.gitbook/assets/image%20%2838%29.png)
 
 **详细操作步骤**
 
-* 确保您已成为阿里云/AWS等云厂商的注册用户
+* 注册成为AWS/阿里云等云商用户
+* 注册成为SpotMax用户
 * 配置弹性伸缩组
-* 建立角色，添加权限，并将该角色附加到准备部署MaxGroup的节点上
 * 配置MaxGroup并进行部署
 * 启动MaxGroup
-* 功能验证
+* 安装成功校验
 
