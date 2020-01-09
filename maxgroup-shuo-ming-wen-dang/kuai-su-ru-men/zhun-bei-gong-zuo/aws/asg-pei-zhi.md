@@ -18,13 +18,13 @@
 
 
 
-![](../../../../.gitbook/assets/image%20%2844%29.png)
+![](../../../../.gitbook/assets/image%20%2841%29.png)
 
 
 
-![](../../../../.gitbook/assets/image%20%2829%29.png)
+![](../../../../.gitbook/assets/image%20%2828%29.png)
 
-![](../../../../.gitbook/assets/image%20%2815%29.png)
+![](../../../../.gitbook/assets/image%20%2814%29.png)
 
 其余配置与常规AutoScalingGroup配置相同。
 
@@ -32,5 +32,5 @@
 
 
 
-![](../../../../.gitbook/assets/image%20%2851%29.png)
+![](../../../../.gitbook/assets/image%20%2848%29.png)
 
