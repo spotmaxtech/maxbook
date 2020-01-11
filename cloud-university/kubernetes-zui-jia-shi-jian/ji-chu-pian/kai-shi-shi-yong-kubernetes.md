@@ -100,7 +100,14 @@ You've hit kubia-qr7r9
 You've hit kubia-9bklf
 ```
 
+{% hint style="info" %}
+负载均衡器到达上限时，请用左边那个ClusterIP
+{% endhint %}
 
+```text
+$ kubectl run busybox --rm -i --tty --image busybox -- sh
+$ while true; do wget -O- http://<172.22.2.107>:8080; sleep 1;  done
+```
 
 ## 查看应用跑在哪个节点
 
