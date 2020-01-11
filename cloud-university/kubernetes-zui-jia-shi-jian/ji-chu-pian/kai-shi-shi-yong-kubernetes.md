@@ -145,7 +145,7 @@ sh.helm.release.v1.dashboard.v1              helm.sh/release.v1                 
 上面有个token的name就是令牌了，查看下，如：
 
 ```text
-k describe secrets dashboard-kubernetes-dashboard-token-tr8td
+k describe secrets dashboard-kubernetes-dashboard-token-tr8td --namespace kube-dashboard
 ```
 
 登陆后请浏览一些资源，例如node，其他内容我们后面章节会涉及
