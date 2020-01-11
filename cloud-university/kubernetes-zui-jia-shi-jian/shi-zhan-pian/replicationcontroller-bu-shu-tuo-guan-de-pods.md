@@ -319,7 +319,7 @@ $ k delete daemonset.apps/ssd-monitor
 $ k delete all --all # 确保空间没有重要的服务
 ```
 
-Well Done！到达这里你已经是半个DevOps了，这里是kubernetes的核型功能，能够自动的帮你管理副本集的状态。
+Well Done！到达这里你已经是半个DevOps了，这里是kubernetes的核心功能，能够自动的帮你管理副本集的状态。
 
 下一节，我们让其他服务访问我们的副本集。
 
