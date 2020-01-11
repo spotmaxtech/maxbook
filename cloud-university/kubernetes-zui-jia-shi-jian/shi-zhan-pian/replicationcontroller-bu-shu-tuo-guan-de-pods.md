@@ -41,8 +41,8 @@ spec:
   containers:
   - image: luksa/kubia-unhealthy
     name: kubia
-    livenessProbe:
-      httpGet:
+    livenessProbe:     #注意这里增加了健康监测
+      httpGet:         #http访问8080端口
         path: /
         port: 8080
 ```
