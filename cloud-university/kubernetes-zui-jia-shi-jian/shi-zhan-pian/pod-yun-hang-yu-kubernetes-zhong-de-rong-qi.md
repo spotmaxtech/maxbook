@@ -25,7 +25,7 @@ spec:
 
 ## 创建pod与了解它
 
-告诉kubernetes，让它按找yaml的描述为我们部署上述资源
+告诉kubernetes，让它按照yaml的描述为我们部署上述资源
 
 {% hint style="info" %}
 为便于做练习，适当清理之前的资源是个好习惯，常用指令
