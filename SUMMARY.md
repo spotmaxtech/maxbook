@@ -19,7 +19,7 @@
       * [依赖环境配置](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/aws/yi-lai-huan-jing-pei-zhi.md)
   * [安装与启动](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong.md)
   * [功能验证](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/gong-neng-yan-zheng.md)
-* [最佳实践](maxgroup-shuo-ming-wen-dang/chan-pin-jia-gou.md)
+* [产品架构](maxgroup-shuo-ming-wen-dang/chan-pin-jia-gou.md)
 * [常见问题](maxgroup-shuo-ming-wen-dang/chang-jian-wen-ti.md)
 * [相关协议](maxgroup-shuo-ming-wen-dang/xiang-guan-xie-yi.md)
 
@@ -46,16 +46,16 @@
   * [基础篇](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/README.md)
     * [开始使用Docker](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-docker.md)
     * [开始使用Kubernetes](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-kubernetes.md)
-    * [开始使用Helm/Charts](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-helmcharts.md)
   * [实战篇](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/README.md)
     * [Pod：运行于Kubernetes中的容器](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/pod-yun-hang-yu-kubernetes-zhong-de-rong-qi.md)
     * [ReplicationController：部署托管的pods](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/replicationcontroller-bu-shu-tuo-guan-de-pods.md)
     * [Service：让客户端发现pod并与之通信](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/service-rang-ke-hu-duan-fa-xian-pod-bing-yu-zhi-tong-xin.md)
     * [Volumes：给containers挂载磁盘](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/volumes-gei-containers-gua-zai-ci-pan.md)
     * [ConfigMap和Secret：配置应用程序](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/configmap-he-secret-pei-zhi-ying-yong-cheng-xu.md)
-    * [从应用中访问pod的metadata等资源](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/cong-ying-yong-zhong-fang-wen-pod-de-metadata-deng-zi-yuan.md)
     * [Deployment: 声明式地升级应用](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/deployment-sheng-ming-shi-di-sheng-ji-ying-yong.md)
     * [StatefulSet：部署有状态的多副本应用](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/statefulset-bu-shu-you-zhuang-tai-de-duo-fu-ben-ying-yong.md)
+  * [实践篇](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/README.md)
+    * [Helm和Charts](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts.md)
 
 ## 在云端 <a id="zhi-shi-fen-xiang"></a>
 

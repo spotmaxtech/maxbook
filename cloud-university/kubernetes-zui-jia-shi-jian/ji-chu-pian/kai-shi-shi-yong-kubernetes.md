@@ -14,7 +14,7 @@
 kubectl get nodes
 ```
 
-![](../../../.gitbook/assets/image%20%2838%29.png)
+![](../../../.gitbook/assets/image%20%2844%29.png)
 
 {% hint style="info" %}
 给 kubectl 做一下alias吧，后续我们使用k
@@ -87,6 +87,10 @@ kubia   1         1         1       142m
 
 修改期望的副本即可以完成伸缩
 
+```erlang
+$ k scale rc kubia --replicas=3
+```
+
 因为我们的应用可以返回主机名，所以每次请求会获得不同的结果
 
 ```text
@@ -104,7 +108,7 @@ You've hit kubia-9bklf
 kubectl get pods -o wide
 ```
 
-![](../../../.gitbook/assets/image%20%2812%29.png)
+![](../../../.gitbook/assets/image%20%2814%29.png)
 
 还可以查看pod的一些细节，还有日志，试试指令吧
 
@@ -125,7 +129,7 @@ kubectl get pods -o wide
 
 提示登陆，请选择令牌
 
-![](../../../.gitbook/assets/image%20%2841%29.png)
+![](../../../.gitbook/assets/image%20%2848%29.png)
 
 这里令牌是一个用户的口令，使用正确的令牌就能代表一个用户登陆了。请按照下述命令获取它的令牌
 

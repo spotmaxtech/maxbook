@@ -85,5 +85,5 @@ users:
 
 拿到文本后是config模式的，自己merge到配置文件中吧。可以参考这个方式
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 

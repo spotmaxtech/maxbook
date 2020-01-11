@@ -1,13 +1,5 @@
 # Pod：运行于Kubernetes中的容器
 
-> 要点
->
-> * 创建、 启动和停止pod
-> * 使用标签组织pod和其他资源
-> * 使用特定标签对所有pod执行操作
-> * 使用命名空间将多个pod分到不重叠的组中
-> * 调度pod到指定类型的工作节点
-
 ## 为pod创建一个简单的yaml描述文件
 
 ```yaml
@@ -141,7 +133,7 @@ kubectl delete namespace custom-namespace
 此实验容易在多人环境中名字冲突，大家可以尝试自定义命名空间。如果理解了，也可以不用做，毕竟命名空间操作的时候并不多。
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](../../../.gitbook/assets/image%20%286%29.png)
 
 ## 给pod打上标签
 
