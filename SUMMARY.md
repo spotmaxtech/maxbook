@@ -19,7 +19,7 @@
       * [依赖环境配置](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/aws/yi-lai-huan-jing-pei-zhi.md)
   * [安装与启动](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong.md)
   * [功能验证](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/gong-neng-yan-zheng.md)
-* [产品架构](maxgroup-shuo-ming-wen-dang/chan-pin-jia-gou.md)
+* [最佳实践](maxgroup-shuo-ming-wen-dang/chan-pin-jia-gou.md)
 * [常见问题](maxgroup-shuo-ming-wen-dang/chang-jian-wen-ti.md)
 * [相关协议](maxgroup-shuo-ming-wen-dang/xiang-guan-xie-yi.md)
 
