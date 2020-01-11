@@ -94,7 +94,7 @@ $ k scale rc kubia --replicas=3
 因为我们的应用可以返回主机名，所以每次请求会获得不同的结果
 
 ```text
-$ while True; do curl http://47.56.228.139:8080; sleep 1;  done
+$ while true; do curl http://47.56.228.139:8080; sleep 1;  done
 You've hit kubia-qr7r9
 You've hit kubia-qr7r9
 You've hit kubia-9bklf
