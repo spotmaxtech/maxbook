@@ -146,6 +146,15 @@ deployment.extensions/kubia patched
 while true; do curl http://<130.21.109.222替换自己的>; done
 ```
 
+{% hint style="danger" %}
+如果LB申请不下来，可以使用busybox内网测试，见：
+{% endhint %}
+
+```yaml
+$ kubectl run busybox --rm -i --tty --image busybox -- sh
+$ while true; do wget -O- http://<172.22.2.107替换自己的>:8080; sleep 1;  done
+```
+
 执行升级操作，这里是将deployment中的image由v1改为了v2
 
 ```yaml
