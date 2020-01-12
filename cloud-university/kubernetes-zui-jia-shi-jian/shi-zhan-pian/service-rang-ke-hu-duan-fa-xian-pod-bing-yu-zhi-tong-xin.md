@@ -186,7 +186,7 @@ metadata:
   name: kubia
 spec:
   rules:
-  - host: kubia.example.com
+  - host: <kubia换成自己的>.example.com
     #域名这个要配置本地的/etc/hosts
     #如：<Nginx外网IP>    kubia.example.com
     http:
