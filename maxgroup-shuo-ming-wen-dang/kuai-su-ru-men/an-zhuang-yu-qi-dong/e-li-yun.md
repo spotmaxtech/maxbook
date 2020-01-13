@@ -52,7 +52,7 @@ max\_group为已编译完成的二进制包，无系统环境依赖，下载附�
 }
 ```
 
-修改完成配置文件，将配置文件service\_config.json上传至阿里云的OSS，OSS的endpoint与bucket要与license位置相同，例如：oss-us-east-1.aliyuncs.com\|spotmax-xxxx
+修改完成配置文件，将配置文件service\_config.json上传至阿里云的OSS，OSS的endpoint和bucket，要与license位置相同，例如：oss-us-east-1.aliyuncs.com\|spotmax-xxxx
 
 ![](../../../.gitbook/assets/image%20%2867%29.png)
 
