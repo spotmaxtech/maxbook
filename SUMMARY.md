@@ -52,7 +52,7 @@
   * [实践篇](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/README.md)
     * [Helm和Charts](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts.md)
 
-## 在云端 <a id="zhi-shi-fen-xiang"></a>
+## 最佳实践 <a id="zhi-shi-fen-xiang"></a>
 
 * [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
 * [阿里云配置竞价实例中断消息](zhi-shi-fen-xiang/e-li-yun-pei-zhi-jing-jia-shi-li-zhong-duan-xiao-xi.md)
