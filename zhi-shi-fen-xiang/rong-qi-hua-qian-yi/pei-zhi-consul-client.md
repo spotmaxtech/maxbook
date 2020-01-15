@@ -30,6 +30,10 @@ git clone https://github.com/spotmaxtech/consul-helm.git
 
 ## 获取consul server的信息
 
+{% hint style="warning" %}
+这部分信息可以从运维server集群的管理员获得，或是找到旧节点上的初始化脚本处获得，例如：as\_autoscaling.sh
+{% endhint %}
+
 ### 注册的data center
 
 > Datacenter is the name of the datacenter that the agents should register as.
