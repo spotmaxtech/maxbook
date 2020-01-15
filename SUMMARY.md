@@ -38,7 +38,6 @@
 ## 云原生咨询与培训 <a id="ji-shu-zi-xun-yu-pei-xun"></a>
 
 * [高可用架构咨询](ji-shu-zi-xun-yu-pei-xun/gao-ke-yong-jia-gou-zi-xun.md)
-* [弹性集群管理咨询](ji-shu-zi-xun-yu-pei-xun/tan-xing-ji-qun-guan-li-zi-xun.md)
 * [混沌工程实践咨询](ji-shu-zi-xun-yu-pei-xun/hun-dun-gong-cheng-shi-jian-zi-xun.md)
 * [Kubernetes培训课程](ji-shu-zi-xun-yu-pei-xun/kubernetes-pei-xun-ke-cheng.md)
 
