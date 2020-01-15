@@ -127,3 +127,7 @@ kubectl run busybox --rm -i --tty --image busybox -- sh
 $ wget -qO- http://consul-client.consul-client.svc.cluster.local:8500/v1/catalog/nodes
 ```
 
+## FAQ
+
+有问题请留言
+
