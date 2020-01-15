@@ -6,26 +6,37 @@
 
 EKS使用用户方式接入，所以DevOps人员需要具备以下环境
 
-* 安装好kubectl工具
-* 安装好aws客户端工具
-* 安装好aws-iam-authenticator工具
-* 一个aws的console控制台登陆user
+* 安装kubectl
+* 安装awscli
+* 安装aws-iam-authenticator
+* 配置aws configure
 
-以上环境在mac上都可以使用brew安装，请google必要的文档，这里不赘述了。
+{% hint style="info" %}
+aws configure请使用spotmax\_devops用户，如有特殊需要，请找到集群管理员操作
+{% endhint %}
 
-### 用户添加到Kubernetes配置里
+以上环境在mac上都可以使用brew安装，请google必要的文档，或参考这个 [EKS入门文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/getting-started-console.html)
 
-这个需要管理员操作，不然后续DevOps人员会遇到权限报错。这里不赘述了。
+### DevOps用户添加到Kubernetes
+
+所有集群都默认加入了spotmax\_devops角色，该角色信息请找管理员索取。如果遇到权限报错，请反馈给管理员。
+
+```bash
+# k edit configmap aws-auth --namespace kube-system
+mapUsers: |
+    - userarn: arn:aws:iam::xxxxxxxxx:user/spotmax_devops
+      username: spotmax_devops
+      groups:
+        - system:masters
+```
 
 ### DevOps更新EKS环境到本地config里
 
 这里的config是kubeconfig，亚马逊提供了更新工具，执行
 
 ```text
-aws eks --region us-east-1 update-kubeconfig --name spotmax-prod-vg
+aws eks --region <us-east-1替换区域> update-kubeconfig --name <spotmax-prod-vg替换名字>
 ```
-
-上述指令字面意思就容易理解，先不解释了。
 
 更新完毕后，确认下当前的context是否指向了这个kubernetes，测试下
 
@@ -40,7 +51,7 @@ kubectl get ns
 helm ls
 ```
 
-不报错表示接入了，遇到错误和管理员一起trouble shooting
+不报错表示接入了，遇到错误请和管理员一起trouble shooting
 
 ## 阿里云的ACK接入方式
 
