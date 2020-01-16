@@ -26,7 +26,12 @@ $ kubens consul-client
 ```bash
 # 请git clone到本地
 git clone https://github.com/spotmaxtech/consul-helm.git
+cd consul-helm && git checkout spotmax
 ```
+
+{% hint style="info" %}
+spotmax是fork了官方helm并做了修改，所以使用spotmax分之
+{% endhint %}
 
 ## 获取consul server的信息
 
