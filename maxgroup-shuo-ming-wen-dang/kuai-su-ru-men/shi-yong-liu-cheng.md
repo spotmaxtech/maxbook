@@ -4,7 +4,7 @@
 
 完整的MaxGroup使用流程包含以下步骤
 
-![](../../.gitbook/assets/image%20%2846%29.png)
+![](../../.gitbook/assets/image%20%2845%29.png)
 
 **详细操作步骤**
 

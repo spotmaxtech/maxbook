@@ -56,7 +56,7 @@
 
 * [容器化迁移](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/README.md)
   * [Admin和DevOps角色](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/admin-he-devops-jiao-se.md)
-  * [接入容器集群](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/devops-ren-yuan-jie-ru-rong-qi-huan-jing.md)
+  * [接入容器集群](zhi-shi-fen-xiang/devops-ren-yuan-jie-ru-rong-qi-huan-jing.md)
   * [配置consul client](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/pei-zhi-consul-client.md)
   * [创建屏蔽云商的StorageClass](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/chuang-jian-ping-bi-yun-shang-de-storageclass.md)
 * [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
