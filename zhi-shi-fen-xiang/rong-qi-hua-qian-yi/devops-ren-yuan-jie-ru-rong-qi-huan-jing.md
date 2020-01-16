@@ -90,7 +90,36 @@ users:
 
 ### 合并到自己的kubeconfig
 
-拿到文本后是config模式的，自己merge到配置文件中吧。可以参考这个方式
+拿到文本后是config模式的，需要将内容自己merge到配置文件中。
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+#### 保存到临时文件
+
+将上述文本存储到文件 ~/.kube/config\_temp
+
+{% hint style="danger" %}
+主要修改 cluster/user/context的name，以便于合并，不然前后有相同的key会有问题！
+{% endhint %}
+
+#### 执行语句合并
+
+```text
+KUBECONFIG=~/.kube/config:~/.kube/config_temp kubectl config view --flatten > ~/.kube/config_new
+```
+
+#### 检查并覆盖默认文件
+
+仔细检查一下config\_new
+
+```text
+# cat ~/.kube/config_new
+cp ~/.kube/config_new ~/.kube/config
+```
+
+## 管理好kubeconfig
+
+{% hint style="info" %}
+集群变多时需要管理好自己的配置文件，便于集群间互相切换
+{% endhint %}
+
+![](../../.gitbook/assets/image%20%2826%29.png)
 
