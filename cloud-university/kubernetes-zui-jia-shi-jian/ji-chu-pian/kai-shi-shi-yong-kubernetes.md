@@ -14,7 +14,7 @@
 kubectl get nodes
 ```
 
-![](../../../.gitbook/assets/image%20%2848%29.png)
+![](../../../.gitbook/assets/image%20%2853%29.png)
 
 {% hint style="info" %}
 给 kubectl 做一下alias吧，后续我们使用k
@@ -115,7 +115,7 @@ $ while true; do wget -O- http://<172.22.2.107>:8080; sleep 1;  done
 kubectl get pods -o wide
 ```
 
-![](../../../.gitbook/assets/image%20%2816%29.png)
+![](../../../.gitbook/assets/image%20%2817%29.png)
 
 还可以查看pod的一些细节，还有日志，试试指令吧
 
@@ -136,7 +136,7 @@ kubectl get pods -o wide
 
 提示登陆，请选择令牌
 
-![](../../../.gitbook/assets/image%20%2852%29.png)
+![](../../../.gitbook/assets/image%20%2857%29.png)
 
 这里令牌是一个用户的口令，使用正确的令牌就能代表一个用户登陆了。请按照下述命令获取它的令牌
 
