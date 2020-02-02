@@ -8,5 +8,5 @@
 
 #### 与直接使用云商托管式集群对比
 
-![](../../.gitbook/assets/image%20%2866%29.png)
+![](../../.gitbook/assets/image%20%2867%29.png)
 

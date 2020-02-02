@@ -2,7 +2,7 @@
 
 阿里云创建ESS弹性伸缩组有两种方式：1.从ACK容器服务页面创建；2.直接从弹性伸缩页面创建
 
-![&#x4ECE;ACK&#x5BB9;&#x5668;&#x670D;&#x52A1;&#x9875;&#x9762;&#x521B;&#x5EFA;](../../../../.gitbook/assets/image%20%2839%29.png)
+![&#x4ECE;ACK&#x5BB9;&#x5668;&#x670D;&#x52A1;&#x9875;&#x9762;&#x521B;&#x5EFA;](../../../../.gitbook/assets/image%20%2840%29.png)
 
 ![&#x4ECE;&#x4F38;&#x7F29;&#x7EC4;&#x7BA1;&#x7406;&#x9875;&#x9762;&#x521B;&#x5EFA;](../../../../.gitbook/assets/image%20%2831%29.png)
 
@@ -10,7 +10,7 @@
 
 ![](../../../../.gitbook/assets/image%20%2811%29.png)
 
-![](../../../../.gitbook/assets/image%20%2840%29.png)
+![](../../../../.gitbook/assets/image%20%2841%29.png)
 
 
 
