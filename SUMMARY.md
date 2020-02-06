@@ -57,6 +57,7 @@
 ## 最佳实践 <a id="zhi-shi-fen-xiang"></a>
 
 * [容器化迁移](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/README.md)
+  * [扩容容器磁盘（PV）](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/kuo-rong-rong-qi-ci-pan-pv.md)
   * [Admin和DevOps角色](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/admin-he-devops-jiao-se.md)
   * [接入容器集群](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/devops-ren-yuan-jie-ru-rong-qi-huan-jing.md)
   * [配置consul client](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/pei-zhi-consul-client.md)

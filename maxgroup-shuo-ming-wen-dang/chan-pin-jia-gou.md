@@ -10,7 +10,7 @@
 
 新创建一个镜像，镜像要求有两个EBS，一个根卷，一个外挂附属卷。
 
-![](../.gitbook/assets/image%20%2870%29.png)
+![](../.gitbook/assets/image%20%2872%29.png)
 
 系统中，将另一块盘mount到指定目录，示例如下：
 
@@ -38,9 +38,9 @@ $ crontab -l
 
 **注意：max\_group只能进行aws层面磁盘转移，系统内部的mount无法进行，这里推荐使用模板中的高级选项的data来植入一个脚本实现mount转移。这里采用了 tag功能，因此给模板内实例需要有get tag的IAM role。**
 
-![](../.gitbook/assets/image%20%2832%29.png)
-
 ![](../.gitbook/assets/image%20%2834%29.png)
+
+![](../.gitbook/assets/image%20%2836%29.png)
 
 ```text
 #!/bin/bash
