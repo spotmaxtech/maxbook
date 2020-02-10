@@ -52,7 +52,9 @@
     * [Deployment: 声明式地升级应用](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/deployment-sheng-ming-shi-di-sheng-ji-ying-yong.md)
     * [StatefulSet：部署有状态的多副本应用](cloud-university/kubernetes-zui-jia-shi-jian/shi-zhan-pian/statefulset-bu-shu-you-zhuang-tai-de-duo-fu-ben-ying-yong.md)
   * [实践篇](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/README.md)
-    * [Helm和Charts](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts.md)
+    * [Helm和Charts](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/README.md)
+      * [什么是Helm和Chart？](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/shen-me-shi-helm-he-chart.md)
+      * [使用Helm](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/shi-yong-helm.md)
 
 ## 最佳实践 <a id="zhi-shi-fen-xiang"></a>
 
