@@ -39,6 +39,7 @@ parameters:
 provisioner: kubernetes.io/aws-ebs
 reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
 ```
 
 创建这个class
@@ -77,6 +78,7 @@ parameters:
   # zoneid: us-east-1a,us-east-1b # 填写正确可用区
 provisioner: alicloud/disk
 volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
 ```
 
 ### 最终效果
