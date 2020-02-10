@@ -28,7 +28,7 @@ Chart是helm包,它包含在Kubernetes集群内部运行应用程序，工具或
 
 ### release
 
-Release是发布在k8s集群中运行的chart的实例.一个chart通常可以多次安装到同一个集群中.每次安装都会创建一个新版本.例如一个mysql chart。如果你想在集群运行两个数据库实例,则可以安装该chart两次.每个实例都有自己的release,而每个release又都有属于自己的release名。
+Release是发布在k8s集群中运行的chart的实例.一个chart通常可以多次安装到同一个集群中。每次安装都会创建一个新版本，例如一个nginx chart。如果你想在集群运行两个nginx实例,则可以安装该chart两次.每个实例都有自己的release，而每个release又都有属于自己的release名。
 
 ### 概念之间的关系
 
