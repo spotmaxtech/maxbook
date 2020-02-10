@@ -55,6 +55,7 @@
     * [Helm和Charts](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/README.md)
       * [什么是Helm和Chart？](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/shen-me-shi-helm-he-chart.md)
       * [使用Helm](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/shi-yong-helm.md)
+      * [创建自己的chart](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-he-charts/chuang-jian-zi-ji-de-chart.md)
 
 ## 最佳实践 <a id="zhi-shi-fen-xiang"></a>
 

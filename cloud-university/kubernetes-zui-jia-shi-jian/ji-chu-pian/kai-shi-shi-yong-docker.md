@@ -115,7 +115,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](../../../.gitbook/assets/image%20%2874%29.png)
+![](../../../.gitbook/assets/image%20%2875%29.png)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
