@@ -8,7 +8,7 @@ EKS使用用户方式接入，所以DevOps人员需要具备以下环境
 
 * 安装kubectl
 * 安装awscli
-* 安装aws-iam-authenticator
+* ~~安装aws-iam-authenticator （这一步已经淘汰了）~~
 * 配置aws configure
 
 {% hint style="info" %}
