@@ -95,7 +95,7 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 
 | tag名 | 取值 | 说明 |
 | :--- | :--- | :--- |
-| te | dsp/adn/3s | 业务线名称 |
+| team | dsp/adn/3s | 业务线名称 |
 | k8s.io/cluster-autoscaler/&lt;EKS-NAME&gt; | owned | EKS节点发现 |
 | kubernetes.io/cluster/&lt;EKS-NAME&gt; | owned | EKS节点发现 |
 
