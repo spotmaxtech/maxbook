@@ -16,7 +16,7 @@ SpotMax主要包括以下部分:
 
 **MaxChaos** 混沌工程，混沌工程套件
 
-![](../../.gitbook/assets/image%20%2872%29.png)
+![](../../.gitbook/assets/image%20%2877%29.png)
 
 ### SpotMax特性
 
@@ -44,9 +44,9 @@ Kmax是基于SpotMax与Kubernetes的容器编排运行平台，提供开箱即�
 
 ### KMax架构
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2869%29.png)
 
 ### 调度流程
 
-![](../../.gitbook/assets/image%20%2859%29.png)
+![](../../.gitbook/assets/image%20%2863%29.png)
 

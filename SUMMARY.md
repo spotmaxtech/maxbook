@@ -60,9 +60,10 @@
 ## 最佳实践 <a id="zhi-shi-fen-xiang"></a>
 
 * [容器化迁移](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/README.md)
+  * [KMAX的AWS EKS部署方式](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/kmax-de-aws-eks-bu-shu-fang-shi.md)
   * [Admin和DevOps角色](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/admin-he-devops-jiao-se.md)
-  * [创建屏蔽云商的StorageClass](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/chuang-jian-ping-bi-yun-shang-de-storageclass.md)
   * [接入容器集群](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/devops-ren-yuan-jie-ru-rong-qi-huan-jing.md)
+  * [创建屏蔽云商的StorageClass](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/chuang-jian-ping-bi-yun-shang-de-storageclass.md)
   * [配置consul client](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/pei-zhi-consul-client.md)
   * [扩容容器磁盘（PV）](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/kuo-rong-rong-qi-ci-pan-pv.md)
 * [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
