@@ -62,14 +62,20 @@ max\_group为已编译完成的二进制包，无系统环境依赖，下载附�
 
 ```text
 $ ./ali_maxgroup
--L string
+ -L string
         The license file path
+  -k string
+        [optional] the key of your AccessKeyId
+  -p string
+        [optional] the password of your AccessSecret
+  -r string
+        the region name
 ```
 
 常规启动方式如下：
 
 ```text
-$ ./ali_maxgroup -L ./conf/license.txt
+$ ./ali_maxgroup -L ./conf/license.txt -k xxx-p xxx
 ```
 
 启动成功，会看到以下日志输出:
