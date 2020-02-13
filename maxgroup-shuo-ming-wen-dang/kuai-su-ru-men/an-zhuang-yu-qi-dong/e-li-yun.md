@@ -69,7 +69,7 @@ $ ./ali_maxgroup
   -p string
         [optional] the password of your AccessSecret
   -r string
-        the region name
+        [optional] the region name
 ```
 
 常规启动方式如下：
