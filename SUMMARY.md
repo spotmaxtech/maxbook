@@ -68,4 +68,5 @@
   * [扩容容器磁盘（PV）](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/kuo-rong-rong-qi-ci-pan-pv.md)
 * [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
 * [阿里云配置竞价实例中断消息](zhi-shi-fen-xiang/e-li-yun-pei-zhi-jing-jia-shi-li-zhong-duan-xiao-xi.md)
+* [竞价实例管理机制](zhi-shi-fen-xiang/jing-jia-shi-li-guan-li-ji-zhi.md)
 
