@@ -40,7 +40,7 @@ worknode是指容器工作节点，同样需要事先创建好这些节点所使
 这里可以在账户里找到kmax-worknode这个iam role
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2874%29.png)
+![](../../.gitbook/assets/image%20%2875%29.png)
 
 
 
@@ -127,7 +127,7 @@ team标签好理解，这里还有个kubernetes.io的标签，这个标签是必
 
 这些标签是在模版的user数据中，也就是EC2被拉起后执行的操作。
 
-![](../../.gitbook/assets/image%20%2888%29.png)
+![](../../.gitbook/assets/image%20%2889%29.png)
 
 {% hint style="info" %}
 日常运维会在实例初始化是调整一下登陆用户、SUDO权限相关的脚本，也可以增加上。
@@ -219,16 +219,17 @@ setup_sudo
 
 至此，创建好的ASG会自动拉取节点，此时使用kubectl客户端可以看到节点已经加入了！
 
-## 注册管理的CA（By KMAX）
+## 启用CA（ClusterAutoscaler）
 
 {% hint style="info" %}
 这个模块的操作可以和kmax确认后操作
 {% endhint %}
 
-### 安装metrics-server
+### 确保worknode的IAM含有ASG操作权限
 
-**helm repo add stable** [**https://kubernetes-charts.storage.googleapis.com/**](https://kubernetes-charts.storage.googleapis.com/) **（使用helm3.0）**  
-**helm install stable/metrics-server --generate-name --namespace kube-system**
+如果没有意外，当前worknode所使用的IAM角色已经含有了ASG权限，可以查看到
+
+![](../../.gitbook/assets/image%20%2865%29.png)
 
 ### 安装CA
 
@@ -262,4 +263,22 @@ spec:
       app: cluster-autoscaler
 
 ```
+
+## 启用HPA（Horizontal Pod Autoscaler）
+
+关于HPA的详细介绍可以参考[说明文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/horizontal-pod-autoscaler.html)
+
+所以让HPA可用，我们只需要在集群里安装好Metrics Server即可
+
+### Metrics-Server安装
+
+{% hint style="danger" %}
+如果已经集群已经安装过了，这个环节可以省去，例如prometheus也会使用到这个模块。
+{% endhint %}
+
+```yaml
+helm install stable/metrics-server --generate-name --namespace kube-system
+```
+
+
 
