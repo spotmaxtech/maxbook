@@ -221,6 +221,8 @@ setup_sudo
 
 ## 启用CA（ClusterAutoscaler）
 
+CA的基本概念与详细说明请参考[说明文档](https://amazonaws-china.com/cn/premiumsupport/knowledge-center/eks-cluster-autoscaler-setup/)
+
 {% hint style="info" %}
 这个模块的操作可以和kmax确认后操作
 {% endhint %}
