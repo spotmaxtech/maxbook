@@ -233,35 +233,48 @@ setup_sudo
 
 ### 安装CA
 
+CA即Cluster Autoscaler，是kubernetes社区的组件，支持不同的云商，大家找到自己的云商可以直接安装，这里我们使用的亚马逊的CA。
+
+#### 下载YAML文件
+
+要在 GitHub 上下载 Cluster Autoscaler 项目提供的示例部署文件，请运行以下命令：
+
 ```text
-......
-command:
-- ./cluster-autoscaler
-- --v=4
-- --stderrthreshold=info
-- --cloud-provider=aws
-- --skip-nodes-with-local-storage=false
-- --expander=most-pods
-- --node-group-auto-discovery=asg:tag=kmax/EKS-NAME
-env:
-- name: AWS_REGION
-value: us-east-1
-......
+wget https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
 ```
 
-### 安装PDB
+#### 修改YAML文件添加ASG组
 
-```yaml
-apiVersion: policy/v1beta1
-kind: PodDisruptionBudget
-metadata:
-  name: cluster-autoscaler-pdb
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: cluster-autoscaler
+打开下载的 YAML 文件并根据下例设置 EKS 集群名称 \(**awsExampleClusterName**\) 和环境变量 \(**us-east-1**\)。然后保存更改。
 
+```text
+...          
+          command:
+            - ./cluster-autoscaler
+            - --v=4
+            - --stderrthreshold=info
+            - --cloud-provider=aws
+            - --skip-nodes-with-local-storage=false
+            - --expander=least-waste
+            - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/awsExampleClusterName
+          env:
+            - name: AWS_REGION
+              value: us-east-1
+...
+```
+
+#### 使用YAML部署CA
+
+要创建 Cluster Autoscaler 部署，请运行以下命令：
+
+```text
+kubectl apply -f cluster-autoscaler-autodiscover.yaml
+```
+
+要检查 Cluster Autoscaler 部署日志以查看部署错误，请运行以下命令：
+
+```text
+kubectl logs -f deployment/cluster-autoscaler -n kube-system
 ```
 
 ## 启用HPA（Horizontal Pod Autoscaler）
