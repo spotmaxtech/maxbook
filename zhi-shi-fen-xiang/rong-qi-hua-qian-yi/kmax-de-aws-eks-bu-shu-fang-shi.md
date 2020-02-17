@@ -40,7 +40,7 @@ worknode是指容器工作节点，同样需要事先创建好这些节点所使
 这里可以在账户里找到kmax-worknode这个iam role
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2875%29.png)
+![](../../.gitbook/assets/image%20%2876%29.png)
 
 
 
@@ -69,6 +69,10 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 {% endhint %}
 
 ![](../../.gitbook/assets/image%20%2836%29.png)
+
+说明：上面的节点组所需大小创建时是最小是1，不能置为0的，这个可以通过后台ASG编辑解决，因为它这里实际上也是启动了一个ASG。
+
+![](../../.gitbook/assets/image%20%2844%29.png)
 
 ## 利用example的EC2模版改造自己的模版
 
@@ -108,7 +112,7 @@ team标签好理解，这里还有个kubernetes.io的标签，这个标签是必
 
 点开模版的高级选项，修改IAM为我们事先指定好的kmax-worknode。
 
-![](../../.gitbook/assets/image%20%2856%29.png)
+![](../../.gitbook/assets/image%20%2857%29.png)
 
 {% hint style="danger" %}
 这一点很重要，NodeGroup的example模版依照kmax-worknode创建了一个新的iam配置文件，我们不用它的。
@@ -127,7 +131,7 @@ team标签好理解，这里还有个kubernetes.io的标签，这个标签是必
 
 这些标签是在模版的user数据中，也就是EC2被拉起后执行的操作。
 
-![](../../.gitbook/assets/image%20%2889%29.png)
+![](../../.gitbook/assets/image%20%2890%29.png)
 
 {% hint style="info" %}
 日常运维会在实例初始化是调整一下登陆用户、SUDO权限相关的脚本，也可以增加上。
@@ -231,7 +235,7 @@ CA的基本概念与详细说明请参考[说明文档](https://amazonaws-china.
 
 如果没有意外，当前worknode所使用的IAM角色已经含有了ASG权限，可以查看到
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2866%29.png)
 
 ### 安装CA
 

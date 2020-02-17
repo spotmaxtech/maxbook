@@ -10,7 +10,7 @@
 
 新创建一个镜像，镜像要求有两个EBS，一个根卷，一个外挂附属卷。
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2881%29.png)
 
 系统中，将另一块盘mount到指定目录，示例如下：
 
