@@ -96,11 +96,12 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 | tag名 | 取值 | 说明 |
 | :--- | :--- | :--- |
 | team | dsp/adn/3s | 业务线名称 |
-| k8s.io/cluster-autoscaler/&lt;EKS-NAME&gt; | owned | EKS节点发现 |
 | kubernetes.io/cluster/&lt;EKS-NAME&gt; | owned | EKS节点发现 |
 
 {% hint style="success" %}
-优点：结合使用max\_group时，比正常走autoscaling打tag快10秒注册进EKS
+team标签好理解，这里还有个kubernetes.io的标签，这个标签是必须要打上的，否则EKS不会把节点注册上，尽管有了注册脚本（user-data）
+
+当然也可以在ASG里传递这个标签，在这里的优点是：结合使用max\_group时，比正常走autoscaling打tag快10秒注册进EKS
 {% endhint %}
 
 ### **修改高级选项的IAM kmax-worknode** <a id="KMAX&#x5E73;&#x53F0;&#x90E8;&#x7F72;&#x4E0E;&#x4F7F;&#x7528;-&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#x4E2D;&#xFF0C;&#x6CE8;&#x610F;&#x9009;&#x62E9;IAM&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;kmax-worknode"></a>
@@ -213,7 +214,8 @@ setup_sudo
 
 | **tag** | 取值 | 说明 |
 | :--- | :--- | :--- |
-| kmax/&lt;EKS-NAME&gt; | owned | CA自动注册asg使用 |
+| k8s.io/cluster-autoscaler/enabled | true | CA自动发现使用 |
+| k8s.io/cluster-autoscaler/&lt;EKS-NAME&gt; | owned | CA自动发现使用 |
 
 至此，创建好的ASG会自动拉取节点，此时使用kubectl客户端可以看到节点已经加入了！
 
