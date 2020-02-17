@@ -128,6 +128,65 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 
 ![](../../.gitbook/assets/image%20%2888%29.png)
 
+{% hint style="info" %}
+日常运维会在实例初始化是调整一下登陆用户、SUDO权限相关的脚本，也可以增加上。
+{% endhint %}
+
+```yaml
+#!/bin/bash 
+set -ex 
+
+add_user(){
+	groupadd admin
+	groupadd dev
+	useradd -G admin mobsa
+	useradd -G dev mobdev
+	id mobdev
+	id mobsa
+}
+
+setup_key(){
+	su - mobsa -c "ssh-keygen  -t rsa -N '' -f ~/.ssh/id_rsa -q -b 2048"
+	su - mobsa -c "touch ~/.ssh/authorized_keys"
+	su - mobdev -c "ssh-keygen  -t rsa -N '' -f ~/.ssh/id_rsa -q -b 2048"
+	su - mobdev -c "touch ~/.ssh/authorized_keys"
+
+	cat > /home/mobdev/.ssh/authorized_keys <<END1
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlMUO/Z2+VGypRLCE4QAxQLodPQSp941POXcAabH2W8v4n9OTXlpqPRLF+hGNvWOafydxjeVgAjTRfLC8Z5STqMJ6ECFULk7RuWS2D5GqCiVKXSXllU7E3Cx2eipSrKcWIO34vXUDXKtzAgxWkxeF18z//GEzXxMLg5zVjT37vrhd7uClm4vhWX0UZM6bEghYt0akaas54VT6DJ2Trf/0m5Gh6TD6F2RiQv8WajTYpjTX/j0EQWnpiKFqzc39B607ItWIiH7A/cvEA6dieGUloNNmNSmmp1AKsKJxm81cBgzThHpOjQVxjINL1uhzQvOGtL6xl94bq4N3cr4/D0qxX mobdev@ip-172-31-8-162
+END1
+	cat > /home/mobsa/.ssh/authorized_keys <<END2
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBJz3tMgLCzfFdJyA/mGd3iYxXBBCqbgUSiD0V2qZJnrCZSCLtatPEFhEm38htpiHzvkclrhfC7XbiU17Kmfq7qD9jEehukr5J7VbaA/6k+kXj+hMs0v1FyXEY+uSPQvP7DyuVnunXhDbrEp5EoS0FfHAjPv3PJ0zmSa5uKavujoVlk2hdJxYR6L4RAdnvYVk23qvNK5HpxayADHkd05aE66VYSZaR13WnIjZUCP8tduS2SLhvgisqrCbdbdf6jsoEVXRSTpirx2gtL1XkuhCLBhS7QOfcjH5BHVvpQkSNOskzs8se2UQuFJeNanAMAQdy95SB4xmQy0+aRZdrplDD mobsa@ip-172-31-8-162
+END2
+	chown mobsa. /home/mobsa/.ssh/ -R
+	chmod 600  /home/mobsa/.ssh/authorized_keys
+	chown mobdev. /home/mobdev/.ssh/ -R
+	chmod 600  /home/mobdev/.ssh/authorized_keys
+}
+
+setup_sudo(){
+	chmod 777 /etc/sudoers
+	cat >> /etc/sudoers<<END
+##### OPS #####
+Cmnd_Alias      NSU=/bin/su
+Cmnd_Alias      NSHELLS = /bin/sh,/bin/bash
+Cmnd_Alias      NCMDS = /usr/sbin/visudo,/usr/bin/chattr,/sbin/fdisk,/bin/dd,/usr/bin/passwd,/usr/sbin/usermod
+Cmnd_Alias      DEV = /usr/bin/svn
+
+Defaults:mobsa       !requiretty
+User_Alias MOBADMIN = %admin
+User_Alias MOBDEV = %dev
+MOBADMIN       ALL=(ALL) NOPASSWD: ALL
+MOBDEV         ALL=(ALL) ALL,!NSU,!NSHELLS,!NCMDS,NOPASSWD: DEV
+END
+	chmod 440 /etc/sudoers
+}
+
+add_user
+setup_key
+setup_sudo
+
+```
+
 至此我们准备好了一种规格的模版！之所以称之为一种规格是因为我们需要根据不通的产品拉起不通的节点，因此也需要不同的模版了。
 
 {% hint style="warning" %}
