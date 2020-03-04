@@ -1,6 +1,6 @@
 # 常见问题
 
-
+所谓preaction，就是查找中断率相对比较低的spot替换中断率高的spot，其实执行的频率是由参数preaction\_snapshot\_interval\_minutes 来决定，例如设置preaction\_snapshot\_interval\_minutes:20 即20分钟执行一次判断是否替换中断率较高的spot
 
 ### 配置文件groups中选项解释
 
