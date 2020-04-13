@@ -21,7 +21,7 @@ $./maxgroup -k key_id -p secret
 如果license在其它目录需要指定路径
 
 ```text
-$./maxgroup -L ./conf/license.txt -k key_id -p secret
+$./maxgroup -L ./conf/license -k key_id -p secret
 ```
 
 3、添加目录
@@ -34,24 +34,8 @@ $./maxgroup -L ./conf/license.txt -k key_id -p secret
 
 ### 启动MaxGroup
 
-上传完成，启动max\_group，使用./ali\_maxgroup可以查看启动所使用的参数
-
 ```text
-$ ./ali_maxgroup
- -L string
-        The license file path
-  -k string
-        [optional] the key of your AccessKeyId
-  -p string
-        [optional] the password of your AccessSecret
-  -r string
-        [optional] the region name
-```
-
-常规启动方式如下：
-
-```text
-$ ./ali_maxgroup -L ./conf/license.txt -k xxx-p xxx
+$ ./maxgroup
 ```
 
 启动成功，会看到以下日志输出:
