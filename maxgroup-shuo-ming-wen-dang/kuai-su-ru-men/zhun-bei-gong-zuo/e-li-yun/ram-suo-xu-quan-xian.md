@@ -1,6 +1,6 @@
 # RAM所需权限
 
-1、权限策略名称：
+1、建议使用RAM权限运行，**权限策略名称**如下：
 
 [AliyunECSFullAccess](https://ram.console.aliyun.com/policies/AliyunECSFullAccess/System)
 
