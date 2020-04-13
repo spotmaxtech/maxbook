@@ -12,7 +12,7 @@
 
 2、MaxGroup建议运行在ECS实体机上，运行在k8s的pod上会出现权限问题
 
-3、注意云监控要授权MNS，报警规则运行maxGroupwfc会自动创建
+3、注意检查云监控要授权MNS，**报警规则，**当运行maxGroup会自动创建
 
 ![](../../../../.gitbook/assets/image%20%2890%29.png)
 
