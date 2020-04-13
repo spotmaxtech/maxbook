@@ -14,5 +14,3 @@
 
 5、点击下载Licesne与maxGroup程序，目前只支持linux x64版本，后续会添加更多的版本
 
-6、目前MaxGroup只建议运行在Ecs实体机上，运行在k8s的pod上会出现权限问题
-
