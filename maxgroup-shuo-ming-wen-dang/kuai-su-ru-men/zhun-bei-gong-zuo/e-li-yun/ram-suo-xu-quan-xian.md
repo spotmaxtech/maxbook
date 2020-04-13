@@ -1,6 +1,6 @@
-# RAM所需权限
+# RAM用户所需权限
 
-1、建议使用RAM权限运行，**权限策略名称**如下：
+1、建议使用RAM用户运行，**权限策略名称**如下：
 
 [AliyunECSFullAccess](https://ram.console.aliyun.com/policies/AliyunECSFullAccess/System)
 
@@ -10,7 +10,7 @@
 
 [AliyunESSFullAccess](https://ram.console.aliyun.com/policies/AliyunESSFullAccess/System)
 
-2、目前MaxGroup只建议运行在Ecs实体机上，运行在k8s的pod上会出现权限问题
+2、MaxGroup建议运行在ECS实体机上，运行在k8s的pod上会出现权限问题
 
 
 

@@ -16,7 +16,7 @@
       * [依赖环境配置](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/aws/yi-lai-huan-jing-pei-zhi.md)
     * [阿里云](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/README.md)
       * [下载Max Group](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/xia-zai-max-group.md)
-      * [RAM所需权限](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/ram-suo-xu-quan-xian.md)
+      * [RAM用户所需权限](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/ram-suo-xu-quan-xian.md)
       * [伸缩组配置](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/yi-lai-huan-jing-pei-zhi.md)
       * [监控配置](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun/jian-kong-pei-zhi.md)
   * [安装与启动](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong/README.md)
