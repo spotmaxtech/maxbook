@@ -12,7 +12,7 @@
 
 2、MaxGroup建议运行在ECS实体机上，运行在k8s的pod上会出现权限问题
 
-3、注意云监控都MNS授权
+3、注意云监控要授权MNS
 
 ![](../../../../.gitbook/assets/image%20%2890%29.png)
 
