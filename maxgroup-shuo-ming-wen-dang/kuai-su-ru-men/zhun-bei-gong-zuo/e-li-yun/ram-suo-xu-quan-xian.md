@@ -14,7 +14,7 @@
 
 3、注意检查云监控要授权MNS，**报警规则，**当运行maxGroup会自动创建
 
-![](../../../../.gitbook/assets/image%20%2890%29.png)
+![](../../../../.gitbook/assets/image%20%2891%29.png)
 
 
 
