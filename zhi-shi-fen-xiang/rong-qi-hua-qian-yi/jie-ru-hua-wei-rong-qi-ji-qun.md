@@ -4,13 +4,13 @@
 
 华为集群接入方式也是直接使用kubeconfig，管理员可从console下载，如图示：
 
-![](../../.gitbook/assets/image%20%2864%29.png)
+![](../../.gitbook/assets/image%20%2865%29.png)
 
 ## 修改配置
 
 默认提供了内网、外网两个网络接入地址，这里我们使用外网接入，所以在合并到我们默认配置文件时，可以先删除internalCluster方式
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 ## 合并技巧
 

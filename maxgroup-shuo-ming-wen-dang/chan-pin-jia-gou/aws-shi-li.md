@@ -2,7 +2,7 @@
 
 ## 带有2块磁盘的，非root盘需要继续保留的：
 
-![](../../.gitbook/assets/image%20%2896%29.png)
+![](../../.gitbook/assets/image%20%2897%29.png)
 
 由于这里解决的是物理层磁盘挂载，而在系统中，需要对磁盘进行重新mount，这里提供自动化脚本植入系统，帮助完成系统层面的mount。
 
@@ -32,9 +32,17 @@ done
 
 ## 需要consul解注册功能：
 
-![](../../.gitbook/assets/image%20%2895%29.png)
+![](../../.gitbook/assets/image%20%2896%29.png)
 
 ## 需要k8s drain功能：
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
+
+## cloudwatch指标监控
+
+cloudwatch集成了max\_group事件指标监控，可根据时间指标查询到max\_group的工作记录，如下图所示
+
+![](../../.gitbook/assets/image%20%283%29.png)
+
+
 
