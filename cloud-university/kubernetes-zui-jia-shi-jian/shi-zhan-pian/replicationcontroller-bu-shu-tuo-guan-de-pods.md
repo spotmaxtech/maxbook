@@ -307,7 +307,7 @@ $ k create -f ssd-monitor-daemonset.yaml
 daemonset.apps/ssd-monitor created
 ```
 
-![](../../../.gitbook/assets/image%20%2894%29.png)
+![](../../../.gitbook/assets/image%20%28103%29.png)
 
 ## 删除副本集
 

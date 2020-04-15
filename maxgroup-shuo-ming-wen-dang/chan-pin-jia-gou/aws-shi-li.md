@@ -2,7 +2,7 @@
 
 ## 带有2块磁盘的，非root盘需要继续保留的：
 
-![](../../.gitbook/assets/image%20%2887%29.png)
+![](../../.gitbook/assets/image%20%2894%29.png)
 
 ## 需要consul解注册功能：
 
