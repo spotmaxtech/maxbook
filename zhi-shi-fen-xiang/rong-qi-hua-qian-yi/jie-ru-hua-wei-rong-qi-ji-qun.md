@@ -4,7 +4,7 @@
 
 华为集群接入方式也是直接使用kubeconfig，管理员可从console下载，如图示：
 
-![](../../.gitbook/assets/image%20%2863%29.png)
+![](../../.gitbook/assets/image%20%2864%29.png)
 
 ## 修改配置
 

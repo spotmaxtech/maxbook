@@ -12,9 +12,9 @@ MaxGroup并不限制用户使用场景。一般来说，对于大规模HTTP/RPC�
 
 
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../../.gitbook/assets/image%20%2824%29.png)
 
 ## 调度流程
 
-![](../../.gitbook/assets/image%20%2861%29.png)
+![](../../.gitbook/assets/image%20%2862%29.png)
 

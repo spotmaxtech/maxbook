@@ -2,7 +2,7 @@
 
 ## 带有2块磁盘的，非root盘需要继续保留的：
 
-![](../../.gitbook/assets/image%20%2894%29.png)
+![](../../.gitbook/assets/image%20%2896%29.png)
 
 由于这里解决的是物理层磁盘挂载，而在系统中，需要对磁盘进行重新mount，这里提供自动化脚本植入系统，帮助完成系统层面的mount。
 
@@ -32,11 +32,9 @@ done
 
 ## 需要consul解注册功能：
 
-![](http://confluence.mobvista.com/download/attachments/35016857/image2020-4-8_18-9-10.png?version=1&modificationDate=1586340551354&api=v2)
+![](../../.gitbook/assets/image%20%2895%29.png)
 
 ## 需要k8s drain功能：
 
-
-
-![](http://confluence.mobvista.com/download/attachments/35016857/image2020-4-8_18-14-57.png?version=1&modificationDate=1586340899822&api=v2)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
