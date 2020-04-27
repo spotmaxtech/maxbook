@@ -121,5 +121,5 @@ cp ~/.kube/config_new ~/.kube/config
 集群变多时需要管理好自己的配置文件，便于集群间互相切换
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2842%29.png)
 

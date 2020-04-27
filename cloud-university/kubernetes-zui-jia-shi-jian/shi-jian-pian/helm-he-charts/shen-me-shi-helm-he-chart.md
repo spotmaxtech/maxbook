@@ -12,11 +12,11 @@
 >
 > Charts可以很容易的创建、版本管理、分享、公开，因此从现在开始使用Helm而不要再复制粘贴了。
 
-![](../../../../.gitbook/assets/image%20%28111%29.png)
+![](../../../../.gitbook/assets/image%20%28115%29.png)
 
 ## 三个组成概念
 
-![](../../../../.gitbook/assets/image%20%2895%29.png)
+![](../../../../.gitbook/assets/image%20%2896%29.png)
 
 ### chart
 
