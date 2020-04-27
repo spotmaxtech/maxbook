@@ -30,9 +30,9 @@ time="2020-04-13T17:12:21+08:00" level=info msg="MaxGroupServer is starting..."
 ......
 ```
 
-### 更多命令
+### 自定义
 
-执行如下命令
+执行如下命令，可以了解更详细的功能
 
 ```text
 $ ./max_group -help
