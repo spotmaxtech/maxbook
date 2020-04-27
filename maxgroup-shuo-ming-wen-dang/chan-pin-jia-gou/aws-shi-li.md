@@ -2,7 +2,7 @@
 
 ## 带有2块磁盘的，非root盘需要继续保留的：
 
-![](../../.gitbook/assets/image%20%28100%29.png)
+![](../../.gitbook/assets/image%20%28102%29.png)
 
 由于这里解决的是物理层磁盘挂载，而在系统中，需要对磁盘进行重新mount，这里提供自动化脚本植入系统，帮助完成系统层面的mount。
 
@@ -32,7 +32,7 @@ done
 
 ## 需要consul解注册功能：
 
-![](../../.gitbook/assets/image%20%2899%29.png)
+![](../../.gitbook/assets/image%20%28101%29.png)
 
 ## 需要k8s drain功能：
 
