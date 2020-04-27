@@ -48,7 +48,7 @@ Node IAM Role，如：eks-demo-node
 
 在页面找到CloudFormation模版
 
-![](../.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 填写信息注意以下几点
 
@@ -61,7 +61,7 @@ Node IAM Role，如：eks-demo-node
 
 之后会根据CloudFormation创建出一个完整的Autoscaling Group，同时还有一个配套的模版，是不是很有趣！
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2851%29.png)
 
 ## 将Worker Node Group加入到Cluster
 

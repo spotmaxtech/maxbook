@@ -16,11 +16,11 @@
 
 选择事件监控并创建报警规则
 
-![](../.gitbook/assets/image%20%2889%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 勾选时注意选择好是MNS队列接收，这块注意好，没有难度
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%2892%29.png)
 
 ![](../.gitbook/assets/image%20%2814%29.png)
 
