@@ -2,15 +2,19 @@
 
 ## 方法一：RAM角色授权
 
-1、推荐使用，创建RAM角色
+#### **1、推荐使用，创建RAM角色**
 
 ![](../../../.gitbook/assets/image%20%285%29.png)
 
-![](../../../.gitbook/assets/image%20%28108%29.png)
+![](../../../.gitbook/assets/image%20%28109%29.png)
 
-![](../../../.gitbook/assets/image%20%28104%29.png)
+![](../../../.gitbook/assets/image%20%28105%29.png)
 
-2、点击权限管理，授权策略如下：
+点击 完成，用户创建成功，如下内容：
+
+![](../../../.gitbook/assets/image%20%28102%29.png)
+
+#### 2、点击权限管理，授权策略如下：
 
 [AliyunECSFullAccess](https://ram.console.aliyun.com/policies/AliyunECSFullAccess/System)
 
@@ -20,11 +24,11 @@
 
 [AliyunESSFullAccess](https://ram.console.aliyun.com/policies/AliyunESSFullAccess/System)
 
-![](../../../.gitbook/assets/image%20%28103%29.png)
+![](../../../.gitbook/assets/image%20%28104%29.png)
 
 ## 方法二：RAM用户授权，需要AK
 
-1、推荐使用阿里云ecs运行max\_group,使用RAM用户对ecs进行授权， 授权策略如下：
+1、使用RAM用户对ecs进行授权， 授权策略如下：
 
 [AliyunECSFullAccess](https://ram.console.aliyun.com/policies/AliyunECSFullAccess/System)
 

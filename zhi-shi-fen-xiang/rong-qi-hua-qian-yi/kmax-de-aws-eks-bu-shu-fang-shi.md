@@ -131,7 +131,7 @@ team标签好理解，这里还有个kubernetes.io的标签，这个标签是必
 
 这些标签是在模版的user数据中，也就是EC2被拉起后执行的操作。
 
-![](../../.gitbook/assets/image%20%28118%29.png)
+![](../../.gitbook/assets/image%20%28119%29.png)
 
 {% hint style="info" %}
 日常运维会在实例初始化是调整一下登陆用户、SUDO权限相关的脚本，也可以增加上。

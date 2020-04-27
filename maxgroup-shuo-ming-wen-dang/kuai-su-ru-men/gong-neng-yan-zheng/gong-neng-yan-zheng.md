@@ -6,7 +6,7 @@
 
 ![](../../../.gitbook/assets/image.png)
 
-![](../../../.gitbook/assets/image%20%28102%29.png)
+![](../../../.gitbook/assets/image%20%28103%29.png)
 
 ![](../../../.gitbook/assets/image%20%2856%29.png)
 
@@ -18,7 +18,7 @@
 
 附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
 
-![](../../../.gitbook/assets/image%20%28114%29.png)
+![](../../../.gitbook/assets/image%20%28115%29.png)
 
 ![](../../../.gitbook/assets/image%20%2831%29.png)
 
