@@ -2,6 +2,12 @@
 
 * [Welcome](README.md)
 
+## Managed Instance
+
+* [产品简介](managed-instance/untitled/README.md)
+  * [介绍](managed-instance/untitled/jie-shao.md)
+* [快速入门](managed-instance/kuai-su-ru-men.md)
+
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
 
 * [产品简介](maxgroup-shuo-ming-wen-dang/introduction/README.md)
@@ -69,8 +75,4 @@
 * [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
 * [阿里云配置竞价实例中断消息](zhi-shi-fen-xiang/e-li-yun-pei-zhi-jing-jia-shi-li-zhong-duan-xiao-xi.md)
 * [竞价实例管理机制](zhi-shi-fen-xiang/jing-jia-shi-li-guan-li-ji-zhi.md)
-
-## Managed Instance
-
-* [Untitled](managed-instance/untitled.md)
 
