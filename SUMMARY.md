@@ -70,3 +70,7 @@
 * [阿里云配置竞价实例中断消息](zhi-shi-fen-xiang/e-li-yun-pei-zhi-jing-jia-shi-li-zhong-duan-xiao-xi.md)
 * [竞价实例管理机制](zhi-shi-fen-xiang/jing-jia-shi-li-guan-li-ji-zhi.md)
 
+## Managed Instance
+
+* [Untitled](managed-instance/untitled.md)
+
