@@ -34,18 +34,18 @@ Managed Instances utilize a combination of snapshots, volumes and ENIs to ensure
 
 **Persist root volume**: Selecting to persist the root volume ensures that Operating System and root volume configurations are maintained during instance replacements.
 
-To learn more about persisting the root volume see our documentation [here](https://help.spot.io/managed-instances/concepts/root-volume-persistence/).
+To learn more about persisting the root volume see our documentation \(?\)
 
 **Persist data volumes**: Data devices are maintained using one of the following methods:
 
 * Reattach Volumes: The same EBS volumes are detached from the original instance and reattached to the new instance.
 * Snapshot Backups: During the launch of a new instance, new EBS volumes are created and attached to it as part of the launch specifications.
 
-To learn more about persisting data volumes see our documentation [here](https://help.spot.io/managed-instances/concepts/data-volume-persistence/).
+To learn more about persisting data volumes see our documentation \(?\)
 
 **Persist Network Interface**: New instances are provisioned with the same private IP using the same Elastic Network Interface.
 
 * Private IP Pool – Specify a pool of private IPs to be used by the Stateful instances.
 
-To learn more about persisting the private IP with the Elastic Network Interface \(ENI\) see our documentation [here](https://help.spot.io/managed-instances/concepts/network-persistence/).
+To learn more about persisting the private IP with the Elastic Network Interface \(ENI\) see our documentation \(?\)
 
