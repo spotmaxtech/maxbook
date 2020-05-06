@@ -6,6 +6,7 @@
 
 * [产品简介](managed-instance/untitled/README.md)
   * [介绍](managed-instance/untitled/jie-shao.md)
+  * [工作原理](managed-instance/untitled/gong-zuo-yuan-li.md)
 * [快速入门](managed-instance/kuai-su-ru-men.md)
 
 ## MaxGroup <a id="maxgroup-shuo-ming-wen-dang"></a>
