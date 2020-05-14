@@ -36,7 +36,9 @@
 
 [AliyunESSFullAccess](https://ram.console.aliyun.com/policies/AliyunESSFullAccess/System)
 
-![](../../../.gitbook/assets/image%20%28107%29.png)
+[AliyunRAMFullAccess](https://ram.console.aliyun.com/policies/AliyunRAMFullAccess/System)
+
+![](../../../.gitbook/assets/image%20%28117%29.png)
 
 创建实例时，选择创建好的RAM角色
 

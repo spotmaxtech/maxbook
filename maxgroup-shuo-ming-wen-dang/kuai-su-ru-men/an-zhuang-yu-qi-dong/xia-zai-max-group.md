@@ -6,7 +6,7 @@
 
 3、如果使用Lite版本，直接点击下载即可，Pro版本请联系我们，SAAS版本目前只支持AWS
 
-![](../../../.gitbook/assets/image%20%28121%29.png)
+![](../../../.gitbook/assets/image%20%28122%29.png)
 
 4、输入Accound Id，绑定Max Group要运行所在的阿里云账号下，**注意：Accound Id输入后不能更改**
 
