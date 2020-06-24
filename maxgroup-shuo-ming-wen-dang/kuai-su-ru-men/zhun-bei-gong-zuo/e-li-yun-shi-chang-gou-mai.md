@@ -24,5 +24,35 @@
 
 ## RAM角色授权：
 
+#### **创建RAM角色**
+
+![](../../../.gitbook/assets/image%20%285%29.png)
+
+![](../../../.gitbook/assets/image%20%28112%29.png)
+
+![](../../../.gitbook/assets/image%20%28108%29.png)
+
+点击 完成，用户创建成功，如下内容：
+
+![](../../../.gitbook/assets/image%20%28105%29.png)
+
+#### 2、点击权限管理，授权策略如下：
+
+[AliyunECSFullAccess](https://ram.console.aliyun.com/policies/AliyunECSFullAccess/System)
+
+[AliyunMNSFullAcces](https://ram.console.aliyun.com/policies/AliyunMNSFullAccess/System)
+
+[AliyunCloudMonitorFullAccess](https://ram.console.aliyun.com/policies/AliyunCloudMonitorFullAccess/System)
+
+[AliyunESSFullAccess](https://ram.console.aliyun.com/policies/AliyunESSFullAccess/System)
+
+[AliyunRAMFullAccess](https://ram.console.aliyun.com/policies/AliyunRAMFullAccess/System)
+
+![](../../../.gitbook/assets/image%20%28117%29.png)
+
+创建实例时，选择创建好的RAM角色
+
+![](../../../.gitbook/assets/image%20%2825%29.png)
+
 
 
