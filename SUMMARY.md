@@ -16,6 +16,7 @@
   * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
 * [阿里云市场](maxgroup-shuo-ming-wen-dang/e-li-yun-shi-chang/README.md)
   * [准备工作](maxgroup-shuo-ming-wen-dang/e-li-yun-shi-chang/e-li-yun-shi-chang-gou-mai.md)
+  * [安装与启动](maxgroup-shuo-ming-wen-dang/e-li-yun-shi-chang/an-zhuang-yu-qi-dong.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [准备工作](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/README.md)
     * [AWS](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/aws.md)
