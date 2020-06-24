@@ -20,11 +20,11 @@
 
 最后确认订单，创建实例
 
-![](../../.gitbook/assets/image%20%28128%29.png)
+![](../../.gitbook/assets/image%20%28133%29.png)
 
 登录刚刚创建实例的机器，查看运行状态
 
-![](../../.gitbook/assets/image%20%28127%29.png)
+![](../../.gitbook/assets/image%20%28132%29.png)
 
 此时已经运行成功
 
