@@ -13,7 +13,7 @@ max\_group功能依赖于识别Autoscaling（AWS）或者伸缩组（阿里云�
 | spotmax:persistence\_dev | /dev/sdf | 添加此tag可以进行ebs的漂移，无默认值，tag-value为非root盘在instance上的映射路径，暂时仅aws平台支持 | Pro |
 | spotmax:consul\_port | 8500 | 配置此参数为consul支持，无默认值，tag-value为consul agent本地端口号 在实例中断并经过detaching\_delay\_seconds时间后，该实例将会从consul的服务发现列表中移除 | Pro |
 | spotmax:k8s\_node\_drain\_option | true | kubernetes pod预迁移功能，当此tag-key为true时，开启此功能，当node为spot且将要被回收时，会在新起node后，并将被中断node上的pod迁移 | Pro |
-| spotmax:spot\_price\_limit | 0.01 - 0.99 | spot价格限制，例如 0.9， 当spot机型价格超过od价格的90%，取消这个机型的替换 |  ali Lite/Pro |
+| spotmax:spot\_price\_limit | 0.01 - 0.99 | spot价格限制，例如 0.9， 当spot机型价格超过按需机型价格的90%，取消这个机型的替换 |  ali Lite/Pro |
 
 **注：当启用 spotmax:k8s\_node\_drain\_option 时，建议将spotmax:detaching\_delay\_seconds 的tag-value设置为80-90之间，这样可以在保证新node ready情况下，将pod转移过去。**
 
