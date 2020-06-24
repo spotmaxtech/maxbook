@@ -15,7 +15,7 @@
   * [基础介绍](maxgroup-shuo-ming-wen-dang/introduction/shen-me-shi-maxgroup.md)
   * [产品优势](maxgroup-shuo-ming-wen-dang/introduction/he-xin-gong-neng.md)
   * [定价策略](maxgroup-shuo-ming-wen-dang/introduction/ding-jia-ce-lve.md)
-* [阿里云市场使用指南](maxgroup-shuo-ming-wen-dang/e-li-yun-shi-chang-gou-mai.md)
+* [阿里云市场](maxgroup-shuo-ming-wen-dang/e-li-yun-shi-chang-gou-mai.md)
 * [快速入门](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/README.md)
   * [准备工作](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/README.md)
     * [AWS](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/aws.md)
