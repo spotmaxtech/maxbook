@@ -8,17 +8,21 @@
 
 点击购买，进行配置
 
-![](../../.gitbook/assets/image%20%28130%29.png)
+![](../../.gitbook/assets/image%20%28131%29.png)
 
 选择所需要的网络，公网IP与安全组
 
-![](../../.gitbook/assets/image%20%28128%29.png)
+![](../../.gitbook/assets/image%20%28129%29.png)
 
 选择准备工作创建好的 **RAM角色权限**（**非常重要**）
 
-![](../../.gitbook/assets/image%20%28129%29.png)
+![](../../.gitbook/assets/image%20%28130%29.png)
 
 最后确认订单，创建实例
+
+![](../../.gitbook/assets/image%20%28128%29.png)
+
+登录刚刚创建实例的机器，查看运行状态，此时已经运行成功
 
 ![](../../.gitbook/assets/image%20%28127%29.png)
 
