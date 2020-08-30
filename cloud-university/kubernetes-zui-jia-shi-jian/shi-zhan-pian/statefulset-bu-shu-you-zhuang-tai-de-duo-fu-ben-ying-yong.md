@@ -38,6 +38,7 @@ spec:
           storage: 20Gi
       accessModes:
       - ReadWriteOnce
+      storageClassName: "disk"
 ```
 
 创建它看看，大家能够注意到，每个pod名字不再是随机码了，而是有了编号，他们也就是有了固定的名字了，所以对应的磁盘也是有了名字
