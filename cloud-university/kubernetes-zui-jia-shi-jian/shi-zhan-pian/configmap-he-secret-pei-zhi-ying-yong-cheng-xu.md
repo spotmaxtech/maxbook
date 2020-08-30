@@ -359,7 +359,92 @@ Well！现在我们体验了如何在kubernetes中为自己的应用使用配置
 
 ## 通过Secret传递敏感配置信息
 
-有时我们有一些账号密码不能明文，kubernetes提供了Secret资源和ConfigMap使用非常相似，只是对文本加密了而已。这里我们不做练习了。
+有时我们有一些账号密码不能明文，kubernetes提供了Secret资源和ConfigMap使用非常相似，只是对文本加密了而已。
+
+我们常见的是给阿里云、亚马逊的密钥做加密处理，这些密钥是用来控制权限访问云商资源的。
+
+首先创建一个secret
+
+```yaml
+k create secret generic ali-key --from-literal=key=1234567890abcdefghijk --from-literal=secret=secret1234567890abcdefg
+```
+
+查看已经创建的secret
+
+```yaml
+$ k get secret                                                                                                                                          1 ↵
+NAME                  TYPE                                  DATA   AGE
+ali-key               Opaque                                2      9s
+
+$ k describe secret ali-key
+Name:         ali-key
+Namespace:    liuzongxian
+Labels:       <none>
+Annotations:  <none>
+
+Type:  Opaque
+
+Data
+====
+key:     21 bytes
+secret:  23 bytes
+```
+
+我们现在就可以使用secret了，写一个yaml
+
+```yaml
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: package-test
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: package-test
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: main
+              image: registry.cn-hangzhou.aliyuncs.com/hio-open-image/hio-open:1.0.7
+              imagePullPolicy: Always
+              command: ["sh"]
+              args: ["-c", "echo $accesskeyid $accesskeysecret"]
+              env:
+                - name: env
+                  value: "tests"
+                - name: accesskeyid
+                  valueFrom:
+                    secretKeyRef:
+                      name: ali-key
+                      key: key
+                - name: accesskeysecret
+                  valueFrom:
+                    secretKeyRef:
+                      name: ali-key
+                      key: secret
+                - name: parentPackageId
+                  value: "2"
+                - name: taskId
+                  value: "3"
+                - name: parentPackageOssKey
+                  value: "channelpkg/2020/05/27/01/channelDemo_1.0.0.apk"
+                - name: packageInfos
+                  value: "11:1111,22:2222,33:3333"
+
+```
+
+将它保存到文件 package-test.yaml，执行
+
+```yaml
+k apply -f package-test.yaml
+
+```
+
+它是一个cronjob，每两分钟运行一次作业（启动一个pod），我们的作业就是简单的打印环境变量 key和secret。
 
 ## 思考题
 
