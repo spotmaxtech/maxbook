@@ -104,7 +104,7 @@ spec:
       containers:
       - image: luksa/kubia:v1
         name: nodejs
----   # 注意这个写法
+---
 apiVersion: v1
 kind: Service
 metadata:
