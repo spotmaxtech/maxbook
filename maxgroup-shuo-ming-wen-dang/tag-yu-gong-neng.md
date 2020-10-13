@@ -4,7 +4,7 @@ max\_group功能依赖于识别Autoscaling（AWS）或者伸缩组（阿里云�
 
 | tag-key | tag-value | 功能 | 版本支持 |
 | :---: | :---: | :---: | :---: |
-| spotmax:detaching\_delay\_seconds | 20 | 当触发spot回收时，间隔多少秒后，将被回收机器从asg中detach，默认为20秒 | Lite/Pro |
+| spotmax:detaching\_delay\_seconds | 30 | 当触发spot回收时，间隔多少秒后，将被回收机器从asg中detach，默认为30秒 | Lite/Pro |
 | spotmax:is\_enable\_preaction | true | 增加此tag为开启集群防退化功能，此功能为预测即将被回收的机器，并提前进行更替机型操作，tag-value为true表示为开启此功能 | Lite/Pro |
 | spotmax:max\_num\_of\_terminated\_one\_time | 2 | 集群防退化功能一次关闭的最大机器数，替换机器执行分批替换，每次替换的最大数量 | Lite/Pro |
 | spotmax:preaction\_termination\_delay\_seconds | 600 | 集群防退化功能执行terminate间隔时间 | Lite/Pro |
