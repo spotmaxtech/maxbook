@@ -92,7 +92,7 @@ max\_group功能依赖于识别Autoscaling（AWS）或者伸缩组（阿里云�
       style="text-align:center">Pro</td>
     </tr>
     <tr>
-      <td style="text-align:center">spotmax:alt&#xFF08;num&#xFF09;</td>
+      <td style="text-align:center">spotmax:alt(num)</td>
       <td style="text-align:center">ecs.mn4.large</td>
       <td style="text-align:center">
         <p>&#x7528;&#x4E8E;&#x5F53;&#x4F38;&#x7F29;&#x7EC4;&#x5185;&#x7684;&#x673A;&#x5668;&#x6CA1;&#x6709;&#x65F6;&#xFF0C;&#x7528;&#x989D;&#x5916;&#x7684;&#x673A;&#x5668;&#x6765;&#x66FF;&#x6362;&#xFF0C;&#x4F8B;&#x5B50;&#xFF1A;</p>
