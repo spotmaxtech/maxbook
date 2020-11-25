@@ -6,7 +6,7 @@
 2. 进入“密钥管理”页面
 3. 填写key&secret，点击“提交”或“更新”
 
-![](../.gitbook/assets/image%20%28134%29.png)
+![](../.gitbook/assets/image%20%28135%29.png)
 
 {% hint style="info" %}
 当前一个SpotMax账户仅能保存一组key&secret，如果需要修改，则直接在SpotMax官网后台更新即可
