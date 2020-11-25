@@ -22,3 +22,9 @@
 | :--- | :--- |
 | AmazonEC2ReadOnlyAccess | Provides read only access to Amazon EC2 via the AWS Management Console. |
 
+针对用户的资源使用，SpotMax SaaS在提供资源优化建议的同时，也提供一键优化的功能，如果用户需要使用该项功能，则需要添加以下权限
+
+| 权限名称 | 权限说明 |
+| :--- | :--- |
+| AmazonEC2FullAccess | Provides full access to Amazon EC2 via the AWS Management Console. |
+
