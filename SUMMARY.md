@@ -35,6 +35,10 @@
 * [常见问题](maxgroup-shuo-ming-wen-dang/chang-jian-wen-ti.md)
 * [相关协议](maxgroup-shuo-ming-wen-dang/xiang-guan-xie-yi.md)
 
+## SAAS功能介绍
+
+* [密钥管理](saas-gong-neng-jie-shao/mi-yao-guan-li.md)
+
 ## KMAX
 
 * [产品简介](kmax/kuai-su-ru-men/README.md)
