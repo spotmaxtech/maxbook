@@ -2,9 +2,9 @@
 
 ## 购买License：
 
-访问云市场，按需购买我们的商品：[License](https://market.aliyun.com/products/56838014/cmgj00040678.html?#sku=yuncode3467800001)
+访问云市场，按需购买我们的商品：[License](https://market.aliyun.com/products/56838014/cmgj00040678.html?#sku=yuncode3467800001) \(以下示例为pro版本最小规格license\)
 
-![](../../.gitbook/assets/image%20%28126%29.png)
+![](../../.gitbook/assets/1607505946220.jpg)
 
 ## 服务开启：
 
