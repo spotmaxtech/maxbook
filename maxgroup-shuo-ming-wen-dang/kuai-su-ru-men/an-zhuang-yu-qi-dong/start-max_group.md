@@ -1,22 +1,22 @@
-# 启动max\_group
+# 启动maxgroup\(以aws Pro版本为例\)
 
 ### 配置MaxGroup
 
-max\_group为已编译完成的二进制包，无系统环境依赖，下载附件并解压，将得到二进制文件max\_group和license文件放在同一目录
+max_group为已编译完成的二进制包，无系统环境依赖，下载附件并解压，将得到二进制文件maxgroup\_pro_\_aws
 
 
 
 ```text
 $ ls /data/spotmax/
-max_group license
+maxgroup_pro_aws
 ```
 
 ### 启动MaxGroup
 
-启动max\_group，使用./max\_group即可启动max\_group。
+启动maxgroup，使用如下命令启动maxgroup。
 
 ```text
-$ ./max_group
+$ ./maxgroup_pro_aws
 ```
 
 启动成功，会看到以下日志输出
@@ -35,6 +35,6 @@ time="2020-04-13T17:12:21+08:00" level=info msg="MaxGroupServer is starting..."
 执行如下命令，可以了解更详细的功能
 
 ```text
-$ ./max_group -help
+$ ./maxgroup_pro_aws -help
 ```
 

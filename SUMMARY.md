@@ -24,7 +24,7 @@
     * [阿里云](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/zhun-bei-gong-zuo/e-li-yun.md)
   * [安装与启动](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong/README.md)
     * [下载Max Group](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong/xia-zai-max-group.md)
-    * [启动max\_group](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong/start-max_group.md)
+    * [启动maxgroup\(以aws Pro版本为例\)](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/an-zhuang-yu-qi-dong/start-max_group.md)
   * [功能验证](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/gong-neng-yan-zheng/README.md)
     * [AWS](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/gong-neng-yan-zheng/gong-neng-yan-zheng.md)
     * [阿里云](maxgroup-shuo-ming-wen-dang/kuai-su-ru-men/gong-neng-yan-zheng/e-li-yun.md)
