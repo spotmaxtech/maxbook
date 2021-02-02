@@ -51,6 +51,7 @@ spotmax:detaching\_delay\_seconds    80
 2. 需要给maxgroup所在的IAM role授权EKS的master权限，并导出config，放到/root/.kube/目录下
 
 ```text
+#######以下命令在eks master上执行###########
 kubectl describe configmap -n kube-system aws-auth   ###查看当前eks授权情况
 kubectl edit -n kube-system configmap/aws-auth       ###编辑授权表，添加权限
 
@@ -67,7 +68,7 @@ data:
       rolearn: arn:aws:iam::<your aws account>:role/max_group_role
       username: system:node:{{EC2PrivateDNSName}}
       
-      
+ ######以下命令在maxgroup上执行##########     
 aws eks --region <region-code> update-kubeconfig --name <cluster_name> --kubeconfig /root/.kbue/config
 ```
 
