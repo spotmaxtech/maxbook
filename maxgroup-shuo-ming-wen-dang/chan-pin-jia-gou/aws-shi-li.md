@@ -36,7 +36,40 @@ done
 
 ## 需要k8s drain功能：
 
+使用k8s用户需要进行如下两步操作：
+
+
+
+1.在使用k8s的autoscaling上打上如下标签：
+
+spotmax:k8s\_node\_drain\_option    true
+
+spotmax:detaching\_delay\_seconds    80
+
 ![](../../.gitbook/assets/image%20%2823%29.png)
+
+2. 需要给maxgroup所在的IAM role授权EKS的master权限，并导出config，放到/root/.kube/目录下
+
+```text
+kubectl describe configmap -n kube-system aws-auth   ###查看当前eks授权情况
+kubectl edit -n kube-system configmap/aws-auth       ###编辑授权表，添加权限
+
+
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::<your aws account>:role/max_group_role
+      username: system:node:{{EC2PrivateDNSName}}
+      
+      
+aws eks --region <region-code> update-kubeconfig --name <cluster_name> --kubeconfig /root/.kbue/config
+```
 
 ## cloudwatch指标监控
 
