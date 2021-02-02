@@ -9,3 +9,9 @@
 
 ![](../../../.gitbook/assets/image%20%2848%29.png)
 
+## 启动实例
+
+启动一个ec2实例，并关联上述IAM role。
+
+![](../../../.gitbook/assets/image%20%28142%29.png)
+
