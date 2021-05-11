@@ -4,8 +4,6 @@
 
 max_group为已编译完成的二进制包，无系统环境依赖，下载附件并解压，将得到二进制文件maxgroup\_pro_\_aws
 
-
-
 ```text
 $ ls /data/spotmax/
 maxgroup_pro_aws

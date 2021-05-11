@@ -70,9 +70,16 @@ max\_group功能依赖于识别Autoscaling（AWS）或者伸缩组（阿里云�
       style="text-align:center">Pro</td>
     </tr>
     <tr>
-      <td style="text-align:center">spotmax:k8s_node_drain_option</td>
-      <td style="text-align:center">true</td>
-      <td style="text-align:center">kubernetes pod&#x9884;&#x8FC1;&#x79FB;&#x529F;&#x80FD;&#xFF0C;&#x5F53;&#x6B64;tag-key&#x4E3A;true&#x65F6;&#xFF0C;&#x5F00;&#x542F;&#x6B64;&#x529F;&#x80FD;&#xFF0C;&#x5F53;node&#x4E3A;spot&#x4E14;&#x5C06;&#x8981;&#x88AB;&#x56DE;&#x6536;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;&#x65B0;&#x8D77;node&#x540E;&#xFF0C;&#x5E76;&#x5C06;&#x88AB;&#x4E2D;&#x65AD;node&#x4E0A;&#x7684;pod&#x8FC1;&#x79FB;</td>
+      <td style="text-align:center">spotmax:spotmax:k8s_config_file_path</td>
+      <td style="text-align:center">xxx/config</td>
+      <td style="text-align:center">kubernetes &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x628A;&#x6743;&#x9650;&#x8D4B;&#x7ED9;max
+        group</td>
+      <td style="text-align:center">Pro</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">spotmax:spotmax:spotmax:k8s_node_drain_grace_second</td>
+      <td style="text-align:center">600</td>
+      <td style="text-align:center">node&#x4E0B;&#x7684;pod&#x79FB;&#x51FA;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;</td>
       <td
       style="text-align:center">Pro</td>
     </tr>
