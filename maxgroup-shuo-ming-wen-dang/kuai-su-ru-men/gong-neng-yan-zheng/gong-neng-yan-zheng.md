@@ -8,6 +8,8 @@
 
 ![](../../../.gitbook/assets/image%20%28106%29.png)
 
+![](../../../.gitbook/assets/image%20%28144%29.png)
+
 ![](../../../.gitbook/assets/image%20%2858%29.png)
 
 创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
