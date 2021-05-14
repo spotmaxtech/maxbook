@@ -70,14 +70,14 @@ max\_group功能依赖于识别Autoscaling（AWS）或者伸缩组（阿里云�
       style="text-align:center">Pro</td>
     </tr>
     <tr>
-      <td style="text-align:center">spotmax:spotmax:k8s_config_file_path</td>
+      <td style="text-align:center">spotmax:k8s_config_file_path</td>
       <td style="text-align:center">xxx/config</td>
       <td style="text-align:center">kubernetes &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x628A;&#x6743;&#x9650;&#x8D4B;&#x7ED9;max
         group</td>
       <td style="text-align:center">Pro</td>
     </tr>
     <tr>
-      <td style="text-align:center">spotmax:spotmax:spotmax:k8s_node_drain_grace_second</td>
+      <td style="text-align:center">spotmax:k8s_node_drain_grace_second</td>
       <td style="text-align:center">600</td>
       <td style="text-align:center">node&#x4E0B;&#x7684;pod&#x79FB;&#x51FA;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;</td>
       <td
