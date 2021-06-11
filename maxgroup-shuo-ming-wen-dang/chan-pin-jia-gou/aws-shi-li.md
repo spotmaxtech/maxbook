@@ -42,13 +42,13 @@ done
 
 1.在使用k8s的autoscaling上打上如下标签：
 
-spotmax:k8s\_node\_drain\_option    true
+spotmax:k8s\_config\_file\_path    /data/spotmax/k8sconfig
 
 spotmax:detaching\_delay\_seconds    80
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../../.gitbook/assets/1623398565432.jpg)
 
-2. 需要给maxgroup所在的IAM role授权EKS的master权限，并导出config，放到/root/.kube/目录下
+2. 需要给maxgroup所在的IAM role授权EKS的master权限，并导出k8sconfig，路径为：/data/spotmax/k8sconfig
 
 ```text
 #######以下命令在eks master上执行###########
@@ -69,7 +69,7 @@ data:
       username: system:node:{{EC2PrivateDNSName}}
       
  ######以下命令在maxgroup上执行##########     
-aws eks --region <region-code> update-kubeconfig --name <cluster_name> --kubeconfig /root/.kbue/config
+aws eks --region <region-code> update-kubeconfig --name <cluster_name> --kubeconfig /data/spotmax/k8sconfig
 ```
 
 ## cloudwatch指标监控
@@ -78,5 +78,34 @@ cloudwatch集成了max\_group事件指标监控，可根据时间指标查询到
 
 ![](../../.gitbook/assets/image%20%283%29.png)
 
+## Duration spot使用方法
 
+### 处理时间保证
+
+可以保证请求在被处理期间 \(0-350分钟内\) ，用于处理请求的实例不被中断。 
+
+### 特点
+
+* -  应用无需做任何修改
+* -  可以通过现有的形式进行服务发现/负责均衡/工作负责调度 \(如:通过ELB/ALB/NLB，第三服务
+
+  发现机制，K8S环境\)
+
+* -  保持Autoscaling Group伸缩方式
+* -  在Spot Instance无法获取时可以通过OnDemand进行补偿。待有符合要求的Spot instance后，
+
+  OnDemand实例会被替换为对应Spot instance，以实现成本的持续节省 配置方式
+
+### 方法配置
+
+1. 在启动模版\(LaunchTemplate\)中配置Spot Instance请求，并配置相应的Block Duration \(Block Duration 须大于要保证的运行时间\)
+
+2. 在AutoScaling使用该模版
+
+![](../../.gitbook/assets/1623403131258.jpg)
+
+3. 针对以上AutoScaling Group添加以下Tag  
+ spotmax:instance\_duration\_hours      1
+
+spotmax:gurantee\_living\_mins: 50，（表示50分钟后，maxgroup会将替换新实例，此实例将下线）
 
