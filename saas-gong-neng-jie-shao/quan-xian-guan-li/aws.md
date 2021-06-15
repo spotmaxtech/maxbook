@@ -36,7 +36,7 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | ElasticLoadBalancingReadOnly | Provides read only access to Amazon ElasticLoadBalancing and dependent services |
 | AutoScalingReadOnlyAccess | Provides read-only access to Auto Scaling. |
 | CloudWatchReadOnlyAccess | Provides read only access to CloudWatch. |
-| MyCostExplorerReadOnlyAccess | User created policy. Provides read only access to Cost Explorer.   |
+| _**MyCostExplorerReadOnlyAccess**_ | User created policy. Provides read only access to Cost Explorer.   |
 
 针对用户的资源使用，SpotMax SaaS在提供资源优化建议的同时，也提供一键优化的功能，如果用户需要使用该项功能，则需要添加以下权限
 
@@ -46,5 +46,5 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | ElasticLoadBalancingFullAccess | Provides full access to Amazon ElasticLoadBalancing, and limited access to other services necessary to provide ElasticLoadBalancing features. |
 | AutoScalingFullAccess | Provides full access to Auto Scaling. |
 | CloudWatchFullAccess | Provides full access to CloudWatch. |
-| MyCostExplorerReadOnlyAccess | User created policy. Provides read only access to Cost Explorer.   |
+| _**MyCostExplorerReadOnlyAccess**_ | User created policy. Provides read only access to Cost Explorer.   |
 
