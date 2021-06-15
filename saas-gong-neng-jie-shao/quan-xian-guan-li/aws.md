@@ -8,23 +8,23 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 * 登录AWS控制台—&gt;Identity and Access Management \(IAM\)
 
-![](../../.gitbook/assets/image%20%28161%29.png)
+![](../../.gitbook/assets/image%20%28162%29.png)
 
 * 使用AWS托管的策略
 
-![](../../.gitbook/assets/image%20%28159%29.png)
+![](../../.gitbook/assets/image%20%28160%29.png)
 
-![](../../.gitbook/assets/image%20%28162%29.png)
+![](../../.gitbook/assets/image%20%28163%29.png)
 
-* 新建策略（用于MyCostExplorerReadOnlyAccess策略）
+* 新建内联策略（用于MyCostExplorerReadOnlyAccess策略）
 
-![&#x65B0;&#x5EFA;&#x7B56;&#x7565;](../../.gitbook/assets/image%20%28160%29.png)
+![](../../.gitbook/assets/image%20%28151%29.png)
 
-![&#x70B9;&#x51FB;&#x6D4F;&#x89C8;&#x670D;&#x52A1;](../../.gitbook/assets/image%20%28154%29.png)
+![&#x70B9;&#x51FB;&#x6D4F;&#x89C8;&#x670D;&#x52A1;](../../.gitbook/assets/image%20%28155%29.png)
 
-![&#x9009;&#x62E9;&#x670D;&#x52A1;&#x540D;](../../.gitbook/assets/image%20%28155%29.png)
+![&#x9009;&#x62E9;&#x670D;&#x52A1;&#x540D;](../../.gitbook/assets/image%20%28156%29.png)
 
-![&#x914D;&#x7F6E;&#x6743;&#x9650;](../../.gitbook/assets/image%20%28157%29.png)
+![&#x914D;&#x7F6E;&#x6743;&#x9650;](../../.gitbook/assets/image%20%28158%29.png)
 
 ## **权限添加**
 
