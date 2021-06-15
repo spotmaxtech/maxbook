@@ -16,7 +16,7 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 ![](../../.gitbook/assets/image%20%28158%29.png)
 
-* 新建策略（用于创建MyCostExplorerReadOnlyAccess策略）
+* 新建策略（用于MyCostExplorerReadOnlyAccess策略）
 
 ![&#x65B0;&#x5EFA;&#x7B56;&#x7565;](../../.gitbook/assets/image%20%28156%29.png)
 
@@ -33,9 +33,9 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | 权限名称 | 权限说明 |
 | :--- | :--- |
 | AmazonEC2ReadOnlyAccess | Provides read only access to Amazon EC2 via the AWS Management Console. |
-| [ElasticLoadBalancingReadOnly](https://console.aws.amazon.com/iam/home#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FElasticLoadBalancingReadOnly) | Provides read only access to Amazon ElasticLoadBalancing and dependent services |
-| [AutoScalingReadOnlyAccess](https://console.aws.amazon.com/iam/home#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FAutoScalingReadOnlyAccess) | Provides read-only access to Auto Scaling. |
-| [CloudWatchReadOnlyAccess](https://console.aws.amazon.com/iam/home#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FCloudWatchReadOnlyAccess) | Provides read only access to CloudWatch. |
+| ElasticLoadBalancingReadOnly | Provides read only access to Amazon ElasticLoadBalancing and dependent services |
+| AutoScalingReadOnlyAccess | Provides read-only access to Auto Scaling. |
+| CloudWatchReadOnlyAccess | Provides read only access to CloudWatch. |
 | MyCostExplorerReadOnlyAccess | User created policy. Provides read only access to Cost Explorer.   |
 
 针对用户的资源使用，SpotMax SaaS在提供资源优化建议的同时，也提供一键优化的功能，如果用户需要使用该项功能，则需要添加以下权限
@@ -43,8 +43,8 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | 权限名称 | 权限说明 |
 | :--- | :--- |
 | AmazonEC2FullAccess | Provides full access to Amazon EC2 via the AWS Management Console. |
-| [ElasticLoadBalancingFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FElasticLoadBalancingFullAccess) | Provides full access to Amazon ElasticLoadBalancing, and limited access to other services necessary to provide ElasticLoadBalancing features. |
-| [AutoScalingFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FAutoScalingFullAccess) | Provides full access to Auto Scaling. |
-| [CloudWatchFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FCloudWatchFullAccess) | Provides full access to CloudWatch. |
+| ElasticLoadBalancingFullAccess | Provides full access to Amazon ElasticLoadBalancing, and limited access to other services necessary to provide ElasticLoadBalancing features. |
+| AutoScalingFullAccess | Provides full access to Auto Scaling. |
+| CloudWatchFullAccess | Provides full access to CloudWatch. |
 | MyCostExplorerReadOnlyAccess | User created policy. Provides read only access to Cost Explorer.   |
 
