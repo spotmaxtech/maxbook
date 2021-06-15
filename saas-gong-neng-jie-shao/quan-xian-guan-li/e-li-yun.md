@@ -12,20 +12,11 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 * 添加权限
 
-![](../../.gitbook/assets/image%20%28139%29.png)
+![&#x914D;&#x7F6E;&#x7B56;&#x7565;](../../.gitbook/assets/image%20%28152%29.png)
 
 ## 权限添加
 
-如果用户仅使用SpotMax SaaS提供的资源使用分析功能，则需要添加以下权限
-
-| 权限名称 | 权限说明 |
-| :--- | :--- |
-| AliyunECSReadOnlyAccess | 只读访问云服务器服务\(ECS\)的权限 |
-| AliyunSLBReadOnlyAccess | 只读访问负载均衡服务\(SLB\)的权限 |
-| AliyunEIPReadOnlyAccess | 只读访问弹性公网IP（EIP）的权限 |
-| AliyunBSSReadOnlyAccess | 只读访问费用中心\(BSS\)的权限 |
-
-针对用户的资源使用，SpotMax SaaS在提供资源优化建议的同时，也提供一键优化的功能，如果用户需要使用该项功能，则需要添加以下权限
+使用SpotMax SaaS提供的资源使用分析和一键优化的功能，则需要添加以下权限
 
 | 权限名称 | 权限说明 |
 | :--- | :--- |
