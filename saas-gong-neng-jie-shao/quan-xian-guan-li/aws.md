@@ -36,5 +36,5 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | ElasticLoadBalancingFullAccess | 管理负载均衡服务\(ELB\)的权限 |
 | AutoScalingFullAccess | 管理弹性伸缩服务\(AutoScaling\)的权限 |
 | CloudWatchFullAccess | 管理云监控服务\(CloudWatch\)的权限 |
-| _**MyCostExplorerReadOnlyAccess**_ | 管理CostExplorer服务的只读权限 |
+| _**MyCostExplorerReadOnlyAccess**_ | 只读访问成本管理器服务\(CostExplorer\)的权限 |
 

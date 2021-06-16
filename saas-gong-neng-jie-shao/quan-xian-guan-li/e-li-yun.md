@@ -24,6 +24,7 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | AliyunSLBFullAccess | 管理负载均衡服务\(SLB\)的权限 |
 | AliyunEIPFullAccess | 管理弹性公网IP\(EIP\)的权限 |
 | AliyunESSFullAccess | 管理弹性伸缩服务\(ESS\)的权限 |
+| AliyunBSSReadOnlyAccess | 只读访问费用中心\(BSS\)的权限 |
 
 
 
