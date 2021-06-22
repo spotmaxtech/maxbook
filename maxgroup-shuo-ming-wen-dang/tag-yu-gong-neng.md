@@ -112,6 +112,13 @@ max\_group功能依赖于识别Autoscaling（AWS）或者伸缩组（阿里云�
       </td>
       <td style="text-align:center">Pro</td>
     </tr>
+    <tr>
+      <td style="text-align:center">spotmax:ignore_tag</td>
+      <td style="text-align:center">false</td>
+      <td style="text-align:center">&#x5F53;tag-value&#x4E3A;true&#x65F6;&#xFF0C;maxGroup&#x4E0D;&#x7BA1;&#x7406;&#x6B64;&#x4F38;&#x7F29;&#x7EC4;</td>
+      <td
+      style="text-align:center">Pro</td>
+    </tr>
   </tbody>
 </table>
 
