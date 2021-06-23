@@ -8,5 +8,5 @@
 
 ![](../../.gitbook/assets/image%20%28165%29.png)
 
-3、最后点击完成即可，添加角色添加权限，权限添加请移步[权限管理](https://docs.spotmaxtech.com/saas-gong-neng-jie-shao/quan-xian-guan-li/e-li-yun)
+3、最后点击完成即可，为角色添加权限，权限添加请移步[权限管理](https://docs.spotmaxtech.com/saas-gong-neng-jie-shao/quan-xian-guan-li/e-li-yun)
 
