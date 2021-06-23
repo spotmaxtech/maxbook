@@ -17,7 +17,7 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 ![](../../.gitbook/assets/image%20%28173%29.png)
 
-* 为用户或角色授权：AmazonEC2FullAccess、IAMReadOnlyAccess、MyCostExplorerReadOnlyAccess
+* 为用户/角色授权：AmazonEC2FullAccess、IAMReadOnlyAccess、MyCostExplorerReadOnlyAccess
 
 ![](../../.gitbook/assets/image%20%28176%29.png)
 
