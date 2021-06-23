@@ -7,24 +7,23 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 权限设置操作需要登录到AWS控制台进行设置，步骤如下
 
 * 登录AWS控制台—&gt;Identity and Access Management \(IAM\)
+* 新建自定义策略：MyCostExplorerReadOnlyAccess
 
-![](../../.gitbook/assets/image%20%28162%29.png)
+![](../../.gitbook/assets/image%20%28181%29.png)
 
-* 使用AWS托管的策略
+![](../../.gitbook/assets/image%20%28172%29.png)
 
-![](../../.gitbook/assets/image%20%28160%29.png)
+![](../../.gitbook/assets/image%20%28186%29.png)
 
-![](../../.gitbook/assets/image%20%28163%29.png)
+![](../../.gitbook/assets/image%20%28173%29.png)
 
-* 新建内联策略（用于MyCostExplorerReadOnlyAccess策略）
+* 为用户或角色授权：AmazonEC2FullAccess、IAMReadOnlyAccess、MyCostExplorerReadOnlyAccess
 
-![](../../.gitbook/assets/image%20%28151%29.png)
+![](../../.gitbook/assets/image%20%28176%29.png)
 
-![&#x70B9;&#x51FB;&#x6D4F;&#x89C8;&#x670D;&#x52A1;](../../.gitbook/assets/image%20%28155%29.png)
+![](../../.gitbook/assets/image%20%28178%29.png)
 
-![&#x9009;&#x62E9;&#x670D;&#x52A1;&#x540D;](../../.gitbook/assets/image%20%28156%29.png)
-
-![&#x914D;&#x7F6E;&#x6743;&#x9650;](../../.gitbook/assets/image%20%28158%29.png)
+![](../../.gitbook/assets/image%20%28171%29.png)
 
 ## **权限添加**
 
