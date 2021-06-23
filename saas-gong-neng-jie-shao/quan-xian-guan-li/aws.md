@@ -33,9 +33,6 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | 权限名称 | 权限说明 |
 | :--- | :--- |
 | AmazonEC2FullAccess | 管理云服务器服务\(EC2\)的权限 |
-| ElasticLoadBalancingFullAccess | 管理负载均衡服务\(ELB\)的权限 |
-| AutoScalingFullAccess | 管理弹性伸缩服务\(AutoScaling\)的权限 |
-| CloudWatchReadOnlyAccess | 只读访问云监控服务\(CloudWatch\)的权限 |
 | IAMReadOnlyAccess | 只读访问身份和访问管理服务\(IAM\)的权限 |
 | _**MyCostExplorerReadOnlyAccess**_ | 只读访问成本管理器服务\(CostExplorer\)的权限 |
 
