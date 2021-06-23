@@ -1,16 +1,28 @@
 # AWS
 
-如果想要使用SaaS控制台访问及管理SpotMax产品服务，又不想提供对应云商的AccessKey和Secret，则可在SpotMax官网后台设置STS的方式如下：
+1、点击创建Ram角色:
 
-1. 登录SpotMax账户，并切换到对应云商
-2. 进入“密钥信息”页面
-3. 填写STS的角色Arn，点击“修改”，会更新并自动检测Arn权限是否完整
+![](../../.gitbook/assets/image%20%28177%29.png)
 
-![](../../.gitbook/assets/image%20%28171%29.png)
+2、添加授权用户的账户ID
 
-{% hint style="info" %}
-当前一个SpotMax账户仅能使用1种授权方式（key&secret或者STS），如果需要修改，则直接在SpotMax官网后台更新即可
-{% endhint %}
+![](../../.gitbook/assets/image%20%28173%29.png)
 
-#### 
+3、为角色添加权限，权限操作请移步到[权限管理](https://docs.spotmaxtech.com/saas-gong-neng-jie-shao/quan-xian-guan-li/e-li-yun)
+
+4、为角色添加标签（非必要）
+
+5、添加角色名称，并检查已授权列表
+
+![](../../.gitbook/assets/image%20%28174%29.png)
+
+6、复制角色ARN
+
+![](../../.gitbook/assets/image%20%28175%29.png)
+
+7、在spotmax的saas平台添加ARN，授权spotmax账号访问：
+
+![](../../.gitbook/assets/image%20%28176%29.png)
+
+8、点击提交，进行用户权限校验
 
