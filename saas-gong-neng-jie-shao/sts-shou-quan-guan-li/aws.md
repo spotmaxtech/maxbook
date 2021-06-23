@@ -6,7 +6,7 @@
 2. 进入“密钥信息”页面
 3. 填写STS的角色Arn，点击“修改”，会更新并自动检测Arn权限是否完整
 
-![](../../.gitbook/assets/image%20%28169%29.png)
+![](../../.gitbook/assets/image%20%28170%29.png)
 
 {% hint style="info" %}
 当前一个SpotMax账户仅能使用1种授权方式（key&secret或者STS），如果需要修改，则直接在SpotMax官网后台更新即可
