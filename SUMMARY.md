@@ -84,13 +84,15 @@
 
 ---
 
+* [概览](gai-lan.md)
+* [安装](an-zhuang.md)
 * [集群管理](ji-qun-guan-li/README.md)
   * [集群列表](ji-qun-guan-li/ji-qun-lie-biao.md)
 * [项目管理](xiang-mu-guan-li/README.md)
   * [项目列表](xiang-mu-guan-li/xiang-mu-lie-biao.md)
 * [用户管理](yong-hu-guan-li/README.md)
   * [用户列表](yong-hu-guan-li/yong-hu-lie-biao.md)
-* [Demo](ben-di-fu-wu-ce-shi/README.md)
+* [Demo功能演示](ben-di-fu-wu-ce-shi/README.md)
   * [server服务部署](ben-di-fu-wu-ce-shi/server-fu-wu-bu-shu.md)
   * [web服务部署](ben-di-fu-wu-ce-shi/web-fu-wu-bu-shu.md)
   * [效果展示](ben-di-fu-wu-ce-shi/xiao-guo-zhan-shi.md)
