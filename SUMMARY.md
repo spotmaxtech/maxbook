@@ -79,8 +79,6 @@
   * [配置consul client](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/pei-zhi-consul-client.md)
   * [扩容容器磁盘（PV）](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/kuo-rong-rong-qi-ci-pan-pv.md)
   * [接入华为容器集群](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/jie-ru-hua-wei-rong-qi-ji-qun.md)
-  * [Immediate还是waitForFirstConsumer](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/immediate-hai-shi-waitforfirstconsumer.md)
-* [创建带有SpotInstance的EKS](zhi-shi-fen-xiang/chuang-jian-dai-you-spotinstance-de-eks.md)
 
 ## MaxCloud
 
