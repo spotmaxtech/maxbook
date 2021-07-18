@@ -21,7 +21,8 @@ docker run <image>:<tag>
 
 一个简单的http服务代码，nodejs语法
 
-```javascript
+```bash
+cat > app.js <<EOF
 const http = require('http');
 const os = require('os');
 
@@ -35,12 +36,30 @@ var handler = function(request, response) {
 
 var www = http.createServer(handler);
 www.listen(8080);
+
+EOF
+
 ```
 
 如果你本地有node环境，可以运行测试一下
 
 ```javascript
 node app.js
+```
+
+{% hint style="info" %}
+上述命令可以使用下面的脚本安装
+{% endhint %}
+
+```bash
+# 安装node环境
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+nvm install node
+
 ```
 
 在另外一个控制台 curl
