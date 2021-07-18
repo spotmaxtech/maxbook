@@ -49,7 +49,7 @@
 * [常见问题](kmax/chan-pin-jia-gou.md)
 * [相关协议](kmax/xiang-guan-xie-yi.md)
 
-## 云大学 <a id="cloud-university"></a>
+## 云端跟我学 <a id="cloud-university"></a>
 
 * [跟我学容器](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
   * [基础篇](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/README.md)
