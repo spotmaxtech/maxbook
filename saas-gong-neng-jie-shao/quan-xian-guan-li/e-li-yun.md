@@ -26,6 +26,8 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 | AliyunESSFullAccess | 管理弹性伸缩服务\(ESS\)的权限 |
 | AliyunRAMReadOnlyAccess | 只读访问资源访问控制服务\(RAM\)的权限 |
 | AliyunBSSFullAccess | 管理费用中心\(BSS\)的权限 |
+| AliyunLogReadOnlyAccess | 用于读取阿里云SLS日志服务 |
+| AliyunOSSFullAccess | 用于对阿里云的oss日志存储的操作 |
 
 
 
