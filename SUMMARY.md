@@ -39,7 +39,7 @@
   * [阿里云](saas-gong-neng-jie-shao/quan-xian-guan-li/e-li-yun.md)
   * [AWS](saas-gong-neng-jie-shao/quan-xian-guan-li/aws.md)
 * [智能存储](saas-gong-neng-jie-shao/zhi-neng-cun-chu/README.md)
-  * [基础介绍](saas-gong-neng-jie-shao/zhi-neng-cun-chu/ji-chu-jie-shao.md)
+  * [产品介绍](saas-gong-neng-jie-shao/zhi-neng-cun-chu/ji-chu-jie-shao.md)
 
 ## KMAX
 
