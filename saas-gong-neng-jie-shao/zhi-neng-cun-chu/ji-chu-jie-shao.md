@@ -10,3 +10,11 @@
 
 2、访问频率未知，不断变化或不可预测的数据，并且无需考虑对象大小或保留期。
 
+## 产品架构
+
+![](../../.gitbook/assets/yong-hu-zhi-neng-cun-chu-.drawio.png)
+
+
+
+
+
