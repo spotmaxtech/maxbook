@@ -22,7 +22,7 @@
 
 7、在spotmax的saas平台添加ARN，授权spotmax账号访问：
 
-![](../../.gitbook/assets/image%20%28197%29.png)
+![](../../.gitbook/assets/image%20%28198%29.png)
 
 8、点击提交，进行用户权限校验
 
