@@ -1,0 +1,200 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    ef9ca94b-8115-4146-b058-ee2ceaf4f6b7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 180
+      z: 1
+      embeds: []
+    f040f809-5b6d-4a76-bf5f-a2d147be32e6:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 270
+      z: 1
+      embeds: []
+      dependson:
+        - ef9ca94b-8115-4146-b058-ee2ceaf4f6b7
+    d043518b-25ef-427f-a304-5c12a53f5a09:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 250
+        'y': 270
+      z: 1
+      embeds: []
+      isassociatedwith:
+        - ef9ca94b-8115-4146-b058-ee2ceaf4f6b7
+Parameters:
+  KeyName:
+    Description: The EC2 Key Pair to allow SSH access to the instances
+    Type: 'AWS::EC2::KeyPair::KeyName'
+  SecurityGroup:
+    Description: 'The security group of the instance,that you can connect to your instance'
+    Type: 'AWS::EC2::SecurityGroup::Id'
+  SubnetId:
+    Description: The subnet where instance can be created.
+    Type: 'AWS::EC2::Subnet::Id'
+  InstanceType:
+    Description: EC2 instance type for the maxGroupServer.
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.small
+      - t2.medium
+      - t2.large
+      - t2.xlarge
+      - t2.2xlarge
+      - t3.small
+      - t3.medium
+      - m3.medium
+      - m3.large
+      - m3.xlarge
+      - m3.2xlarge
+      - m4.large
+      - m4.xlarge
+      - m4.2xlarge
+      - m4.4xlarge
+      - m4.10xlarge
+      - m5.large
+      - m5.xlarge
+      - m5.2xlarge
+      - m5.4xlarge
+      - m5.12xlarge
+      - m5.24xlarge
+      - c4.large
+      - c4.xlarge
+      - c4.2xlarge
+      - c4.4xlarge
+      - c4.8xlarge
+      - c5.large
+      - c5.xlarge
+      - c5.2xlarge
+      - c5.4xlarge
+      - c5.9xlarge
+      - c5.18xlarge
+      - i3.large
+      - i3.xlarge
+      - i3.2xlarge
+      - i3.4xlarge
+      - i3.8xlarge
+      - i3.16xlarge
+      - r3.xlarge
+      - r3.2xlarge
+      - r3.4xlarge
+      - r3.8xlarge
+      - r4.large
+      - r4.xlarge
+      - r4.2xlarge
+      - r4.4xlarge
+      - r4.8xlarge
+      - r4.16xlarge
+      - x1.16xlarge
+      - x1.32xlarge
+      - p2.xlarge
+      - p2.8xlarge
+      - p2.16xlarge
+      - p3.2xlarge
+      - p3.8xlarge
+      - p3.16xlarge
+    ConstraintDescription: Must be a valid EC2 instance type
+Mappings:
+  AWSRegionAMI:
+    cn-northwest-1:
+      AMIid: ami-0b6ea802f7ef3bcdb
+    cn-north-1:
+      AMIid: ami-0321b103323b5d57b
+
+Resources:
+  InstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      Path: /
+      Roles:
+        - !Ref SpotmaxRole
+    DeletionPolicy: Delete
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: d043518b-25ef-427f-a304-5c12a53f5a09
+  maxGroupServer:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !FindInMap
+        - AWSRegionAMI
+        - !Ref 'AWS::Region'
+        - AMIid
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SubnetId: !Ref SubnetId
+      IamInstanceProfile: !Ref InstanceProfile
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            easy_install supervisor
+            echo_supervisord_conf >> /etc/supervisord.conf
+            cat <<EOF >>/etc/supervisord.conf
+            [program:spotmax]
+            directory=/data/spotmax/
+            command=./max_group_pro_aws -debug 
+            process_name=%(process_num)s
+            numprocs=1
+            autostart=true
+            autorestart=true
+            user=root
+            stdout_logfile=/data/spotmax/nohup_spot.log
+            stderr_logfile=/data/spotmax/log_maxgroup_debug.log
+            EOF
+            
+            mkdir -p /data/spotmax
+            kill -9 `ps -ef|grep maxgroup|grep -v grep|awk '{print $2}'`
+            cd /data/spotmax/ && wget -q -O max_group_pro.tar  "https://loginserver.spotmaxtech.com/download_max_group?cloud=aws&type=pro" && tar xf max_group_pro.tar && rm -rf max_group_pro.tar
+            cd /data/spotmax/ && /usr/bin/supervisord -c /etc/supervisord.conf
+
+    DeletionPolicy: Delete
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: f040f809-5b6d-4a76-bf5f-a2d147be32e6
+    DependsOn:
+      - SpotmaxRole
+  SpotmaxRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com.cn
+            Action:
+              - sts:AssumeRole
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonEC2FullAccess
+        - arn:aws:iam::aws:policy/AmazonSQSFullAccess
+        - arn:aws:iam::aws:policy/AutoScalingFullAccess
+        - arn:aws:iam::aws:policy/CloudWatchEventsFullAccess
+      Policies:
+        - PolicyName: PassRole
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'iam:GetRole'
+                  - 'iam:PassRole'
+                Resource: '*'
+    DeletionPolicy: Delete
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ef9ca94b-8115-4146-b058-ee2ceaf4f6b7

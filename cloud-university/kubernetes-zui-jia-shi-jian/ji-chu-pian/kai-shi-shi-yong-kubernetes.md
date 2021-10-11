@@ -10,11 +10,11 @@
 
 测试一下环境
 
-```text
+```
 kubectl get nodes
 ```
 
-![](../../../.gitbook/assets/image%20%2881%29.png)
+![](<../../../.gitbook/assets/image (40).png>)
 
 {% hint style="info" %}
 给 kubectl 做一下alias吧，后续我们使用k
@@ -26,7 +26,7 @@ alias k=kubectl
 
 现在正式在kubernetes中部署我们的应用
 
-```text
+```
 kubectl run kubia --image=luksa/kubia --port=8080 --generator=run/v1
 ```
 
@@ -36,7 +36,7 @@ kubectl run kubia --image=luksa/kubia --port=8080 --generator=run/v1
 docker run --name kubia -p 8080:8080 -d luksa/kubia
 {% endhint %}
 
-```text
+```
 $ kubectl get pods
 NAME    READY   STATUS    RESTARTS   AGE
 kubia   1/1     Running   0          6s
@@ -44,14 +44,14 @@ kubia   1/1     Running   0          6s
 
 这里就能看到我们启动的pod了，现在需要让我们能访问它，大家可以先执行指令，感受效果，不用过多探究每个参数的含义。
 
-```text
+```
 $ kubectl expose rc kubia --type=LoadBalancer --name kubia
 service/kubia exposed
 ```
 
 看看暴露的服务，我们申请了LoadBalancer，云商创建需要1-5分钟的时间，耐心等待下
 
-```text
+```
 $ k get svc
 NAME    TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 kubia   LoadBalancer   172.22.14.146   <pending>     8080:30019/TCP   5s
@@ -59,7 +59,7 @@ kubia   LoadBalancer   172.22.14.146   <pending>     8080:30019/TCP   5s
 
 看到了LoadBalancer后，测试一下
 
-```text
+```
 $ curl http://47.56.228.138:8080
 You've hit kubia-9bklf
 ```
@@ -70,7 +70,7 @@ You've hit kubia-9bklf
 
 ## 横向伸缩你的应用
 
-```text
+```
 $ k get replicationcontrollers
 NAME    DESIRED   CURRENT   READY   AGE
 kubia   1         1         1       142m
@@ -93,7 +93,7 @@ $ k scale rc kubia --replicas=3
 
 因为我们的应用可以返回主机名，所以每次请求会获得不同的结果
 
-```text
+```
 $ while true; do curl http://47.56.228.139:8080; sleep 1;  done
 You've hit kubia-qr7r9
 You've hit kubia-qr7r9
@@ -104,22 +104,22 @@ You've hit kubia-9bklf
 负载均衡器到达上限时，请用左边那个ClusterIP
 {% endhint %}
 
-```text
+```
 $ kubectl run busybox --rm -i --tty --image busybox -- sh
 $ while true; do wget -O- http://<172.22.2.107>:8080; sleep 1;  done
 ```
 
 ## 查看应用跑在哪个节点
 
-```text
+```
 kubectl get pods -o wide
 ```
 
-![](../../../.gitbook/assets/image%20%2822%29.png)
+![](<../../../.gitbook/assets/image (51).png>)
 
 还可以查看pod的一些细节，还有日志，试试指令吧
 
-```text
+```
 # kubectl describe pod <选择一个pod>
 # kubectl logs <选择一个pod>
 ```
@@ -136,11 +136,11 @@ kubectl get pods -o wide
 
 提示登陆，请选择令牌
 
-![](../../../.gitbook/assets/image%20%2887%29.png)
+![](<../../../.gitbook/assets/image (52).png>)
 
 这里令牌是一个用户的口令，使用正确的令牌就能代表一个用户登陆了。请按照下述命令获取它的令牌
 
-```text
+```
 $ kubectl get secret --namespace kube-dashboard
 NAME                                         TYPE                                  DATA   AGE
 dashboard-kubernetes-dashboard               Opaque                                0      16m
@@ -151,7 +151,7 @@ sh.helm.release.v1.dashboard.v1              helm.sh/release.v1                 
 
 上面有个token的name就是令牌了，查看下，如：
 
-```text
+```
 k describe secrets dashboard-kubernetes-dashboard-token-tr8td --namespace kube-dashboard
 ```
 
@@ -226,4 +226,3 @@ replicationcontroller/kubia   1         1         1       36s
 > * 怎样查看节点信息
 > * 怎样查看pod信息，日志呢？
 > * 怎样查看services信息，它的简写是什么？
-

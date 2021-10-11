@@ -4,7 +4,7 @@
 
 服务是虚拟的网络管理，不涉及实实在在的pod，所以确保已经创建好了pod，可以使用前面的yaml创建，如
 
-```text
+```
 $ k create -f kubia-replicaset.yaml                                                                                                                                          130 ↵
 replicaset.apps/kubia created
 ```
@@ -27,7 +27,7 @@ spec:
 
 同样，大家不要刻意记忆，理解就好，后面用到可以到这里copy/paste。创建它
 
-```text
+```
 $ k create -f kubia-svc.yaml                                                                                                                                                 130 ↵
 service/kubia created
 
@@ -48,7 +48,7 @@ replicaset.apps/kubia   3         3         3       10m
 
 上面有个服务CLUSTER-IP（172.22.2.238），要换成你自己的，找到它访问一下，可以这样
 
-```text
+```
 $ k exec kubia-77bv5 -- curl -s http://172.22.2.238
 You've hit kubia-wwkmh
 ```
@@ -61,11 +61,11 @@ kubectl exec 是用来执行pod中指令的，所以kubia-77bv5是一个pod，�
 
 每个服务都有唯一的域名，如这个服务对应的域名是
 
-**kubia.&lt;liuzongxian换成你的命名空间&gt;.svc.cluster.local**
+**kubia.\<liuzongxian换成你的命名空间>.svc.cluster.local**
 
 这个域名在集群内部都是可以直接使用的，如：
 
-```text
+```
 $ kubectl exec kubia-77bv5 -- curl -s http://kubia.liuzongxian.svc.cluster.local                                                                                             130 ↵
 You've hit kubia-m89k7
 ```
@@ -104,7 +104,7 @@ spec:
 
 查看一下
 
-```text
+```
 # k get svc                                                                                                                                                                  130 ↵
 NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubia            ClusterIP   172.22.2.238   <none>        80/TCP         145m
@@ -113,7 +113,7 @@ kubia-nodeport   NodePort    172.22.9.134   <none>        80:30123/TCP   21m
 
 由于阿里云开的资源默认没有分配公网ip，需要使用内网测试，内网ip可以从节点的名字中找到，如下图的 10.32.100.48
 
-```text
+```
 # k get node
 NAME                       STATUS   ROLES    AGE     VERSION
 cn-hongkong.10.32.100.46   Ready    <none>   7d4h    v1.14.8-aliyun.1
@@ -123,7 +123,7 @@ cn-hongkong.10.32.100.48   Ready    <none>   2d23h   v1.14.8-aliyun.1
 
 这里稍稍复杂一些，我们启动了一个busybox的pod来测试内网端口
 
-```text
+```
 $ kubectl run busybox --rm -i --tty --image busybox -- sh
 # 然后使用wget测试
 wget -O- http://10.32.100.48:<30123换成你自己的端口30XXX>
@@ -131,12 +131,12 @@ wget -O- http://10.32.100.48:<30123换成你自己的端口30XXX>
 
 效果如图
 
-![](../../../.gitbook/assets/image%20%28121%29.png)
+![](<../../../.gitbook/assets/image (65).png>)
 
 ### 使用负载均衡器
 
 {% hint style="warning" %}
-最简单但是要换钱的方式 😅 
+最简单但是要换钱的方式 :sweat_smile: 
 {% endhint %}
 
 ```yaml
@@ -156,7 +156,7 @@ spec:
 
 create它，然后看看，然后请找到自己的External IP，就是外网负载均衡器了。
 
-```text
+```
 $ k create -f kubia-svc-loadbalancer.yaml
 service/kubia-loadbalancer created
 
@@ -203,13 +203,13 @@ spec:
 ingress 也是一种资源，同pod/svc类似的
 {% endhint %}
 
-```text
+```
 $ k get ingress                                                                                                                                                              130 ↵
 NAME    HOSTS               ADDRESS         PORTS   AGE
 kubia   kubia.example.com   47.52.155.217   80      60s
 ```
 
-从上面的Address代表了nginx外网ip，配置到/etc/hosts下，我们就可以用浏览器输入域名访问了，对必须输入域名。 😛 
+从上面的Address代表了nginx外网ip，配置到/etc/hosts下，我们就可以用浏览器输入域名访问了，对必须输入域名。 :stuck_out_tongue: 
 
 {% hint style="danger" %}
 这里有个扩展，就是配置nginx的443安全访问，我们不在课程中讲解了
@@ -296,5 +296,4 @@ replicationcontroller/kubia   3         3         1       3m12s
 
 
 
-## 
-
+##

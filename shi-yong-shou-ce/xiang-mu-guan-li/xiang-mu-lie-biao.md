@@ -6,27 +6,27 @@
 
 在页面点击添加项目
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-4.38.47.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午4.38.47.png>)
 
 添加项目信息，导入群组，添加人员并提交项目。导入的集群为集群列表中已添加集群，添加人员为用户列表中已添加用户。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-4.44.55.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午4.44.55.png>)
 
 ## 项目管理
 
 在项目列表中点击要操作的项目。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-5.18.23.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午5.18.23.png>)
 
 项目详情中包含项目关联集群信息，成员信息，可添加项目关联集群与成员。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-5.24.08%20%281%29.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午5.24.08 (1).png>)
 
 ### 添加关联集群
 
 选择要添加的集群，并选择集群的命名空间。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-5.47.40.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午5.47.40.png>)
 
 ### 添加项目成员
 
@@ -34,15 +34,15 @@
 
 开发人员选择developer，访客选择reportor。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-5.59.00.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午5.59.00.png>)
 
 ### 创建服务
 
 在项目列表中点击查看服务，创建服务。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-7.23.49.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午7.23.49.png>)
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-8.04.21.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午8.04.21.png>)
 
 ### 更多操作
 
@@ -50,13 +50,11 @@
 
 点击添加命名空间，选择添加命名空间到项目中。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-7.29.50.png)
+![](<../../.gitbook/assets/截屏2021-06-30 下午7.29.50.png>)
 
 导出配置可以导出集群的config配置文件。
 
-![](../../.gitbook/assets/jie-ping-20210630-xia-wu-7.37.36.png)
-
-
+![](<../../.gitbook/assets/截屏2021-06-30 下午7.37.36.png>)
 
 
 

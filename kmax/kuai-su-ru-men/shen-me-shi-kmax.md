@@ -16,11 +16,11 @@ SpotMax主要包括以下部分:
 
 **MaxChaos** 混沌工程，混沌工程套件
 
-![](../../.gitbook/assets/image%20%28100%29.png)
+![](<../../.gitbook/assets/image (30).png>)
 
 ### SpotMax特性
 
-* **高可用性** 通过MaxArch构建高可用性，高弹性\(Resilient\)架构，可以允许系统在不影响业务的前提下更充分的使用具有成本优势的高弹性计算资源\(Spot Instance\)。
+* **高可用性** 通过MaxArch构建高可用性，高弹性(Resilient)架构，可以允许系统在不影响业务的前提下更充分的使用具有成本优势的高弹性计算资源(Spot Instance)。
 * **智能容错** MaxChaos利用混沌工程可以有效的评估系统的容错能力，其评估结果将成为MaxGroup自动规划合理弹性集群的依据。实现MaxArch的持续改进及评估。
 * **智能集群管理** MaxGroup智能弹性集群管理可以有效减少弹性计算资源波动带来的集群服务能力变化。并在面 向成本优化构建的混合机型集群最大发挥集群不同机型的服务能力。
 
@@ -44,9 +44,8 @@ Kmax是基于SpotMax与Kubernetes的容器编排运行平台，提供开箱即�
 
 ### KMax架构
 
-![](../../.gitbook/assets/image%20%2891%29.png)
+![](<../../.gitbook/assets/image (61).png>)
 
 ### 调度流程
 
-![](../../.gitbook/assets/image%20%2884%29.png)
-
+![](<../../.gitbook/assets/image (62).png>)

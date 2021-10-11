@@ -69,7 +69,7 @@ spec:
     emptyDir: {}
 ```
 
-create试试看\(可以跳过\)，因为上面的INTERVAL是来自命令行，所以结果可想而知频率是固定的2秒。
+create试试看(可以跳过)，因为上面的INTERVAL是来自命令行，所以结果可想而知频率是固定的2秒。
 
 ## 设置暴露给应用程序的环境变量
 
@@ -105,7 +105,7 @@ spec:
 
 create试试，我们继续使用port-forward代理访问pod端口
 
-```text
+```
 $ k create -f fortune-pod-env.yaml
 pod/fortune-env created
 
@@ -116,7 +116,7 @@ Forwarding from [::1]:8080 -> 80
 
 然后在另一个控制台访问，观察是否设定的环境变量秒数
 
-```text
+```
 $ while True; do curl http://localhost:8080; sleep 3;  done
 ```
 
@@ -144,7 +144,7 @@ ConfigMap还有其他方式创建，不过yaml方式是我们推荐经常使用�
 
 create并get，使用-o yaml配合get可以获得最全的yaml描述
 
-```text
+```
 $ kubectl create -f fortune-config.yaml                                                                                                                                      130 ↵
 configmap/fortune-config created
 
@@ -197,7 +197,7 @@ spec:
     emptyDir: {}
 ```
 
-```text
+```
 $ k create -f fortune-pod-env-configmap.yaml
 pod/fortune-env-from-configmap created
 
@@ -209,7 +209,7 @@ pod/fortune-env-from-configmap   2/2     Running   0          4s
 
 同样使用port-forward看下调用下服务吧，这里不贴出结果
 
-```text
+```
 $ k port-forward fortune-env-from-configmap 8080:80
 Forwarding from 127.0.0.1:8080 -> 80
 Forwarding from [::1]:8080 -> 80
@@ -221,7 +221,7 @@ Forwarding from [::1]:8080 -> 80
 
 拿上述服务中的nginx做这个实验，先看看它的配置文件，我们尝试控制它是否开启压缩
 
-```text
+```
 # cat my-nginx-config.conf
 server {
     listen              80;
@@ -255,7 +255,7 @@ configmap/fortune-config created
 
 我们使用的是文件夹，里面含有两个文件，从configmap中能看出
 
-```text
+```
 $ kubectl get configmap fortune-config -o yaml
 apiVersion: v1
 data:
@@ -449,6 +449,4 @@ k apply -f package-test.yaml
 ## 思考题
 
 > * 请谈谈都有哪几种配置应用的方式，和传统开发的区别
-
-
 

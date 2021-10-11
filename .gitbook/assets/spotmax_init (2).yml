@@ -94,7 +94,6 @@ Parameters:
   BucketName:
     Description: Create an S3 bucket for the spotmax use to store license and config file
     Type: String
-
 Resources:
   SQSQPAGLN:
     Type: 'AWS::SQS::QueuePolicy'
@@ -105,9 +104,15 @@ Resources:
         Statement:
           - Sid: Allow-User-SendMessage
             Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
             Action:
-              - 'sqs:SendMessage'
-            Resource: '*'
+              - sqs:SendMessage
+            Resource: !GetAtt InterruptionNotice.Arn
+            Condition: 
+              ArnEquals:
+                aws:SourceArn: !GetAtt Interruption.Arn
+
       Queues:
         - !Ref InterruptionNotice
     Metadata:

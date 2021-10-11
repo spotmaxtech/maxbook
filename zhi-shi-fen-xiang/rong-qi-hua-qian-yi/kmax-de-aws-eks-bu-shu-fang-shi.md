@@ -30,7 +30,7 @@ master是指容器集群节点，需要事先创建好这些节点所使用的ro
 这里可以在账户里找到kmax这个iam role
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2849%29.png)
+![](<../../.gitbook/assets/image (84).png>)
 
 #### worknode使用的role：kmax-worknode
 
@@ -40,7 +40,7 @@ worknode是指容器工作节点，同样需要事先创建好这些节点所使
 这里可以在账户里找到kmax-worknode这个iam role
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2897%29.png)
+![](<../../.gitbook/assets/image (85).png>)
 
 
 
@@ -68,19 +68,19 @@ worknode是指容器工作节点，同样需要事先创建好这些节点所使
 EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签，这样如果我们利用标签统计成本就失效了。所以我们放弃了NodeGroup管理容器节点。
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%2846%29.png)
+![](<../../.gitbook/assets/image (86).png>)
 
 说明：上面的节点组所需大小创建时是最小是1，不能置为0的，这个可以通过后台ASG编辑解决，因为它这里实际上也是启动了一个ASG。
 
-![](../../.gitbook/assets/image%20%2859%29.png)
+![](<../../.gitbook/assets/image (91).png>)
 
 ## 利用example的EC2模版改造自己的模版
 
 ### 新模版的命名
 
-找到kmax-example-group使用的模版，使用它为模版创建一个新的模版，例如dsp-8c64g-kmax，其中&lt;dsp表示业务线&gt;-&lt;8c64g表示规格&gt;-&lt;kmax搜索词&gt;。
+找到kmax-example-group使用的模版，使用它为模版创建一个新的模版，例如dsp-8c64g-kmax，其中\<dsp表示业务线>-<8c64g表示规格>-\<kmax搜索词>。
 
-![](../../.gitbook/assets/image%20%2811%29.png)
+![](<../../.gitbook/assets/image (87).png>)
 
 {% hint style="danger" %}
 关于规格的说明
@@ -97,22 +97,22 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 
 ### 新模版增加必要的tag
 
-| tag名 | 取值 | 说明 |
-| :--- | :--- | :--- |
-| team | dsp/adn/3s | 业务线名称 |
-| kubernetes.io/cluster/&lt;EKS-NAME&gt; | owned | EKS节点发现 |
+| tag名                              | 取值         | 说明      |
+| --------------------------------- | ---------- | ------- |
+| team                              | dsp/adn/3s | 业务线名称   |
+| kubernetes.io/cluster/\<EKS-NAME> | owned      | EKS节点发现 |
 
 {% hint style="success" %}
 team标签好理解，这里还有个kubernetes.io的标签，这个标签是必须要打上的，否则EKS不会把节点注册上，尽管有了注册脚本（user-data）
 
-当然也可以在ASG里传递这个标签，在这里的优点是：结合使用max\_group时，比正常走autoscaling打tag快10秒注册进EKS
+当然也可以在ASG里传递这个标签，在这里的优点是：结合使用max_group时，比正常走autoscaling打tag快10秒注册进EKS
 {% endhint %}
 
-### **修改高级选项的IAM kmax-worknode** <a id="KMAX&#x5E73;&#x53F0;&#x90E8;&#x7F72;&#x4E0E;&#x4F7F;&#x7528;-&#x9AD8;&#x7EA7;&#x9009;&#x9879;&#x4E2D;&#xFF0C;&#x6CE8;&#x610F;&#x9009;&#x62E9;IAM&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;kmax-worknode"></a>
+### **修改高级选项的IAM kmax-worknode** <a href="kmax-ping-tai-bu-shu-yu-shi-yong-gao-ji-xuan-xiang-zhong-zhu-yi-xuan-ze-iam-shi-li-pei-zhi-wen-jian" id="kmax-ping-tai-bu-shu-yu-shi-yong-gao-ji-xuan-xiang-zhong-zhu-yi-xuan-ze-iam-shi-li-pei-zhi-wen-jian"></a>
 
 点开模版的高级选项，修改IAM为我们事先指定好的kmax-worknode。
 
-![](../../.gitbook/assets/image%20%2875%29.png)
+![](<../../.gitbook/assets/image (88).png>)
 
 {% hint style="danger" %}
 这一点很重要，NodeGroup的example模版依照kmax-worknode创建了一个新的iam配置文件，我们不用它的。
@@ -122,16 +122,16 @@ team标签好理解，这里还有个kubernetes.io的标签，这个标签是必
 
 我们使用模版启动的实例在注册时会告诉kubernetes需要给该worknode标记哪些标签，所以我们需要保证节点标签的正确性。
 
-| label | 取值 | 说明 |
-| :--- | :--- | :--- |
-| node.spotmax/team | dsp | 业务线 |
-| node.spotmax/type | spot/ondemand | spot或ondemand |
-| node.spotmax/spec | 8c64g | 规格说明 |
-| eks.amazonaws.com/nodegroup | dsp-8c64g-kmax | 所属的nodegroup |
+| label                       | 取值             | 说明            |
+| --------------------------- | -------------- | ------------- |
+| node.spotmax/team           | dsp            | 业务线           |
+| node.spotmax/type           | spot/ondemand  | spot或ondemand |
+| node.spotmax/spec           | 8c64g          | 规格说明          |
+| eks.amazonaws.com/nodegroup | dsp-8c64g-kmax | 所属的nodegroup  |
 
 这些标签是在模版的user数据中，也就是EC2被拉起后执行的操作。
 
-![](../../.gitbook/assets/image%20%28123%29.png)
+![](<../../.gitbook/assets/image (89).png>)
 
 {% hint style="info" %}
 日常运维会在实例初始化是调整一下登陆用户、SUDO权限相关的脚本，也可以增加上。
@@ -211,15 +211,15 @@ setup_sudo
 为了便于区分管理，我们创建与模版一致名称的ASG
 
 {% hint style="info" %}
-选择模版&lt;dsp-8c64-kmax&gt;创建伸缩组&lt;dsp-8c64g-kmax&gt;
+选择模版\<dsp-8c64-kmax>创建伸缩组\<dsp-8c64g-kmax>
 {% endhint %}
 
 #### **对ASG增加必要的tag**
 
-| **tag** | 取值 | 说明 |
-| :--- | :--- | :--- |
-| k8s.io/cluster-autoscaler/enabled | true | CA自动发现使用 |
-| k8s.io/cluster-autoscaler/&lt;EKS-NAME&gt; | owned | CA自动发现使用 |
+| **tag**                               | 取值    | 说明       |
+| ------------------------------------- | ----- | -------- |
+| k8s.io/cluster-autoscaler/enabled     | true  | CA自动发现使用 |
+| k8s.io/cluster-autoscaler/\<EKS-NAME> | owned | CA自动发现使用 |
 
 至此，创建好的ASG会自动拉取节点，此时使用kubectl客户端可以看到节点已经加入了！
 
@@ -235,7 +235,7 @@ CA的基本概念与详细说明请参考[说明文档](https://amazonaws-china.
 
 如果没有意外，当前worknode所使用的IAM角色已经含有了ASG权限，可以查看到
 
-![](../../.gitbook/assets/image%20%2886%29.png)
+![](<../../.gitbook/assets/image (90).png>)
 
 ### 安装CA
 
@@ -245,15 +245,15 @@ CA即Cluster Autoscaler，是kubernetes社区的组件，支持不同的云商�
 
 要在 GitHub 上下载 Cluster Autoscaler 项目提供的示例部署文件，请运行以下命令：
 
-```text
+```
 wget https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
 ```
 
 #### 修改YAML文件添加ASG组
 
-打开下载的 YAML 文件并根据下例设置 EKS 集群名称 \(**awsExampleClusterName**\) 和环境变量 \(**us-east-1**\)。然后保存更改。
+打开下载的 YAML 文件并根据下例设置 EKS 集群名称 (**awsExampleClusterName**) 和环境变量 (**us-east-1**)。然后保存更改。
 
-```text
+```
 ...          
           command:
             - ./cluster-autoscaler
@@ -273,13 +273,13 @@ wget https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-auto
 
 要创建 Cluster Autoscaler 部署，请运行以下命令：
 
-```text
+```
 kubectl apply -f cluster-autoscaler-autodiscover.yaml
 ```
 
 要检查 Cluster Autoscaler 部署日志以查看部署错误，请运行以下命令：
 
-```text
+```
 kubectl logs -f deployment/cluster-autoscaler -n kube-system
 ```
 
@@ -298,6 +298,4 @@ kubectl logs -f deployment/cluster-autoscaler -n kube-system
 ```yaml
 helm install stable/metrics-server --generate-name --namespace kube-system
 ```
-
-
 

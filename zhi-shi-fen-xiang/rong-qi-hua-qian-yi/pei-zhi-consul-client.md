@@ -6,7 +6,7 @@
 
 ## 确认所在集群与区域
 
-```text
+```
 kubectx
 ```
 
@@ -36,7 +36,7 @@ spotmax是fork了官方helm并做了修改，所以使用spotmax分之
 ## 获取consul server的信息
 
 {% hint style="warning" %}
-这部分信息可以从运维server集群的管理员获得，或是找到旧节点上的初始化脚本处获得，例如：as\_autoscaling.sh
+这部分信息可以从运维server集群的管理员获得，或是找到旧节点上的初始化脚本处获得，例如：as_autoscaling.sh
 {% endhint %}
 
 ### 注册的data center
@@ -139,4 +139,3 @@ $ wget -qO- http://consul-client.consul-client.svc.cluster.local:8500/v1/catalog
 ## FAQ
 
 有问题请留言
-

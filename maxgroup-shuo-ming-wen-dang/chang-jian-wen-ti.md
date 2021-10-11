@@ -1,5 +1,4 @@
 # 常见问题
 
-1. 所谓preaction，就是查找spot中断率较低的替换中断率高的，其执行的频率是由参数preaction\_snapshot\_interval\_minutes 来决定，例如设置preaction\_snapshot\_interval\_minutes:20 即20分钟执行一次判断是否替换中断率较高的spot
+1. 所谓preaction，就是查找spot中断率较低的替换中断率高的，其执行的频率是由参数preaction_snapshot_interval_minutes 来决定，例如设置preaction_snapshot_interval_minutes:20 即20分钟执行一次判断是否替换中断率较高的spot
 2. Aws autoscaling 容量重新平衡 需要关闭，如果开启，当发生中断时，AWS会立刻添加一台新的机器，并且关闭中断的实例，对业务有一定的影响，导致中断的实例的数据没有处理完毕
-

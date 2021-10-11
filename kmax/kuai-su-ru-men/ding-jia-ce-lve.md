@@ -2,12 +2,11 @@
 
 ## AWS
 
-| 机器类型 | 规格 | 价格/每小时 | 价格/每年 |
-| :---: | :---: | :---: | :---: |
-| t2.medium / t3.medium / t3.large | 2C4G | 0.0172 | 1054.704 |
-| c5.large / m4.large / m5.large /  | 2C4G | 0.0366 | 2244.312 |
-| c5.xlarge / m4.xlarge / m5.xlarge | 4C8G | 0.0747 | 4580.604 |
-| c5.2xlarge / m4.2xlarge / m5.2xlarge | 8C16G | 0.1595 | 9780.54 |
+|                 机器类型                 |   规格  | 价格/每小时 |   价格/每年  |
+| :----------------------------------: | :---: | :----: | :------: |
+|   t2.medium / t3.medium / t3.large   |  2C4G | 0.0172 | 1054.704 |
+|   c5.large / m4.large / m5.large /   |  2C4G | 0.0366 | 2244.312 |
+|   c5.xlarge / m4.xlarge / m5.xlarge  |  4C8G | 0.0747 | 4580.604 |
+| c5.2xlarge / m4.2xlarge / m5.2xlarge | 8C16G | 0.1595 |  9780.54 |
 
 ## 阿里云
-

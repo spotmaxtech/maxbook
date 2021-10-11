@@ -8,7 +8,7 @@
 
 默认的是叫做gp2
 
-```text
+```
 $ k get sc
 NAME             PROVISIONER             AGE
 gp2 (default)    kubernetes.io/aws-ebs   13h
@@ -98,6 +98,4 @@ efficiency-delete-wait   alicloud/disk   30d
 ## 磁盘storageclass的选择
 
 大家没有特殊需要请使用“disk“，因为是默认，不指定class也会采用“disk“；如果有类似ssd的需求可以依照上述自己创建，或是寻求管理员的协助。
-
-
 

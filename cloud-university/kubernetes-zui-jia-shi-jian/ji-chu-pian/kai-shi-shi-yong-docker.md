@@ -4,12 +4,12 @@
 
 在安装好的环境中，运行现成的hello world容器
 
-```text
+```
 docker run --rm busybox echo "Hello world"
 ```
 
 {% hint style="info" %}
---rm 可以让容器随着我们使用完毕会自动删除
+\--rm 可以让容器随着我们使用完毕会自动删除
 {% endhint %}
 
 ```javascript
@@ -47,7 +47,7 @@ node app.js
 {% hint style="info" %}
 上述的node命令可以使用下面的脚本安装
 
-\(后面不回再用到了，跳过这个运行测试也是可以的\)
+(后面不回再用到了，跳过这个运行测试也是可以的)
 {% endhint %}
 
 ```bash
@@ -90,11 +90,11 @@ docker build -t <kubia可以起个名字> .
 
 看到制作过程，根据网络情况拉取node环境有快慢，耐心
 
-![](../../../.gitbook/assets/image%20%2843%29.png)
+![](<../../../.gitbook/assets/image (32).png>)
 
 完成后，运行 docker images 能找到刚制作好的镜像，还挺大的是吧
 
-![](../../../.gitbook/assets/image%20%284%29.png)
+![](<../../../.gitbook/assets/image (33).png>)
 
 运行一下容器镜像
 
@@ -114,7 +114,7 @@ docker run --rm --name kubia-container -p 8080:8080 -d luksa/kubia
 
 开另一个控制台，访问一下8080试试吧
 
-![](../../../.gitbook/assets/image%20%2896%29.png)
+![](<../../../.gitbook/assets/image (35).png>)
 
 ## 探索运行容器的内部
 
@@ -133,7 +133,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](../../../.gitbook/assets/image%20%28110%29.png)
+![](<../../../.gitbook/assets/image (37).png>)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
@@ -167,6 +167,4 @@ docker push luksa/kubia
 > * 请问docker构建镜像时那个文件叫什么名字？（扩展，可以换名字么？）
 > * busybox这个镜像是做什么用的？
 > * 临时测试一个容器，用完自动销毁使用什么参数？
-
-
 

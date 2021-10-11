@@ -307,7 +307,7 @@ $ k create -f ssd-monitor-daemonset.yaml
 daemonset.apps/ssd-monitor created
 ```
 
-![](../../../.gitbook/assets/image%20%28116%29.png)
+![](<../../../.gitbook/assets/image (63).png>)
 
 ## 删除副本集
 
@@ -326,4 +326,3 @@ Well Done！到达这里你已经是半个DevOps了，这里是kubernetes的核�
 ## 思考题
 
 > * 在不同命名空间都创建的DaemonSet，会互相冲突么，比如多部署或少部署？
-

@@ -12,9 +12,7 @@
 
 ## 产品架构
 
-![](../../.gitbook/assets/yong-hu-zhi-neng-cun-chu-.drawio.png)
-
-
+![](../../.gitbook/assets/用户智能存储.drawio.png)
 
 
 

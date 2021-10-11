@@ -4,7 +4,7 @@
 
 我们使用search查看有没有redis可以直接安装到kubernetes
 
-```text
+```
 $ helm search hub redis
 URL                                               	CHART VERSION	APP VERSION  	DESCRIPTION
 https://hub.helm.sh/charts/hephy/redis            	v2.4.0       	             	A Redis database for use inside a Kubernetes cl...
@@ -16,9 +16,9 @@ https://hub.helm.sh/charts/incubator/redis-cache  	0.5.0        	4.0.12-alpine	A
 
 查到了很多chart可以用来安装redis，还包含cluster模式的。
 
-> * `helm search hub` 搜索的是 [the Helm Hub](https://hub.helm.sh/)，这个hub索引了几十个存储库的内容，所以能搜多非常多的chart
+> * `helm search hub` 搜索的是 [the Helm Hub](https://hub.helm.sh)，这个hub索引了几十个存储库的内容，所以能搜多非常多的chart
 
-```text
+```
 $ helm search repo redis
 NAME                            	CHART VERSION	APP VERSION	DESCRIPTION
 stable/prometheus-redis-exporter	3.2.0        	1.0.4      	Prometheus exporter for Redis metrics
@@ -29,7 +29,7 @@ stable/sensu                    	0.2.3        	0.28       	Sensu monitoring fram
 
 使用repo也能查到redis，数量少一些。
 
-> * `helm search repo` 搜索的是本地管理的repositories存储库，helm客户端会从这些库里搜索\(添加方法 `helm repo add`\). 这个搜索操作读区本地的缓存列表，有必要时可以更新一下`helm repo update`
+> * `helm search repo` 搜索的是本地管理的repositories存储库，helm客户端会从这些库里搜索(添加方法 `helm repo add`). 这个搜索操作读区本地的缓存列表，有必要时可以更新一下`helm repo update`
 
 ```bash
 # 添加bitnami，一个维护的比较好的扩展库
@@ -44,7 +44,7 @@ bitnami	https://charts.bitnami.com/bitnami
 
 然后我们再次搜索一下redis
 
-```text
+```
 $ helm search repo redis
 NAME                            	CHART VERSION	APP VERSION	DESCRIPTION
 bitnami/redis                   	10.3.0       	5.0.7      	Open source, advanced key-value store. It is of...
@@ -58,7 +58,7 @@ stable/sensu                    	0.2.3        	0.28       	Sensu monitoring fram
 
 使用helm安装一下mysql，现在社区版本是mariadb了。
 
-```text
+```
 $ helm install <happy-panda这里可以改名字> stable/mariadb                                                                                                                                    130 ↵
 NAME: happy-panda
 LAST DEPLOYED: Mon Feb 10 16:28:14 2020
@@ -165,7 +165,7 @@ REVISION	UPDATED                 	STATUS    	CHART        	APP VERSION	DESCRIPTI
 ```
 
 {% hint style="info" %}
-helm history &lt;release-name&gt; 可以查看发版的历史信息
+helm history \<release-name> 可以查看发版的历史信息
 {% endhint %}
 
 有两个发版了，我们回滚到第一个版本
@@ -181,7 +181,7 @@ null
 ```
 
 {% hint style="info" %}
-Usage: helm rollback &lt;RELEASE&gt;  \[REVISION\] \[flags\]
+Usage: helm rollback \<RELEASE>  \[REVISION] \[flags]
 
 注意需要指定版本
 {% endhint %}
@@ -273,4 +273,3 @@ mariadbUser: user1
 {% hint style="info" %}
 覆盖参数有一些较复杂点的方式，如--set指令，留作扩展练习
 {% endhint %}
-

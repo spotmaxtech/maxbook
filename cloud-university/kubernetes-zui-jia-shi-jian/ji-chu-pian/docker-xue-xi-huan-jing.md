@@ -6,9 +6,7 @@
 
 ## 学习一下基本操作
 
-![](../../../.gitbook/assets/image%20%28187%29.png)
-
-
+![](<../../../.gitbook/assets/image (188).png>)
 
 
 

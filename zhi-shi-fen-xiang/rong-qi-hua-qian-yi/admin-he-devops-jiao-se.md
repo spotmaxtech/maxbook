@@ -22,7 +22,7 @@ EKS创建后，默认只能创建者能login这个EKS进行管理，现在我们
 
 #### 确认aws-auth configmap是否存在
 
-```text
+```
 kubectl describe configmap -n kube-system aws-auth
 ```
 
@@ -32,7 +32,7 @@ kubectl describe configmap -n kube-system aws-auth
 
 使用edit编辑这个aws-auth configmap
 
-```text
+```
 kubectl edit -n kube-system configmap/aws-auth
 ```
 
@@ -67,8 +67,7 @@ metadata:
 ```
 
 {% hint style="info" %}
-这里用户有spotmax\_devops，这个账户是给DevOps同学使用的，也可以增加其他管理员例如hujinbin、liuzongxian等等，可以协助管理集群资源。
+这里用户有spotmax_devops，这个账户是给DevOps同学使用的，也可以增加其他管理员例如hujinbin、liuzongxian等等，可以协助管理集群资源。
 {% endhint %}
 
 ### ALI ACK创建初始化权限
-

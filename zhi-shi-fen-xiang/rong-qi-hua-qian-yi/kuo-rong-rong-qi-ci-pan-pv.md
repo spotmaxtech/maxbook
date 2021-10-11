@@ -10,7 +10,7 @@
 
 参见[说明文档](https://yq.aliyun.com/articles/724713?spm=a2c4e.11155435.0.0.6dae3312OTDwci)，尤其阿里云提供的这个权限图片
 
-![](../../.gitbook/assets/image%20%2839%29.png)
+![](<../../.gitbook/assets/image (79).png>)
 
 权限的开启需要集群管理员的协助，DevOps可以反馈给管理员
 
@@ -51,8 +51,6 @@ allowVolumeExpansion: true  # 需要增加这个参数，设置为true
 ```
 
 当确认pvc和pv状态以后，删除pod，这样pod会重新mount扩容好的pv
-
-
 
 
 

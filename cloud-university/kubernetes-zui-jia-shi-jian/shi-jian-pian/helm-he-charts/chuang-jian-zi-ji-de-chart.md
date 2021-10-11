@@ -6,7 +6,7 @@
 
 ## helm create创建chart模版
 
-```text
+```
 $ helm create <myfirstchart可以是自己应用的名字>
 Creating myfirstchart
 
@@ -149,4 +149,3 @@ $ helm lint ./myfirstchart
 ```
 
 到这里，我们创建并使用了自己的第一个chart！
-
