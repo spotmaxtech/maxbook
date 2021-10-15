@@ -46,7 +46,7 @@ Parameters:
     Description: EC2 instance type for the maxGroupServer.
     Type: String
     Default: t2.micro
-    AllowedValues: 
+    AllowedValues:
       - t2.micro
       - t2.small
       - t2.medium
@@ -108,44 +108,10 @@ Parameters:
     ConstraintDescription: Must be a valid EC2 instance type
 Mappings:
   AWSRegionAMI:
-    us-east-1:
-      AMIid: ami-0d5eff06f840b45e9
-    us-east-2:
-      AMIid: ami-077e31c4939f6a2f3
-    us-west-1:
-      AMIid: ami-04468e03c37242e1e
-    us-west-2:
-      AMIid: ami-0cf6f5c8a62fa5da6
-    ap-east-1:
-      AMIid: ami-0aca22cb23f122f27
-    ap-south-1:
-      AMIid: ami-010aff33ed5991201
-    ap-northeast-3:
-      AMIid: ami-056314235f4f5d523
-    ap-northeast-2:
-      AMIid: ami-0f2c95e9fe3f8f80e
-    ap-southeast-1:
-      AMIid: ami-02f26adf094f51167
-    ap-southeast-2:
-      AMIid: ami-0186908e2fdeea8f3
-    ap-northeast-1:
-      AMIid: ami-0ca38c7440de1749a
-    ca-central-1:
-      AMIid: ami-0101734ab73bd9e15
-    eu-central-1:
-      AMIid: ami-043097594a7df80ec 
-    eu-west-1:
-      AMIid: ami-063d4ab14480ac177
-    eu-west-2:
-      AMIid: ami-06dc09bb8854cbde3
-    eu-west-3:
-      AMIid: ami-0b3e57ee3b63dd76b
-    eu-north-1:
-      AMIid: ami-050fdc53cf6ba8f7f
-    me-south-1:
-      AMIid: ami-0880769bc15eeec4f
-    sa-east-1:
-      AMIid: ami-05373777d08895384                                                                 
+    cn-northwest-1:
+      AMIid: ami-0b6ea802f7ef3bcdb
+    cn-north-1:
+      AMIid: ami-0321b103323b5d57b
 
 Resources:
   InstanceProfile:
@@ -154,6 +120,7 @@ Resources:
       Path: /
       Roles:
         - !Ref SpotmaxRole
+    DeletionPolicy: Delete
     Metadata:
       'AWS::CloudFormation::Designer':
         id: d043518b-25ef-427f-a304-5c12a53f5a09
@@ -194,6 +161,7 @@ Resources:
             cd /data/spotmax/ && wget -q -O max_group_pro.tar  "https://loginserver.spotmaxtech.com/download_max_group?cloud=aws&type=pro" && tar xf max_group_pro.tar && rm -rf max_group_pro.tar
             cd /data/spotmax/ && /usr/bin/supervisord -c /etc/supervisord.conf
 
+    DeletionPolicy: Delete
     Metadata:
       'AWS::CloudFormation::Designer':
         id: f040f809-5b6d-4a76-bf5f-a2d147be32e6
@@ -208,7 +176,7 @@ Resources:
           - Effect: Allow
             Principal:
               Service:
-              - ec2.amazonaws.com
+              - ec2.amazonaws.com.cn
             Action:
               - sts:AssumeRole
       Path: /
@@ -227,6 +195,7 @@ Resources:
                   - 'iam:GetRole'
                   - 'iam:PassRole'
                 Resource: '*'
+    DeletionPolicy: Delete
     Metadata:
       'AWS::CloudFormation::Designer':
         id: ef9ca94b-8115-4146-b058-ee2ceaf4f6b7
