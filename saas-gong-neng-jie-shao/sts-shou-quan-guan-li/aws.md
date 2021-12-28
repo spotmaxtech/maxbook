@@ -8,7 +8,7 @@
 
 ![](<../../.gitbook/assets/image (172).png>)
 
-3、为角色添加权限，权限操作请移步到[权限管理](https://docs.spotmaxtech.com/saas-gong-neng-jie-shao/quan-xian-guan-li/e-li-yun)
+3、为角色添加权限，权限操作请移步到[权限管理](https://docs.spotmaxtech.com/saas-gong-neng-jie-shao/quan-xian-guan-li/aws)
 
 4、为角色添加标签（非必要）
 
