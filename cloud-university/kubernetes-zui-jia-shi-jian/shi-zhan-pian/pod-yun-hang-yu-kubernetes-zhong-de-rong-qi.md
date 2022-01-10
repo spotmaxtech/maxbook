@@ -30,10 +30,10 @@ spec:
 {% hint style="info" %}
 为便于做练习，适当清理之前的资源是个好习惯，常用指令
 
-* **kubens **查看当前所在的命名空间，防止误操作别人的资源
+* **kubens** 查看当前所在的命名空间，防止误操作别人的资源
 * **kubectl get all**   查看已有部署
 * **kubectl delete replicationcontroller/kubia** 删除副本控制器，pod也会被自动删除
-* **kubectl delete pods --all **删除全部的pod
+* **kubectl delete pods --all** 删除全部的pod
 {% endhint %}
 
 ```
