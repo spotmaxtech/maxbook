@@ -1,5 +1,5 @@
 ---
-description: Welcome to spotmax document center
+description: Welcome to SpotMax document center
 ---
 
 # Welcome
