@@ -2,6 +2,10 @@
 
 ## 热池功能
 
+### 拟解决的问题
+
+当在AWS上使用Spot时，经常会遇到大规模中断，然而大规模中断后由于实例与APP程序启动时间较慢，导致线上机器数不够，从而影响业务稳定使用，因此为了解决这问题，开发了热池功能，目的减少实例与APP程序的开机时间，并且保证业务有稳定的实例资源。
+
 ### 特点：
 
 1、可根据伸缩组中的实例类型，在热 池中创建备用实例。当用户服务遭 遇中断时，可直接从热池调取备用 实例，更快完成补偿，保障业务稳定&#x20;
@@ -20,7 +24,7 @@
 
 ### 测试例子：
 
-访问github地址：[https://github.com/spotmaxtech/test-aws-warn-pool](https://github.com/spotmaxtech/test-aws-warn-pool)
+请访问github地址：[https://github.com/spotmaxtech/test-aws-warn-pool](https://github.com/spotmaxtech/test-aws-warn-pool)
 
 ## 带有2块磁盘，需要继续保留非root盘：
 
