@@ -1,6 +1,28 @@
 # AWS示例
 
-## 带有2块磁盘的，非root盘需要继续保留的：
+## 热池功能
+
+### 特点：
+
+1、可根据伸缩组中的实例类型，在热 池中创建备用实例。当用户服务遭 遇中断时，可直接从热池调取备用 实例，更快完成补偿，保障业务稳定&#x20;
+
+2、支持实例休眠，实例启动更快捷， 用户可实现秒级启动应用
+
+### 逻辑：
+
+![](<../../.gitbook/assets/image (207).png>)
+
+### 开启：
+
+进入saas平台，选中左边导航栏<mark style="color:red;">MaxGroup</mark>，点击<mark style="color:red;">迁移</mark>选中要开启热池的ASG，点击<mark style="color:red;">配置</mark>，或者点击<mark style="color:red;">批量配置</mark>，配置热池功能：
+
+![](<../../.gitbook/assets/image (206).png>)
+
+### 测试例子：
+
+访问github地址：[https://github.com/spotmaxtech/test-aws-warn-pool](https://github.com/spotmaxtech/test-aws-warn-pool)
+
+## 带有2块磁盘，需要继续保留非root盘：
 
 ![](<../../.gitbook/assets/image (101).png>)
 
@@ -42,9 +64,9 @@ done
 
 1.在使用k8s的autoscaling上打上如下标签：
 
-spotmax:k8s_config_file_path    /data/spotmax/k8sconfig
+spotmax:k8s\_config\_file\_path    /data/spotmax/k8sconfig
 
-spotmax:detaching_delay_seconds    80
+spotmax:detaching\_delay\_seconds    80
 
 ![](../../.gitbook/assets/1623398565432.jpg)
 
@@ -74,7 +96,7 @@ aws eks --region <region-code> update-kubeconfig --name <cluster_name> --kubecon
 
 ## cloudwatch指标监控
 
-cloudwatch集成了max_group事件指标监控，可根据时间指标查询到max_group的工作记录，如下图所示
+cloudwatch集成了max\_group事件指标监控，可根据时间指标查询到max\_group的工作记录，如下图所示
 
 ![](<../../.gitbook/assets/image (113).png>)
 
@@ -82,7 +104,7 @@ cloudwatch集成了max_group事件指标监控，可根据时间指标查询到m
 
 ### 处理时间保证
 
-可以保证请求在被处理期间 (0-350分钟内) ，用于处理请求的实例不被中断。 
+可以保证请求在被处理期间 (0-350分钟内) ，用于处理请求的实例不被中断。&#x20;
 
 ### 特点
 
@@ -104,6 +126,6 @@ cloudwatch集成了max_group事件指标监控，可根据时间指标查询到m
 ![](../../.gitbook/assets/1623403131258.jpg)
 
 3\. 针对以上AutoScaling Group添加以下Tag\
- spotmax:instance_duration_hours      1
+&#x20;spotmax:instance\_duration\_hours      1
 
-spotmax:gurantee_living_mins: 50，（表示50分钟后，maxgroup会将替换新实例，此实例将下线）
+spotmax:gurantee\_living\_mins: 50，（表示50分钟后，maxgroup会将替换新实例，此实例将下线）
