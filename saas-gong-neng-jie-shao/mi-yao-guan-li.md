@@ -8,13 +8,13 @@
 
 2、进入个人中心
 
-![](<../.gitbook/assets/image (203).png>)
+![](<../.gitbook/assets/image (203) (1).png>)
 
 
 
 3、点击服务业务，成本优化
 
-![](<../.gitbook/assets/image (202).png>)
+![](<../.gitbook/assets/image (202) (1).png>)
 
 4、如果用户没有填写key\&secret，进入后台中，要求用户填写key\&secret，填写完毕之后，可以进行权限检测，查看是否有权限使用
 
