@@ -6,53 +6,59 @@
 
 ```
 $ helm search hub redis
-URL                                               	CHART VERSION	APP VERSION  	DESCRIPTION
-https://hub.helm.sh/charts/hephy/redis            	v2.4.0       	             	A Redis database for use inside a Kubernetes cl...
-https://hub.helm.sh/charts/choerodon/redis        	0.2.3        	0.2.3        	redis for Choerodon
-https://hub.helm.sh/charts/bitnami/redis          	10.4.1       	5.0.7        	Open source, advanced key-value store. It is of...
-https://hub.helm.sh/charts/incubator/redis-cache  	0.5.0        	4.0.12-alpine	A pure in-memory redis cache, using statefulset...
-... ...
+URL                                                     CHART VERSION   APP VERSION             DESCRIPTION                                       
+https://artifacthub.io/packages/helm/choerodon/...      16.4.1          6.2.6                   Redis(TM) is an open source, advanced key-value...
+https://artifacthub.io/packages/helm/wenerme/redis      16.8.5          6.2.6                   Redis(TM) is an open source, advanced key-value...
+https://artifacthub.io/packages/helm/bitnami-ak...      16.8.9          6.2.7                   Redis(TM) is an open source, advanced key-value...
+https://artifacthub.io/packages/helm/wener/redis        16.8.5          6.2.6                   Redis(TM) is an open source, advanced key-value...
+https://artifacthub.io/packages/helm/pascaliske...      0.0.3           6.2.6                   A Helm chart for Redis                            
+https://artifacthub.io/packages/helm/bitnami/redis      16.8.9          6.2.7                   Redis(TM) is an open source, advanced key-value...
 ```
 
-查到了很多chart可以用来安装redis，还包含cluster模式的。
+查到了很多chart可以用来安装redis，来自不同的维护组织。
 
-> * `helm search hub` 搜索的是 [the Helm Hub](https://hub.helm.sh)，这个hub索引了几十个存储库的内容，所以能搜多非常多的chart
+> * `helm search hub` 搜索的是 [https://artifacthub.io/](https://artifacthub.io)，这个hub索引了几十个存储库的内容，所以能搜多非常多的chart
+
+{% hint style="info" %}
+helm search命令说明
+{% endhint %}
 
 ```
-$ helm search repo redis
-NAME                            	CHART VERSION	APP VERSION	DESCRIPTION
-stable/prometheus-redis-exporter	3.2.0        	1.0.4      	Prometheus exporter for Redis metrics
-stable/redis                    	10.2.1       	5.0.7      	Open source, advanced key-value store. It is of...
-stable/redis-ha                 	4.2.0        	5.0.6      	Highly available Kubernetes implementation of R...
-stable/sensu                    	0.2.3        	0.28       	Sensu monitoring framework backed by the Redis ...
+$ helm search
+
+Usage:
+  helm search [command]
+
+Available Commands:
+  hub         search for charts in the Artifact Hub or your own hub instance
+  repo        search repositories for a keyword in charts
 ```
 
-使用repo也能查到redis，数量少一些。
+也可以搜索自己本地管理的存储库，我们添加一个
 
-> * `helm search repo` 搜索的是本地管理的repositories存储库，helm客户端会从这些库里搜索(添加方法 `helm repo add`). 这个搜索操作读区本地的缓存列表，有必要时可以更新一下`helm repo update`
-
-```bash
+```
 # 添加bitnami，一个维护的比较好的扩展库
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 "bitnami" has been added to your repositories
 
 $ helm repo list
 NAME   	URL
-stable 	https://kubernetes-charts.storage.googleapis.com/
 bitnami	https://charts.bitnami.com/bitnami
 ```
 
-然后我们再次搜索一下redis
+使用repo再搜索一下redis
 
 ```
 $ helm search repo redis
-NAME                            	CHART VERSION	APP VERSION	DESCRIPTION
-bitnami/redis                   	10.3.0       	5.0.7      	Open source, advanced key-value store. It is of...
-stable/prometheus-redis-exporter	3.2.0        	1.0.4      	Prometheus exporter for Redis metrics
-stable/redis                    	10.2.1       	5.0.7      	Open source, advanced key-value store. It is of...
-stable/redis-ha                 	4.2.0        	5.0.6      	Highly available Kubernetes implementation of R...
-stable/sensu                    	0.2.3        	0.28       	Sensu monitoring framework backed by the Redis ...
+
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+bitnami/redis           16.8.9          6.2.7           Redis(TM) is an open source, advanced key-value...
+bitnami/redis-cluster   7.5.2           6.2.7           Redis(TM) is an open source, scalable, distribu...
 ```
+
+使用repo也能查到redis，数量少一些。
+
+> * `helm search repo` 搜索的是本地管理的repositories存储库，helm客户端会从这些库里搜索(添加方法 `helm repo add`). 这个搜索操作读区本地的缓存列表，有必要时可以更新一下`helm repo update`
 
 ## helm install
 
@@ -208,7 +214,7 @@ NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
 
 
 
-### helm repo list  
+### helm repo list &#x20;
 
 列出所有的存储库列表
 
@@ -219,7 +225,7 @@ stable 	https://kubernetes-charts.storage.googleapis.com/
 bitnami	https://charts.bitnami.com/bitnami
 ```
 
-### helm repo add 
+### helm repo add&#x20;
 
 添加存储库
 
