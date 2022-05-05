@@ -275,33 +275,51 @@ $ helm repo remove bitnami
 ```bash
 $ helm repo update                                                                                                                                                             1 ↵
 Hang tight while we grab the latest from your chart repositories...
-...Successfully got an update from the "stable" chart repository
 ...Successfully got an update from the "bitnami" chart repository
 Update Complete. ⎈ Happy Helming!⎈
 ```
 
 ## 使用参数定制化安装helm install
 
-前面有提到使用values机制可以给一些开源的chart修改参数，按照我们实际的环境安装这个chart。上面的happy-panda已经用过一次，这里再补充一下。
+前面有提到使用values机制可以给一些开源的chart修改参数，按照我们实际的环境安装这个chart。上面的myredis已经用过一次，这里再补充一下。
 
 ```bash
 # 使用show values来查看都有哪些参数可以修改
-$ helm show values stable/mariadb
+$ helm show values bitnami/redis
 ... ...
-image:
-  registry: docker.io
-  repository: bitnami/mariadb
-  tag: 10.3.22-debian-10-r0
+## @section Redis&trade; Sentinel configuration parameters
+##
+
+sentinel:
+  ## @param sentinel.enabled Use Redis&trade; Sentinel on Redis&trade; pods.
+  ## IMPORTANT: this will disable the master and replicas services and
+  ## create a single Redis&trade; service exposing both the Redis and Sentinel ports
+  ##
+  enabled: false
+  ## Bitnami Redis&trade; Sentinel image version
+  ## ref: https://hub.docker.com/r/bitnami/redis-sentinel/tags/
+  ## @param sentinel.image.registry Redis&trade; Sentinel image registry
+  ## @param sentinel.image.repository Redis&trade; Sentinel image repository
+  ## @param sentinel.image.tag Redis&trade; Sentinel image tag (immutable tags are recommended)
+  ## @param sentinel.image.pullPolicy Redis&trade; Sentinel image pull policy
+  ## @param sentinel.image.pullSecrets Redis&trade; Sentinel image pull secrets
+  ## @param sentinel.image.debug Enable image debug mode
+  ##
+  image:
+    registry: docker.io
+    repository: bitnami/redis-sentinel
+    tag: 6.2.7-debian-10-r0
 ... ...
 ```
 
-能看到非常多的参数，这时候可以采用如上面的happy-panda.yaml模式：
+能看到非常多的参数，这时候可以采用myredis.yaml模式：
 
 ```bash
-# happy-panda.yaml
-mariadbUser: user1
+# myredis.yaml
+image: 
+    tag: 6.2.6
 ```
 
 {% hint style="info" %}
-覆盖参数有一些较复杂点的方式，如--set指令，留作扩展练习
+覆盖参数myredis.yaml的操作留作练习
 {% endhint %}
