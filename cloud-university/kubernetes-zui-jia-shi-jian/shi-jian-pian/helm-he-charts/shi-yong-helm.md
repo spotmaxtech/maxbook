@@ -65,56 +65,83 @@ bitnami/redis-cluster   7.5.2           6.2.7           Redis(TM) is an open sou
 使用helm安装一下mysql，现在社区版本是mariadb了。
 
 ```
-$ helm install <happy-panda这里可以改名字> stable/mariadb                                                                                                                                    130 ↵
-NAME: happy-panda
-LAST DEPLOYED: Mon Feb 10 16:28:14 2020
-NAMESPACE: liuzongxian
+$ helm install myredis bitnami/redis
+
+NAME: myredis
+LAST DEPLOYED: Thu May  5 07:51:13 2022
+NAMESPACE: default
 STATUS: deployed
 REVISION: 1
+TEST SUITE: None
 NOTES:
-Please be patient while the chart is being deployed
+CHART NAME: redis
+CHART VERSION: 16.8.9
+APP VERSION: 6.2.7
 
-Tip:
+** Please be patient while the chart is being deployed **
 
-  Watch the deployment status using the command: kubectl get pods -w --namespace liuzongxian -l release=happy-panda
+Redis&trade; can be accessed on the following DNS names from within your cluster:
 
-Services:
+    myredis-master.default.svc.cluster.local for read/write operations (port 6379)
+    myredis-replicas.default.svc.cluster.local for read-only operations (port 6379)
 
-  echo Master: happy-panda-mariadb.liuzongxian.svc.cluster.local:3306
-  echo Slave:  happy-panda-mariadb-slave.liuzongxian.svc.cluster.local:3306
 
-Administrator credentials:
 
-  Username: root
-  Password : $(kubectl get secret --namespace liuzongxian happy-panda-mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 --decode)
+To get your password run:
+
+    export REDIS_PASSWORD=$(kubectl get secret --namespace default myredis -o jsonpath="{.data.redis-password}" | base64 --decode)
+
+To connect to your Redis&trade; server:
+
+1. Run a Redis&trade; pod that you can use as a client:
+
+   kubectl run --namespace default redis-client --restart='Never'  --env REDIS_PASSWORD=$REDIS_PASSWORD  --image docker.io/bitnami/redis:6.2.7-debian-10-r0 --command -- sleep infinity
+
+   Use the following command to attach to the pod:
+
+   kubectl exec --tty -i redis-client \
+   --namespace default -- bash
+
+2. Connect using the Redis&trade; CLI:
+   REDISCLI_AUTH="$REDIS_PASSWORD" redis-cli -h myredis-master
+   REDISCLI_AUTH="$REDIS_PASSWORD" redis-cli -h myredis-replicas
+
+To connect to your database from outside the cluster execute the following commands:
+
+    kubectl port-forward --namespace default svc/myredis-master : &
+    REDISCLI_AUTH="$REDIS_PASSWORD" redis-cli -h 127.0.0.1 -p
 ```
 
 输出了许多信息，有兴趣可以多看几眼，不难理解。
 
 {% hint style="info" %}
-其中happy-panda是发版release的名字，指定不同的名字可以多次发版，他们互相不影响
+其中myredis是发版release的名字，指定不同的名字可以多次发版，他们互相不影响
 {% endhint %}
 
 ```bash
 # list(ls) 列出使用helm管理的发版
 $ helm ls
-NAME       	NAMESPACE  	REVISION	UPDATED                             	STATUS  	CHART        	APP VERSION
-happy-panda	liuzongxian	1       	2020-02-10 16:28:14.695377 +0800 CST	deployed	mariadb-7.3.1	10.3.21
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+myredis default         1               2022-05-05 07:51:13.977288731 +0000 UTC deployed        redis-16.8.9    6.2.7
 ```
 
 ```bash
 # status 会打印安装后的状态，如同一开始install后输出的信息一样
-$ helm status happy-panda
-NAME: happy-panda
-LAST DEPLOYED: Mon Feb 10 16:28:14 2020
-NAMESPACE: liuzongxian
+$ helm status myredis
+
+NAME: myredis
+LAST DEPLOYED: Thu May  5 07:51:13 2022
+NAMESPACE: default
 STATUS: deployed
 REVISION: 1
+TEST SUITE: None
 NOTES:
-Please be patient while the chart is being deployed
+CHART NAME: redis
+CHART VERSION: 16.8.9
+APP VERSION: 6.2.7
 ```
 
-这样我们就安装了mysql数据库
+这样我们就安装了reids数据库（1个master3个replica）
 
 ## helm upgrade
 
