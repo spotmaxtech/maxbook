@@ -151,24 +151,23 @@ APP VERSION: 6.2.7
 升级需要现有版本并根据您提供的信息进行升级。 因为Kubernetes chart可能很大而且很复杂，所以Helm会尝试执行最不具有侵入性的升级。 它只会更新自上次发布以来发生更改的内容。
 {% endhint %}
 
-我们来做一下升级，使用这个yaml，只改动一个参数
+我们来做一下升级，只改动一个参数
 
 ```yaml
-# happy-panda.yaml
-mariadbUser: user1
+$ helm upgrade myredis bitnami/redis --set image.tag=6.2.6
 ```
 
 ```bash
-# 升级指令
-$ helm upgrade -f happy-panda.yaml happy-panda stable/mariadb
-Release "happy-panda" has been upgraded. Happy Helming!
-NAME: happy-panda
-LAST DEPLOYED: Mon Feb 10 21:07:36 2020
-NAMESPACE: liuzongxian
+NAME: myredis
+LAST DEPLOYED: Thu May  5 08:16:16 2022
+NAMESPACE: default
 STATUS: deployed
 REVISION: 2
+TEST SUITE: None
 NOTES:
-Please be patient while the chart is being deployed
+CHART NAME: redis
+CHART VERSION: 16.8.9
+APP VERSION: 6.2.7
 ```
 
 观察helm的输出，REVISION变成了2，同时helm提供了查询values
@@ -179,22 +178,25 @@ values：是指在install的时候指定的个性化参数，后文的定制化�
 
 ```bash
 # 查看在发版中我们覆盖的参数
-$  helm get values happy-panda
+$  helm get values myredis
 USER-SUPPLIED VALUES:
-mariadbUser: user1
+image:
+  tag: 6.2.6
 ```
 
 好了，我们升级完成了！
+
+![](<../../../../.gitbook/assets/image (207).png>)
 
 ## helm rollback
 
 当我们需要回滚时，可以做rollback。回滚前，先看看发版的历史
 
 ```bash
-$ helm history happy-panda
-REVISION	UPDATED                 	STATUS    	CHART        	APP VERSION	DESCRIPTION
-1       	Mon Feb 10 16:28:14 2020	superseded	mariadb-7.3.1	10.3.21    	Install complete
-2       	Mon Feb 10 21:07:36 2020	deployed  	mariadb-7.3.1	10.3.21    	Upgrade complete
+$ helm history myredis
+REVISION        UPDATED                         STATUS          CHART           APP VERSION     DESCRIPTION     
+1               Thu May  5 07:51:13 2022        superseded      redis-16.8.9    6.2.7           Install complete
+2               Thu May  5 08:16:16 2022        deployed        redis-16.8.9    6.2.7           Upgrade complete
 ```
 
 {% hint style="info" %}
@@ -204,11 +206,11 @@ helm history \<release-name> 可以查看发版的历史信息
 有两个发版了，我们回滚到第一个版本
 
 ```bash
-$ helm rollback happy-panda 1                                                                                                                                                  1 ↵
+$ helm rollback myredis 1                                                                                                                                                  1 ↵
 Rollback was a success! Happy Helming!
 
 # 验证没有了指定values
-$ helm get values happy-panda
+$ helm get values myredis
 USER-SUPPLIED VALUES:
 null
 ```
@@ -226,8 +228,8 @@ Usage: helm rollback \<RELEASE>  \[REVISION] \[flags]
 现在我们要卸载掉这个发版
 
 ```bash
-$ helm uninstall happy-panda                                                                                                                                                   1 ↵
-release "happy-panda" uninstalled
+$ helm uninstall myredis                                                                                                                                                   1 ↵
+release "myredis" uninstalled
 
 $ helm ls
 NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
@@ -239,8 +241,6 @@ NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
 
 有时候我们想要用的chart没有在默认的repository存储库里，这个时候需要添加个性化的存储库.
 
-
-
 ### helm repo list &#x20;
 
 列出所有的存储库列表
@@ -248,7 +248,6 @@ NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
 ```bash
 $ helm repo list
 NAME   	URL
-stable 	https://kubernetes-charts.storage.googleapis.com/
 bitnami	https://charts.bitnami.com/bitnami
 ```
 
