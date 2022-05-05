@@ -53,9 +53,9 @@
 * [常见问题](kmax/chan-pin-jia-gou.md)
 * [相关协议](kmax/xiang-guan-xie-yi.md)
 
-## 云端跟我学 <a href="#cloud-university" id="cloud-university"></a>
+## Kubernetes使用者 <a href="#cloud-university" id="cloud-university"></a>
 
-* [跟我学容器](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
+* [Workshop](cloud-university/kubernetes-zui-jia-shi-jian/README.md)
   * [基础篇](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/README.md)
     * [Docker学习环境](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/docker-xue-xi-huan-jing.md)
     * [开始使用Docker](cloud-university/kubernetes-zui-jia-shi-jian/ji-chu-pian/kai-shi-shi-yong-docker.md)
