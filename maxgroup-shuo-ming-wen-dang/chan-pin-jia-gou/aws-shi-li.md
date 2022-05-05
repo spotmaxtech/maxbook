@@ -20,7 +20,7 @@
 
 进入saas平台，选中左边导航栏<mark style="color:red;">MaxGroup</mark>，点击<mark style="color:red;">迁移</mark>选中要开启热池的ASG，点击<mark style="color:red;">配置</mark>，或者点击<mark style="color:red;">批量配置</mark>，配置热池功能：
 
-![](<../../.gitbook/assets/image (206).png>)
+![](<../../.gitbook/assets/image (206) (1).png>)
 
 ### 测试例子：
 

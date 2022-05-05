@@ -4,7 +4,7 @@
 
 我们使用search查看有没有redis可以直接安装到kubernetes
 
-```
+```shell
 $ helm search hub redis
 URL                                                     CHART VERSION   APP VERSION             DESCRIPTION                                       
 https://artifacthub.io/packages/helm/choerodon/...      16.4.1          6.2.6                   Redis(TM) is an open source, advanced key-value...
@@ -23,7 +23,7 @@ https://artifacthub.io/packages/helm/bitnami/redis      16.8.9          6.2.7   
 helm search命令说明
 {% endhint %}
 
-```
+```shell
 $ helm search
 
 Usage:
@@ -36,7 +36,7 @@ Available Commands:
 
 也可以搜索自己本地管理的存储库，我们添加一个
 
-```
+```bash
 # 添加bitnami，一个维护的比较好的扩展库
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 "bitnami" has been added to your repositories
@@ -48,7 +48,7 @@ bitnami	https://charts.bitnami.com/bitnami
 
 使用repo再搜索一下redis
 
-```
+```bash
 $ helm search repo redis
 
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
@@ -62,9 +62,9 @@ bitnami/redis-cluster   7.5.2           6.2.7           Redis(TM) is an open sou
 
 ## helm install
 
-使用helm安装一下mysql，现在社区版本是mariadb了。
+使用helm安装一下redis。
 
-```
+```bash
 $ helm install myredis bitnami/redis
 
 NAME: myredis
@@ -142,6 +142,12 @@ APP VERSION: 6.2.7
 ```
 
 这样我们就安装了reids数据库（1个master3个replica）
+
+<img src="../../../../.gitbook/assets/image (206).png" alt="" data-size="original">
+
+{% hint style="info" %}
+此时可以关联到maxcloud bundle展示
+{% endhint %}
 
 ## helm upgrade
 
