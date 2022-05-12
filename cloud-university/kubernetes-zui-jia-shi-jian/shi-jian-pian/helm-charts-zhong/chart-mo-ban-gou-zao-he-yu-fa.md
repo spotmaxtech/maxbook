@@ -1,5 +1,14 @@
 # Chart模版构造和语法
 
+{% hint style="info" %}
+本小节
+
+* 初始化一个chart，起个应用名字webapp
+* 查看预定义的Chart和Values两个变量结构与内容
+* 查看deployment文件使用上述变量
+* Helm有用的几个命令
+{% endhint %}
+
 我们再初始化一个chart
 
 ```
