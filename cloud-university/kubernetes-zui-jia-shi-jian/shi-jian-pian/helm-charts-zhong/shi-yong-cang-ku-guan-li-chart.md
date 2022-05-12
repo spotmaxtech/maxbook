@@ -89,6 +89,16 @@ NOTES:
 
 ![](<../../../../.gitbook/assets/image (208).png>)
 
+设置image版本升级一下试试
+
+```
+$ helm upgrade webapp --version 0.1.0 maxcloud/webapp
+
+$ helm upgrade webapp --version 0.1.0 maxcloud/webapp --set image.tag=1.21.0
+```
+
+
+
 {% hint style="info" %}
 常用命令
 
