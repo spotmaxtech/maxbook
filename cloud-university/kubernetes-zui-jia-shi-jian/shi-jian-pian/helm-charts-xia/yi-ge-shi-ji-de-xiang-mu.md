@@ -5,7 +5,7 @@
 
 * 资源类型有哪些
 * 提取了哪些变量
-* 常用的语法
+* 常用的几个语法
 {% endhint %}
 
 ### 准备工作
@@ -912,9 +912,9 @@ data:
 {{ include "mychart.app" . | indent 2 }
 ```
 
-#### nindent
+{% hint style="info" %}
+helm install --dry-run mychart ./mychart
 
-
-
-#### - 横线
+dry-run方法可以校验正确与否
+{% endhint %}
 
