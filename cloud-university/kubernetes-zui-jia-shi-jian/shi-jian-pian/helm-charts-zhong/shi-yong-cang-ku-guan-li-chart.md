@@ -87,7 +87,7 @@ NOTES:
 
 查看资源以及可以在maxcloud做个绑定
 
-![](<../../../../.gitbook/assets/image (208).png>)
+![](<../../../../.gitbook/assets/image (208) (1).png>)
 
 设置image版本升级一下试试
 

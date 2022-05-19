@@ -8,7 +8,7 @@
 
 ## 二、Saas页面添加日志收集
 
-1、进入[spotmax成本优化](https://manage.spotmaxtech.com) 点击 **立刻添加** 按钮
+1、进入[spotmax成本优化](https://manage.spotmaxtech.com/) 点击 **立刻添加** 按钮
 
 **注意！**该功能需要授权两个权限：
 

@@ -1,6 +1,6 @@
 # 下载Max Group（AWS请使用上述cloudformation）
 
-1、登录网站：[http://spotmax.mobvista.com/](http://spotmax.mobvista.com)
+1、登录网站：[http://spotmax.mobvista.com/](http://spotmax.mobvista.com/)
 
 2、注册/登录用户，点击[下载/购买](http://spotmax.mobvista.com/pricing)
 

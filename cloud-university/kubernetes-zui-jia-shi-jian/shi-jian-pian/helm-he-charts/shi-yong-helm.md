@@ -17,7 +17,7 @@ https://artifacthub.io/packages/helm/bitnami/redis      16.8.9          6.2.7   
 
 查到了很多chart可以用来安装redis，来自不同的维护组织。
 
-> * `helm search hub` 搜索的是 [https://artifacthub.io/](https://artifacthub.io)，这个hub索引了几十个存储库的内容，所以能搜多非常多的chart
+> * `helm search hub` 搜索的是 [https://artifacthub.io/](https://artifacthub.io/)，这个hub索引了几十个存储库的内容，所以能搜多非常多的chart
 
 {% hint style="info" %}
 helm search命令说明
