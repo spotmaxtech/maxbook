@@ -563,3 +563,358 @@ spec:
     interval: {{ .Values.serviceMonitor.interval | default "120s" }}
 
 ```
+
+### Values.yaml
+
+```yaml
+# Default values for predict.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+consul:
+  dc: "dc-consul"
+  cluster: "dc-consul.cluster.com"
+  keyprefix: "data/example"
+  service: "example.nps.svc.cluster"
+
+metrics:
+  prefix: "nps"
+
+server:
+  discard: 20
+  timeout: 40
+
+aws:
+  enabled: true
+  role: ""
+
+oss: {}
+  # If you are using oss, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'oss:'.
+  #enabled: true
+  #endpoint: ""
+  #id: ""
+  #secret: ""
+
+image:
+  repository: 818539432014.dkr.ecr.us-east-1.amazonaws.com/engineplus/mindalpha-serving-centos
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  #tag: "v1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podDisruptionBudget: {}
+  #minAvailable: 2
+  #maxUnavailable: 20%
+
+strategy:
+  rollingUpdate:
+    maxSurge: 25%
+    maxUnavailable: 0
+  type: RollingUpdate
+
+autoscaling:
+  minReplicas: 1
+  maxReplicas: 2
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 300
+      policies:
+      # type could be Percent or Pods
+      - type: Percent
+        value: 100
+        periodSeconds: 300
+      - type: Pods
+        value: 5
+        periodSeconds: 300
+      selectPolicy: Max
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 10
+        periodSeconds: 300
+      - type: Pods
+        value: 1
+        periodSeconds: 300
+      selectPolicy: Min
+  metrics:
+    cpu:
+      enabled: true
+      name: cpu
+      type: Resource
+      target:
+        type: Utilization
+        value: 50
+    mem:
+      enabled: false
+      name: memory
+      type: Resource
+      target:
+        type: AverageValue
+        value: 15Gi
+    gpu:
+      enabled: false
+      name: DCGM_FI_DEV_GPU_per_second
+      type: Pods
+      target:
+        type: AverageValue
+        value: 500
+    qps:
+      enabled: true
+      name: nps_server_perfermance_qps
+      type: Pods
+      target:
+        type: AverageValue
+        value: 60
+    latency:
+      enabled: false
+      name: nps_server_perfermance_latency_99
+      type: Pods
+      target:
+        type: AverageValue
+        value: 35
+
+livenessProbe:
+  initialDelaySeconds: 180
+
+readinessProbe:
+  initialDelaySeconds: 180
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
+podSecurityContext:
+  # fsGroup: 2000
+  fsGroup: 65534
+
+securityContext:
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 100
+  runAsGroup: 1000
+
+service:
+  type: NodePort
+  ports:
+    tcp:
+      port: 20101
+      protocol: TCP
+    http: 
+      port: 10102
+      protocol: TCP
+    metrics: 
+      port: 18080
+      protocol: TCP
+      path: "/metrics"
+
+annotations: |
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "{{ .Values.service.ports.metrics.port }}"
+  prometheus.io/path: "{{ .Values.service.ports.metrics.path }}"
+
+serviceMonitor:
+  release: prometheus-stack
+
+factor:
+  unknown: 400
+  instance:
+    g4dn.4xlarge: 1600
+    m5.4xlarge: 400
+    r5.4xlarge: 400
+    c5.4xlarge: 400
+
+emptyDir:
+  sizeLimit: 100Gi
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+  #
+
+gpu:
+  # gpu corporation maybe nvidia or amd
+  enabled: true
+  corporation: nvidia.com
+  count: 1
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 800m
+    memory: 16Gi
+  requests:
+    cpu: 500m
+    memory: 8Gi
+
+nodeSelector: {}
+  # service_type: nps-nodes
+
+tolerations: []
+
+affinity: {}
+  #nodeAffinity:
+  #  preferredDuringSchedulingIgnoredDuringExecution:
+  #  - weight: 100
+  #    preference:
+  #      matchExpressions:
+  #      - key: nodestype
+  #        operator: In
+  #        values:
+  #        - nps-gpu-nodes
+  #podAntiAffinity:
+  #  requiredDuringSchedulingIgnoredDuringExecution:
+  #  - labelSelector:
+  #      matchExpressions:
+  #      - key: app.kubernetes.io/name
+  #        operator: In
+  #        values:
+  #        - predict
+  ##    topologyKey: kubernetes.io/hostname
+
+```
+
+### Chart.yaml
+
+```yaml
+apiVersion: v2
+appVersion: 1.2.8
+description: A Helm chart for Kubernetes
+name: predict
+type: application
+version: 0.1.1
+```
+
+### 出现的几个常用语法
+
+#### template
+
+```yaml
+{{- define "mychart.labels" }}
+  labels:
+    generator: helm
+    date: {{ now | htmlDate }}
+{{- end }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  {{- template "mychart.labels" }}
+data:
+  myvalue: "Hello World"
+  {{- range $key, $val := .Values.favorite }}
+  {{ $key }}: {{ $val | quote }}
+  {{- end }}
+```
+
+渲染后
+
+```yaml
+# Source: mychart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: running-panda-configmap
+  labels:
+    generator: helm
+    date: 2016-11-02
+data:
+  myvalue: "Hello World"
+  drink: "coffee"
+  food: "pizza"
+```
+
+看一下官方描述
+
+![](<../../../../.gitbook/assets/image (201).png>)
+
+#### include
+
+用这个例子说明下
+
+```yaml
+{{- define "mychart.app" -}}
+app_name: {{ .Chart.Name }}
+app_version: "{{ .Chart.Version }}"
+{{- end -}}
+```
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  labels:
+    {{ template "mychart.app" . }}
+data:
+  myvalue: "Hello World"
+  {{- range $key, $val := .Values.favorite }}
+  {{ $key }}: {{ $val | quote }}
+  {{- end }}
+{{ template "mychart.app" . }}
+```
+
+渲染出来是错误的
+
+```yaml
+# Source: mychart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: measly-whippet-configmap
+  labels:
+    app_name: mychart
+app_version: "0.1.0"
+data:
+  myvalue: "Hello World"
+  drink: "coffee"
+  food: "pizza"
+app_name: mychart
+app_version: "0.1.0"
+```
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  labels:
+{{ include "mychart.app" . | indent 4 }}
+data:
+  myvalue: "Hello World"
+  {{- range $key, $val := .Values.favorite }}
+  {{ $key }}: {{ $val | quote }}
+  {{- end }}
+{{ include "mychart.app" . | indent 2 }
+```
+
+#### nindent
+
+
+
+#### - 横线
+

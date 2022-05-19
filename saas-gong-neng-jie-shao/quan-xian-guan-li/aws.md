@@ -19,7 +19,7 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 * 为用户/角色授权：AmazonEC2ReadOnlyAccess、IAMReadOnlyAccess、MyCostExplorerReadOnlyAccess
 
-![](<../../.gitbook/assets/image (201) (1).png>)
+![](<../../.gitbook/assets/image (201) (1) (1).png>)
 
 ## **权限升级**
 
