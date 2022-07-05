@@ -27,7 +27,7 @@ alias k=kubectl
 现在正式在kubernetes中部署我们的应用
 
 ```
-kubectl run kubia --image=luksa/kubia --port=8080 --generator=run/v1
+kubectl run kubia --image=luksa/kubia --port=8080
 ```
 
 {% hint style="info" %}
@@ -45,7 +45,7 @@ kubia   1/1     Running   0          6s
 这里就能看到我们启动的pod了，现在需要让我们能访问它，大家可以先执行指令，感受效果，不用过多探究每个参数的含义。
 
 ```
-$ kubectl expose rc kubia --type=LoadBalancer --name kubia
+$ kubectl expose po kubia --type=LoadBalancer --name kubia
 service/kubia exposed
 ```
 
@@ -70,17 +70,83 @@ You've hit kubia-9bklf
 
 ## 横向伸缩你的应用
 
+用文件方式重新部署kubia服务
+
+首先清理之前的pod和service
+
 ```
-$ k get replicationcontrollers
-NAME    DESIRED   CURRENT   READY   AGE
-kubia   1         1         1       142m
+kubctl delete svc kubia
+kubctl delete po kubia
 ```
 
-{% hint style="info" %}
+```
+kubectl apply -f -<<EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubia-deployment
+  labels:
+    app: kubia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubia
+  template:
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kubia
+  name: kubia
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31958
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: kubia
+  sessionAffinity: None
+  type: LoadBalancer
+EOF
+```
+
+```
+$ k get replicaset
+NAME    DESIRED   CURRENT   READY   AGE
+kubia-deployment-69f875bf56   1         1         0       25s
+```
+
+```
+$ k get deployment 
+NAME READY UP-TO-DATE AVAILABLE AGE 
+kubia-deployment 0/3 3 0 3m5s
+```
+
+```
+$ k get svc
+NAME         TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)          AGE
+kubia        LoadBalancer   192.168.24.186   39.106.128.174   8080:31958/TCP   28s
+```
+
 大家需要记住一些缩写
 
-* rc：replicationcontrollers
+{% hint style="info" %}
+* rs：replicaset
 * po：pods
+* deploy： deployment
 
 这样能简化指令
 {% endhint %}
@@ -88,13 +154,19 @@ kubia   1         1         1       142m
 修改期望的副本即可以完成伸缩
 
 ```erlang
-$ k scale rc kubia --replicas=3
+$ k scale deploy kubia-deployment --replicas=3
+deployment.apps/kubia-deployment scaled
+$ k get po
+NAME                                READY   STATUS              RESTARTS   AGE
+kubia-deployment-546dd5d8b6-76lx9   1/1     Running             0          5m14s
+kubia-deployment-546dd5d8b6-tchln   0/1     ContainerCreating   0          30s
+kubia-deployment-546dd5d8b6-zptbt   0/1     ContainerCreating   0          30s
 ```
 
 因为我们的应用可以返回主机名，所以每次请求会获得不同的结果
 
 ```
-$ while true; do curl http://47.56.228.139:8080; sleep 1;  done
+$ while true; do curl http://39.106.128.174:8080; sleep 1;  done
 You've hit kubia-qr7r9
 You've hit kubia-qr7r9
 You've hit kubia-9bklf
@@ -106,7 +178,7 @@ You've hit kubia-9bklf
 
 ```
 $ kubectl run busybox --rm -i --tty --image busybox -- sh
-$ while true; do wget -O- http://<172.22.2.107>:8080; sleep 1;  done
+$ while true; do wget -O- http://<39.106.128.174>:8080; sleep 1;  done
 ```
 
 ## 查看应用跑在哪个节点
@@ -193,8 +265,8 @@ spec:
 {% endhint %}
 
 ```erlang
-$ k delete service/kubia replicationcontroller/kubia
-service "kubia" deleted replicationcontroller "kubia" deleted
+$ k delete service/kubia deployment/kubia-
+service "kubia" deleted deployment "kubia-deployment" deleted
 ```
 
 使用这个yaml文件告诉kubernetes部署
