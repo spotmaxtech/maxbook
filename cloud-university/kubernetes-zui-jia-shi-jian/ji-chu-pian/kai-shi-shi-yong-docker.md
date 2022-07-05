@@ -5,7 +5,7 @@
 在安装好的环境中，运行现成的hello world容器
 
 ```
-docker run --rm busybox echo "Hello world"
+docker run --rm busybox echo "Hello world" 
 ```
 
 {% hint style="info" %}
