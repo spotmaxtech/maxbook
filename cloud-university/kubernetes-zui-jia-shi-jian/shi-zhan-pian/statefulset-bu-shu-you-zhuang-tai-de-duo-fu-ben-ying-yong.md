@@ -8,13 +8,16 @@
 
 ```yaml
 # cat kubia-statefulset.yaml
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet         #使用了stateful
 metadata: 
   name: kubia
 spec:
   serviceName: kubia
   replicas: 2
+  selector:
+    matchLabels:
+     app: kubia
   template:
     metadata:
       labels:
@@ -38,7 +41,7 @@ spec:
           storage: 20Gi
       accessModes:
       - ReadWriteOnce
-      storageClassName: "disk"
+      storageClassName: "alicloud-disk-available"
 ```
 
 创建它看看，大家能够注意到，每个pod名字不再是随机码了，而是有了编号，他们也就是有了固定的名字了，所以对应的磁盘也是有了名字
