@@ -25,12 +25,15 @@ www.listen(8080);
 
 ```yaml
 # cat kubia-deployment-v1.yaml
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment   # 我们这里引入了Deployment
 metadata:
   name: kubia
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+     app: kubia
   template:
     metadata:
       name: kubia
@@ -89,12 +92,15 @@ Deployment 是我们常用的发版方式，且--record记录发版历史，这�
 
 ```yaml
 # cat kubia-deployment-and-service-v1.yaml                                                                                                                                   130 ↵
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kubia
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+     app: kubia
   template:
     metadata:
       name: kubia
