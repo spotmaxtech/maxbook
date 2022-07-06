@@ -198,34 +198,9 @@ kubectl get pods -o wide
 
 通过这些操作，是不是感觉比docker方式简单许多，后面还有更精彩的！
 
-## Kubernetes的Dashboard
+## Maxcloud的K8S操作界面
 
-我们的学习环境安装了kubernetes集群的面板，可以一探究竟
-
-{% hint style="info" %}
-请使用https访问47-56-188-118，后续可能会随时变更，不准确请联系管理员
-{% endhint %}
-
-提示登陆，请选择令牌
-
-![](<../../../.gitbook/assets/image (52).png>)
-
-这里令牌是一个用户的口令，使用正确的令牌就能代表一个用户登陆了。请按照下述命令获取它的令牌
-
-```
-$ kubectl get secret --namespace kube-dashboard
-NAME                                         TYPE                                  DATA   AGE
-dashboard-kubernetes-dashboard               Opaque                                0      16m
-dashboard-kubernetes-dashboard-token-tr8td   kubernetes.io/service-account-token   3      16m
-default-token-xb5sv                          kubernetes.io/service-account-token   3      36m
-sh.helm.release.v1.dashboard.v1              helm.sh/release.v1                    1      16m
-```
-
-上面有个token的name就是令牌了，查看下，如：
-
-```
-k describe secrets dashboard-kubernetes-dashboard-token-tr8td --namespace kube-dashboard
-```
+[https://maxcloud.spotmaxtech.com/](https://maxcloud.spotmaxtech.com/)
 
 登陆后请浏览一些资源，例如node，其他内容我们后面章节会涉及
 
