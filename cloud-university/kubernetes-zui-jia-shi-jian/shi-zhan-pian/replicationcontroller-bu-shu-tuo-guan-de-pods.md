@@ -136,7 +136,7 @@ spec:
 
 ```yaml
 # cat kubia-replicaset.yaml
-apiVersion: apps/v1beta2     #api有变化
+apiVersion: apps/v1     #api有变化
 kind: ReplicaSet             #和上面的不同，大家用这个
 metadata:
   name: kubia
@@ -241,7 +241,7 @@ replicaset.apps/kubia   5         5         5       5m35s
 
 ```yaml
 # cat kubia-daemonset.yaml
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet        #这里是Daemonset
 metadata:
   name: kubia
@@ -264,7 +264,7 @@ spec:
 
 ```yaml
 # cat ssd-monitor-daemonset.yaml
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: ssd-monitor        
@@ -317,6 +317,7 @@ daemonset.apps/ssd-monitor created
 $ k delete daemonset.apps/ssd-monitor
 或
 $ k delete all --all # 确保空间没有重要的服务
+$ k delete ds ssd-monitor
 ```
 
 Well Done！到达这里你已经是半个DevOps了，这里是kubernetes的核心功能，能够自动的帮你管理副本集的状态。
