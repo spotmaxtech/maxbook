@@ -9,6 +9,28 @@ $ k create -f kubia-replicaset.yaml                                             
 replicaset.apps/kubia created
 ```
 
+```
+k create -f -<<EOF
+apiVersion: apps/v1
+kind: ReplicaSet             
+metadata:
+  name: kubia
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia            
+  template:
+    metadata:
+      labels:
+        app: kubia           
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia
+EOF
+```
+
 服务也有yaml描述文件
 
 ```yaml
@@ -136,7 +158,7 @@ wget -O- http://10.32.100.48:<30123换成你自己的端口30XXX>
 ### 使用负载均衡器
 
 {% hint style="warning" %}
-最简单但是要换钱的方式 :sweat_smile: 
+最简单但是要换钱的方式 :sweat\_smile:&#x20;
 {% endhint %}
 
 ```yaml
@@ -180,7 +202,7 @@ ingress方式非常常用
 
 ```yaml
 # cat kubia-ingress.yaml
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kubia
@@ -209,7 +231,7 @@ NAME    HOSTS               ADDRESS         PORTS   AGE
 kubia   kubia.example.com   47.52.155.217   80      60s
 ```
 
-从上面的Address代表了nginx外网ip，配置到/etc/hosts下，我们就可以用浏览器输入域名访问了，对必须输入域名。 :stuck_out_tongue: 
+从上面的Address代表了nginx外网ip，配置到/etc/hosts下，我们就可以用浏览器输入域名访问了，对必须输入域名。 :stuck\_out\_tongue:&#x20;
 
 {% hint style="danger" %}
 这里有个扩展，就是配置nginx的443安全访问，我们不在课程中讲解了
