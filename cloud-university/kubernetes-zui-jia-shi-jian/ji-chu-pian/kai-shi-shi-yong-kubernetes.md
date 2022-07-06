@@ -84,7 +84,7 @@ kubectl apply -f -<<EOF
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubia-deployment
+  name: kubia
   labels:
     app: kubia
 spec:
@@ -126,13 +126,13 @@ EOF
 ```
 $ k get replicaset
 NAME    DESIRED   CURRENT   READY   AGE
-kubia-deployment-69f875bf56   1         1         0       25s
+kubia-69f875bf56   1         1         0       25s
 ```
 
 ```
 $ k get deployment 
 NAME READY UP-TO-DATE AVAILABLE AGE 
-kubia-deployment 0/3 3 0 3m5s
+kubia 0/3 3 0 3m5s
 ```
 
 ```
@@ -154,13 +154,13 @@ kubia        LoadBalancer   192.168.24.186   39.106.128.174   8080:31958/TCP   2
 修改期望的副本即可以完成伸缩
 
 ```erlang
-$ k scale deploy kubia-deployment --replicas=3
-deployment.apps/kubia-deployment scaled
+$ k scale deploy kubia --replicas=3
+deployment.apps/kubia scaled
 $ k get po
 NAME                                READY   STATUS              RESTARTS   AGE
-kubia-deployment-546dd5d8b6-76lx9   1/1     Running             0          5m14s
-kubia-deployment-546dd5d8b6-tchln   0/1     ContainerCreating   0          30s
-kubia-deployment-546dd5d8b6-zptbt   0/1     ContainerCreating   0          30s
+kubia-546dd5d8b6-76lx9   1/1     Running             0          5m14s
+kubia-546dd5d8b6-tchln   0/1     ContainerCreating   0          30s
+kubia-546dd5d8b6-zptbt   0/1     ContainerCreating   0          30s
 ```
 
 因为我们的应用可以返回主机名，所以每次请求会获得不同的结果
@@ -240,8 +240,8 @@ spec:
 {% endhint %}
 
 ```erlang
-$ k delete service/kubia deployment/kubia-
-service "kubia" deleted deployment "kubia-deployment" deleted
+$ k delete service/kubia deployment/kubia
+service "kubia" deleted deployment "kubia" deleted
 ```
 
 使用这个yaml文件告诉kubernetes部署
