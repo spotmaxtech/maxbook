@@ -6,7 +6,7 @@
 
 ## 使用AWS托管的Kubernetes集群
 
-略，请使用课程实验环境，我们目前提供的是基于阿里云的低成本集群，接入方式见 [接入文档](http://confluence.mobvista.com/pages/viewpage.action?pageId=30369001)，有登陆权限。大家可以 登录MaxCloud -> 系统管理->集群管理->终端 来进行操作
+略，请使用课程实验环境，我们目前提供的是基于阿里云的低成本集群，接入方式见 [接入文档](https://doc.spotmaxtech.com/guide/kubemax/kubemax.html)，有登陆权限。大家可以 登录MaxCloud -> 系统管理->集群管理->终端 来进行操作
 
 ![](<../../../.gitbook/assets/Screen Shot 2022-07-06 at 13.07.57.png>)
 
