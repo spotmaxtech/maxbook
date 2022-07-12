@@ -72,6 +72,10 @@ $ curl http://aa4ace9d6de084763b9ca80bcccf121e-357969387.ap-east-1.elb.amazonaws
 You've hit kubia
 ```
 
+{% hint style="success" %}
+这里因为暴露了服务给外网，在自己本地电脑也可以curl的，建议体会下
+{% endhint %}
+
 ## 认识应用的逻辑组成
 
 见课件
