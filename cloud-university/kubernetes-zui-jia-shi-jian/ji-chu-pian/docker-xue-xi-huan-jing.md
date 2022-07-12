@@ -48,7 +48,7 @@ spec:
 
 ![](<../../../.gitbook/assets/image (210).png>)
 
-![](<../../../.gitbook/assets/image (209).png>)
+![](<../../../.gitbook/assets/image (209) (1).png>)
 
 进入终端会看到黑屏就成功了，可以预装几个常用软件
 
@@ -56,7 +56,7 @@ spec:
 apk add bash vim curl
 ```
 
-![](<../../../.gitbook/assets/image (215).png>)
+![](<../../../.gitbook/assets/image (215) (1).png>)
 
 好了，到此我们准备好了docker学习环境。We are ready！
 

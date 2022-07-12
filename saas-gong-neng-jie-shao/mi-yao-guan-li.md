@@ -8,7 +8,7 @@
 
 2、进入个人中心
 
-![](<../.gitbook/assets/image (203) (1) (1).png>)
+![](<../.gitbook/assets/image (203) (1) (1) (1).png>)
 
 
 

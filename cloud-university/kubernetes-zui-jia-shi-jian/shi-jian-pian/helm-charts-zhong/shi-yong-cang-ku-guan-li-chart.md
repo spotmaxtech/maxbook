@@ -47,7 +47,7 @@ webapp           webapp-0.1.0.tgz
 
 上传到仓库中
 
-![](<../../../../.gitbook/assets/image (207) (1) (1).png>)
+![](<../../../../.gitbook/assets/image (207) (1) (1) (1).png>)
 
 刷一下仓库中的chart列表
 

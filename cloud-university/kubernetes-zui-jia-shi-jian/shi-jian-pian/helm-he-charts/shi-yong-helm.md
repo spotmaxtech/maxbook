@@ -192,7 +192,7 @@ image:
 
 好了，我们升级完成了！
 
-![](<../../../../.gitbook/assets/image (207) (1) (1) (1).png>)
+![](<../../../../.gitbook/assets/image (207) (1) (1) (1) (1).png>)
 
 ## helm rollback
 

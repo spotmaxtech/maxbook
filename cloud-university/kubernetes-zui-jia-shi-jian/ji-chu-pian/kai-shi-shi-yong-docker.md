@@ -2,7 +2,7 @@
 
 ## 运行Hello World容器
 
-在学习环境中运行现成的hello world容器
+在学习环境的终端中，运行现成的hello world容器
 
 ```
 docker run --rm busybox echo "Hello world" 
@@ -20,6 +20,10 @@ docker run <image>:<tag>
 ![](<../../../.gitbook/assets/image (214).png>)
 
 第一次运行时，会自动拉取最新的镜像，后面会解释更多
+
+{% hint style="info" %}
+本小节都是在终端环境中操作的
+{% endhint %}
 
 ## 创建一个简单应用
 
@@ -45,6 +49,7 @@ www.listen(8080);
 如果你本地有node环境，可以运行测试一下
 
 ```javascript
+# vi app.js 把代码保存
 node app.js
 ```
 
@@ -74,7 +79,7 @@ You've hit *这里显示你的机器名*
 
 ## 构建与运行你的第一个应用
 
-这个Dockerfile可以打包构建应用
+这个Dockerfile可以打包构建应用，用vi把这段脚本保存到文件Dockfile
 
 ```javascript
 FROM node:7
@@ -88,19 +93,21 @@ ENTRYPOINT ["node", "app.js"]
 docker build -t <kubia可以起个名字> .
 ```
 
+![](<../../../.gitbook/assets/image (215).png>)
+
+如图片所示准备好Dockerfile和app.js文件，并处于同一个目录中，就可以运行docker build了
+
+![](<../../../.gitbook/assets/image (203).png>)
+
+很快就完成了，list一下做好的容器镜像看看
+
+![](<../../../.gitbook/assets/image (209).png>)
+
 {% hint style="warning" %}
 如果大家共用一个docker环境，需要避免名字冲突，如镜像名字、容器名字
 {% endhint %}
 
-看到制作过程，根据网络情况拉取node环境有快慢，耐心
-
-![](<../../../.gitbook/assets/image (32).png>)
-
-完成后，运行 docker images 能找到刚制作好的镜像，还挺大的是吧
-
-![](<../../../.gitbook/assets/image (33).png>)
-
-运行一下容器镜像
+运行一下刚做好的容器镜像
 
 ```javascript
 docker run --name kubia-container -p 8080:8080 -d kubia
@@ -116,9 +123,9 @@ docker run --rm --name kubia-container -p 8080:8080 -d luksa/kubia
 注意这里可以前面提到的 --rm ，临时做实验销毁比较方便，后面使用--rm时不再赘述了
 {% endhint %}
 
-开另一个控制台，访问一下8080试试吧
+访问一下8080试试吧
 
-![](<../../../.gitbook/assets/image (35).png>)
+![](<../../../.gitbook/assets/image (207).png>)
 
 ## 探索运行容器的内部
 

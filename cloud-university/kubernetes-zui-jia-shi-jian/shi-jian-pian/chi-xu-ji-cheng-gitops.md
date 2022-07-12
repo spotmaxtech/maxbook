@@ -4,7 +4,7 @@
 
 进入”应用个管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
 
-![](<../../../.gitbook/assets/image (209) (1).png>)
+![](<../../../.gitbook/assets/image (209) (1) (1).png>)
 
 ```
 apiVersion: apps/v1
@@ -89,7 +89,7 @@ chmod +x v2.sh
 
 这个脚本也可以使用jenkins等CI/CD工具， 集成部署过程
 
-## Helm Bundle也支持持续集成
+## Helm Bundle持续集成
 
 创建Helm仓库， 这里我们使用[https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia](https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia) （已经为大家添加到了实验环境里）
 
