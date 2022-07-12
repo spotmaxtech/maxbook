@@ -184,7 +184,7 @@ You've hit kubia-qr7r9
 You've hit kubia-9bklf
 ```
 
-{% hint style="info" %}
+{% hint style="warning" %}
 负载均衡器到达上限时，请用左边那个ClusterIP
 {% endhint %}
 
