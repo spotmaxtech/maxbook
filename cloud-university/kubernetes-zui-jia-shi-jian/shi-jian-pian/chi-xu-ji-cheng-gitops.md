@@ -34,7 +34,7 @@ spec:
 
 ![](<../../../.gitbook/assets/image (206).png>)
 
-![](<../../../.gitbook/assets/image (208) (1).png>)
+![](<../../../.gitbook/assets/image (208) (1) (1).png>)
 
 ```
 #!/bin/bash

@@ -2,28 +2,30 @@
 
 ## 搭建本地的Kubernetes环境
 
-略，请使用课程实验环境
+> 略，请使用课程实验环境
+>
+> 搭建k8s环境不是我们课程重点，现在都是开箱即用的环境
 
-## 使用AWS托管的Kubernetes集群
+## 使用MaxCloud托管的Kubernetes集群
 
-略，请使用课程实验环境，我们目前提供的是基于阿里云的低成本集群，接入方式见 [接入文档](https://doc.spotmaxtech.com/guide/kubemax/kubemax.html)，有登陆权限。大家可以 登录MaxCloud -> 系统管理->项目管理->终端 来进行操作
+登录MaxCloud账号进入课程实验环境，我们目前提供的是基于公有云低成本集群（如亚马逊、阿里云）。大家可以通过MaxCloud -> 系统管理->项目管理->终端 来进行后续操作。
 
-![](<../../../.gitbook/assets/Screen Shot 2022-07-12 at 16.25.11.png>)
+![](<../../../.gitbook/assets/image (208).png>)
 
-对于本课程中所有操作， 大家也可以通过MaxCloud->资源管理 进行操作（创建、修改、删除、查询状态、查看log、 执行命令、 扩缩容 等）
 
-![](<../../../.gitbook/assets/image (207) (1) (1).png>)
 
-测试一下环境
+
+
+如上图进入终端后测试一下环境，下述指令可以看到集群含有哪些节点
 
 ```
 kubectl get nodes
 ```
 
-![](<../../../.gitbook/assets/image (40).png>)
+![](<../../../.gitbook/assets/image (214).png>)
 
 {% hint style="info" %}
-给 kubectl 做一下alias吧，后续我们使用k
+终端环境已经给 kubectl 做了alias别名，后续我们使用k
 
 alias k=kubectl
 {% endhint %}
@@ -59,15 +61,15 @@ service/kubia exposed
 
 ```
 $ k get svc
-NAME    TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-kubia   LoadBalancer   172.22.14.146   <pending>     8080:30019/TCP   5s
+NAME    TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT(S)          AGE
+kubia   LoadBalancer   10.100.114.238   aa4ace9d6de084763b9ca80bcccf121e-357969387.ap-east-1.elb.amazonaws.com   8080:30207/TCP   16s
 ```
 
 看到了LoadBalancer后，测试一下
 
 ```
-$ curl http://47.56.228.138:8080
-You've hit kubia-9bklf
+$ curl http://aa4ace9d6de084763b9ca80bcccf121e-357969387.ap-east-1.elb.amazonaws.com:8080
+You've hit kubia
 ```
 
 ## 认识应用的逻辑组成
@@ -76,14 +78,14 @@ You've hit kubia-9bklf
 
 ## 横向伸缩你的应用
 
-用文件方式重新部署kubia服务
-
 首先清理之前的pod和service
 
 ```
-kubctl delete svc kubia
-kubctl delete po kubia
+kubectl delete svc kubia
+kubectl delete po kubia
 ```
+
+用文件（Yaml语法）方式重新部署kubia服务
 
 ```
 kubectl apply -f -<<EOF

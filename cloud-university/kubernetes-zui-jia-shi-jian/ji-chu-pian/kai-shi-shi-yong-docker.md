@@ -17,7 +17,7 @@ docker run --rm busybox echo "Hello world"
 docker run <image>:<tag>
 ```
 
-![](<../../../.gitbook/assets/image (214).png>)
+![](<../../../.gitbook/assets/image (214) (1).png>)
 
 第一次运行时，会自动拉取最新的镜像，后面会解释更多
 
