@@ -110,7 +110,7 @@ kubiahelm       chenkui         1               2022-07-12 11:35:10.226574729 +0
 
 配置Gitops
 
-![](<../../../.gitbook/assets/image (216).png>)
+![](<../../../.gitbook/assets/image (216) (1).png>)
 
 ```
 #!/bin/bash
