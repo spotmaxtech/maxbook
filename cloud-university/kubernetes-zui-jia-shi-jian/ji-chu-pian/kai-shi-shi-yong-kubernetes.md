@@ -216,6 +216,14 @@ kubectl get pods -o wide
 
 做到这里，docker和kubernetes你已经入门了！辛苦了！
 
+{% hint style="info" %}
+课程中全部的Yaml代码都能够在如下git地址里找到
+
+git clone [https://github.com/liuzoxan/kubernetes-in-action.git](https://github.com/liuzoxan/kubernetes-in-action.git)
+
+cd kubernetes-in-action/workshop
+{% endhint %}
+
 ## 思考题
 
 > * 说说你对kubernetes的看法，例如功能、docker的区别
