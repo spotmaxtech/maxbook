@@ -42,7 +42,7 @@ spec:
 
 ```
 
-![](<../../../.gitbook/assets/image (214).png>)
+![](<../../../.gitbook/assets/image (214) (1).png>)
 
 如上图提示apply后，就会在应用管理页面初始化好环境了（我们称这个应用为：<mark style="color:blue;">Bundle</mark>），点击进入终端
 

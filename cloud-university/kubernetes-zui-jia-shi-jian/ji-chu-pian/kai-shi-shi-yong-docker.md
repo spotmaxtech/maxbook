@@ -1,8 +1,8 @@
 # 开始使用Docker
 
-## 安装Docker并运行Hello World容器
+## 运行Hello World容器
 
-在安装好的环境中，运行现成的hello world容器
+在学习环境中运行现成的hello world容器
 
 ```
 docker run --rm busybox echo "Hello world" 
@@ -16,6 +16,10 @@ docker run --rm busybox echo "Hello world"
 # docker方式运行容器最简单语法
 docker run <image>:<tag>
 ```
+
+![](<../../../.gitbook/assets/image (214).png>)
+
+第一次运行时，会自动拉取最新的镜像，后面会解释更多
 
 ## 创建一个简单应用
 
