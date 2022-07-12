@@ -1,16 +1,18 @@
 # Docker学习环境
 
-## 进入下面这个学习网站
+## 认识MaxCloud上的学习环境
 
-{% embed url="https://labs.play-with-docker.com/" %}
+登录MaxCloud之后，右上角切换到<mark style="color:blue;">KubernetesWorkshop</mark>团队空间
 
-## 学习一下基本操作
+![](<../../../.gitbook/assets/image (210).png>)
 
-![](<../../../.gitbook/assets/image (188).png>)
+![](<../../../.gitbook/assets/image (209).png>)
 
-## 在MaxCloud上学习Docker基本命令
+MaxCloud -> 应用管理 -> Deployment -> YAML部署 部署自己的Docker实例
 
-MaxCloud -> 资源管理 -> Deployment -> YAML部署 部署自己的Docker实例
+<img src="../../../.gitbook/assets/image (208).png" alt="" data-size="original">
+
+![](<../../../.gitbook/assets/image (207).png>)
 
 MaxCloud -> 资源管理 -> Deployment -> 点击Docker Deployment -> 进入终端 学习Docker使用
 

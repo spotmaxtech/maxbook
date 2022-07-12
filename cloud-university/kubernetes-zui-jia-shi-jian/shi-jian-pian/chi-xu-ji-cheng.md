@@ -4,7 +4,7 @@
 
 进入”应用个管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
 
-![](<../../../.gitbook/assets/image (209).png>)
+![](<../../../.gitbook/assets/image (209) (1).png>)
 
 ```
 apiVersion: apps/v1
@@ -34,7 +34,7 @@ spec:
 
 ![](<../../../.gitbook/assets/image (206).png>)
 
-![](<../../../.gitbook/assets/image (208).png>)
+![](<../../../.gitbook/assets/image (208) (1).png>)
 
 ```
 #!/bin/bash
@@ -85,7 +85,7 @@ chmod +x v2.sh
 
 点击 Bundle -> Deployment 验证已经升级到V2版本
 
-![](<../../../.gitbook/assets/image (210).png>)
+![](<../../../.gitbook/assets/image (210) (1).png>)
 
 这个脚本也可以使用jenkins等CI/CD工具， 集成部署过程
 
