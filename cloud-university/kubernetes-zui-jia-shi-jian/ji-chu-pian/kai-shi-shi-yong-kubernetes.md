@@ -210,69 +210,7 @@ kubectl get pods -o wide
 
 通过这些操作，是不是感觉比docker方式简单许多，后面还有更精彩的！
 
-## Maxcloud的K8S操作界面
 
-[https://maxcloud.spotmaxtech.com/](https://maxcloud.spotmaxtech.com/)
-
-登陆后请浏览一些资源，例如node，其他内容我们后面章节会涉及
-
-## 使用描述文件（yaml）方式
-
-我们换一种方式部署服务，上面的步骤需要记的略多，看这个描述文件
-
-```yaml
-# cat kubia.yaml
-apiVersion: v1
-kind: ReplicationController
-metadata:
-  name: kubia
-  labels:
-    run: kubia
-spec:
-  replicas: 1
-  selector:
-    run: kubia
-  template:
-    metadata:
-      labels:
-        run: kubia
-    spec:
-      containers:
-      - name: kubia
-        image: luksa/kubia:latest
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-```
-
-不需要了解每个语句含义，只需要明白，它定义了rc的名字、副本数、使用的镜像、端口映射等信息就够了
-
-{% hint style="info" %}
-在操作之前，可以先清理已经部署过的服务，如
-{% endhint %}
-
-```erlang
-$ k delete service/kubia deployment/kubia
-service "kubia" deleted deployment "kubia" deleted
-```
-
-使用这个yaml文件告诉kubernetes部署
-
-```erlang
-$ kubectl apply -f kubia.yaml
-replicationcontroller/kubia created
-```
-
-然后看看它帮你做了什么吧
-
-```erlang
-$ kubectl get all
-NAME              READY   STATUS    RESTARTS   AGE
-pod/kubia-j67pf   1/1     Running   0          36s
-
-NAME                          DESIRED   CURRENT   READY   AGE
-replicationcontroller/kubia   1         1         1       36s
-```
 
 恭喜恭喜！
 
