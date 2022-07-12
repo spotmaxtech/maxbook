@@ -4,7 +4,7 @@
 
 进入”应用个管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
 
-![](<../../../.gitbook/assets/image (209) (1) (1).png>)
+![](<../../../.gitbook/assets/image (209) (1) (1) (1).png>)
 
 ```
 apiVersion: apps/v1

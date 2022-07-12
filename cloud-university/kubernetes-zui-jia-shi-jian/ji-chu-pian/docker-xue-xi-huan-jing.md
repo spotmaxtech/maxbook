@@ -48,7 +48,7 @@ spec:
 
 ![](<../../../.gitbook/assets/image (210).png>)
 
-![](<../../../.gitbook/assets/image (209) (1).png>)
+![](<../../../.gitbook/assets/image (209) (1) (1).png>)
 
 进入终端会看到黑屏就成功了，可以预装几个常用软件
 

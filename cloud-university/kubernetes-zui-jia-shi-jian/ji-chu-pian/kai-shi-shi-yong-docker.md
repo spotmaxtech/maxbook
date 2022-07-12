@@ -101,7 +101,7 @@ docker build -t <kubia可以起个名字> .
 
 很快就完成了，list一下做好的容器镜像看看
 
-![](<../../../.gitbook/assets/image (209).png>)
+![](<../../../.gitbook/assets/image (209) (1).png>)
 
 {% hint style="warning" %}
 如果大家共用一个docker环境，需要避免名字冲突，如镜像名字、容器名字
@@ -144,7 +144,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](<../../../.gitbook/assets/image (37).png>)
+![](<../../../.gitbook/assets/image (209).png>)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
