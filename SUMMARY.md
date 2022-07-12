@@ -79,6 +79,7 @@
     * [Helm Charts（下）](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-charts-xia/README.md)
       * [一个实际的项目](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-charts-xia/yi-ge-shi-ji-de-xiang-mu.md)
       * [最后，Helm不是必须的](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/helm-charts-xia/zui-hou-helm-bu-shi-bi-xu-de.md)
+    * [持续集成](cloud-university/kubernetes-zui-jia-shi-jian/shi-jian-pian/chi-xu-ji-cheng.md)
 
 ## 最佳实践 <a href="#zhi-shi-fen-xiang" id="zhi-shi-fen-xiang"></a>
 

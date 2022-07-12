@@ -143,7 +143,7 @@ APP VERSION: 6.2.7
 
 这样我们就安装了reids数据库（1个master3个replica）
 
-<img src="../../../../.gitbook/assets/image (206).png" alt="" data-size="original">
+<img src="../../../../.gitbook/assets/image (206) (1).png" alt="" data-size="original">
 
 {% hint style="info" %}
 此时可以关联到maxcloud bundle展示
