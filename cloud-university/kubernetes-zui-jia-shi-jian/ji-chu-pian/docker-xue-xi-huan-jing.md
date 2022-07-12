@@ -6,9 +6,9 @@
 
 登录MaxCloud之后，右上角切换到<mark style="color:blue;">KubernetesWorkshop</mark>团队空间
 
-![](<../../../.gitbook/assets/image (212).png>)
+![](<../../../.gitbook/assets/image (212) (1).png>)
 
-![](<../../../.gitbook/assets/image (211).png>)
+![](<../../../.gitbook/assets/image (211) (1).png>)
 
 MaxCloud -> 应用管理 -> Apply Yaml
 

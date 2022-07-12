@@ -1,4 +1,4 @@
-# 持续集成
+# 持续集成（Gitops）
 
 ## 部署并创建Bundle
 
@@ -89,4 +89,56 @@ chmod +x v2.sh
 
 这个脚本也可以使用jenkins等CI/CD工具， 集成部署过程
 
-\
+## Helm Bundle也支持持续集成
+
+创建Helm仓库， 这里我们使用[https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia](https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia) （已经为大家添加到了实验环境里）
+
+![](<../../../.gitbook/assets/image (213).png>)
+
+部署Helm
+
+```
+$ helm repo add kubia https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia
+$ helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+kubiahelm       chenkui         1               2022-07-12 11:35:10.226574729 +0000 UTC deployed        kubia-0.1.0     1.16.0  
+```
+
+创建Helm Bundle
+
+![](<../../../.gitbook/assets/image (212).png>)
+
+配置Gitops
+
+![](<../../../.gitbook/assets/image (216).png>)
+
+```
+#!/bin/bash
+
+# version 为您helm的版本，必须和实际对应
+# dry_run 是否测试执行
+# sets helm set参数 多个参数示例： ["aa=bb","cc==dd"]
+secret="9c270a2d6629xxxxxxxxx133b1a18"
+sign=`echo -n "${secret}" | md5sum | awk '{print $1}'`
+
+curl --location --request POST 'https://maxcloud-api.spotmaxtech.com/api/external/bundle/helm/upgrade' \
+--header 'Content-Type: application/json' \
+--data '{
+    "sign": "'$sign'",
+    "bundle_id": 1657625737658321,
+    "version": "0.2.0",  # 这里改为0.2.0
+    "dry_run": false,
+    "sets": []
+}'
+# chmod +x v2.sh
+# ./v2.sh
+# {"status":200,"request_id":"c72b7b1805ed4fa4a26d2f7b01f19cd4","message":"success","data":"apply success","time":1657626107}
+```
+
+验证Helm 实例更新到了V2
+
+```
+$ helm list   
+NAME            NAMESPACE       REVISION        UPDATED                                         STATUS          CHART           APP VERSION
+kubiahelm       chenkui         2               2022-07-12 19:41:46.806868607 +0800 +0800       deployed        kubia-0.2.0     1.16.0   
+```
