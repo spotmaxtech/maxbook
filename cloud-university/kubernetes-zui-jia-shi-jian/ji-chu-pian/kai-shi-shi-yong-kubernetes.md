@@ -6,9 +6,9 @@
 
 ## 使用AWS托管的Kubernetes集群
 
-略，请使用课程实验环境，我们目前提供的是基于阿里云的低成本集群，接入方式见 [接入文档](https://doc.spotmaxtech.com/guide/kubemax/kubemax.html)，有登陆权限。大家可以 登录MaxCloud -> 系统管理->集群管理->终端 来进行操作
+略，请使用课程实验环境，我们目前提供的是基于阿里云的低成本集群，接入方式见 [接入文档](https://doc.spotmaxtech.com/guide/kubemax/kubemax.html)，有登陆权限。大家可以 登录MaxCloud -> 系统管理->项目管理->终端 来进行操作
 
-![](<../../../.gitbook/assets/Screen Shot 2022-07-06 at 13.07.57.png>)
+![](<../../../.gitbook/assets/Screen Shot 2022-07-12 at 16.25.11.png>)
 
 对于本课程中所有操作， 大家也可以通过MaxCloud->资源管理 进行操作（创建、修改、删除、查询状态、查看log、 执行命令、 扩缩容 等）
 
