@@ -199,7 +199,7 @@ $ while true; do wget -O- http://<39.106.128.174>:8080; sleep 1;  done
 kubectl get pods -o wide
 ```
 
-![](<../../../.gitbook/assets/image (51).png>)
+![](<../../../.gitbook/assets/image (213).png>)
 
 还可以查看pod的一些细节，还有日志，试试指令吧
 

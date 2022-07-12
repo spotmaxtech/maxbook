@@ -93,7 +93,7 @@ chmod +x v2.sh
 
 创建Helm仓库， 这里我们使用[https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia](https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia) （已经为大家添加到了实验环境里）
 
-![](<../../../.gitbook/assets/image (213).png>)
+![](<../../../.gitbook/assets/image (213) (1).png>)
 
 部署Helm
 
