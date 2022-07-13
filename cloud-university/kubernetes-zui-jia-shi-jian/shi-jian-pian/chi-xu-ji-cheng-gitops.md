@@ -1,6 +1,6 @@
 # 持续集成（Gitops）
 
-## 部署并创建Bundle
+## 部署并创建[Bundle](https://doc.spotmaxtech.com/guide/workshop/bundleManagement.html)
 
 进入”应用个管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
 
