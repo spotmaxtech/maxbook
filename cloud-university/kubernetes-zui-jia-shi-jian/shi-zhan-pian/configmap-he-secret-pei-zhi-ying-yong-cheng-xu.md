@@ -117,7 +117,7 @@ Forwarding from [::1]:8080 -> 80
 然后在另一个控制台访问，观察是否设定的环境变量秒数
 
 ```
-$ while True; do curl http://localhost:8080; sleep 3;  done
+$ while true; do curl http://localhost:8080; sleep 3;  done
 ```
 
 ## 通过ConfigMap配置应用程序
