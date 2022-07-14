@@ -2,13 +2,13 @@
 
 ## 部署并创建[Bundle](https://doc.spotmaxtech.com/guide/workshop/bundleManagement.html)
 
-进入”应用个管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
+进入”应用管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
 
 ![](<../../../.gitbook/assets/image (209) (1) (1) (1).png>)
 
 ```
 apiVersion: apps/v1
-kind: Deployment   # 我们这里引入了Deployment
+kind: Deployment
 metadata:
   name: kubia
   namespace: << your name space >> #用分配给您的Namespace替换
