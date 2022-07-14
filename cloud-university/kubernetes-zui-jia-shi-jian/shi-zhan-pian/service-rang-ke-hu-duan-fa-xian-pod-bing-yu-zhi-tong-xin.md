@@ -214,9 +214,12 @@ spec:
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: kubia-nodeport
-          servicePort: 80
+          service:
+            name: kubia-nodeport
+            port:
+              number: 80
 ```
 
 创建效果如下
