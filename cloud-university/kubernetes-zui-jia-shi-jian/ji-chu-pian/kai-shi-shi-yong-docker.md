@@ -79,7 +79,7 @@ You've hit *这里显示你的机器名*
 
 ## 构建与运行你的第一个应用
 
-这个Dockerfile可以打包构建应用，用vi把这段脚本保存到文件Dockfile
+这个Dockerfile可以打包构建应用，用vi把这段脚本保存到文件Dockerfile
 
 ```javascript
 FROM node:7
