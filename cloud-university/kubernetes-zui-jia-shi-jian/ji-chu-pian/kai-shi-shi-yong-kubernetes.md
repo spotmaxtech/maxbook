@@ -10,15 +10,9 @@
 
 ### **建立自己专属的实验环境**
 
-登录MaxCloud账号进入课程实验环境，我们目前提供的是基于公有云低成本集群（如亚马逊、阿里云）。大家可以通过MaxCloud -> 系统管理->项目管理->终端 来进行后续操作。
+登录MaxCloud账号进入课程实验环境，切换团队到KubernetesWorkshop团队，创建自己的项目，关联集群MC-KubernetesWorkshop-playground-new，添加自己的命名空间。我们目前提供的是基于公有云低成本集群（如亚马逊、阿里云）。大家可以通过MaxCloud -> 系统管理->项目管理->终端 来进行后续操作。
 
-
-
-![](<../../../.gitbook/assets/image (4).png>)
-
-
-
-
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 如上图进入终端后测试一下环境，下述指令可以看到集群含有哪些节点
 
@@ -26,7 +20,7 @@
 kubectl get nodes
 ```
 
-![](../../../.gitbook/assets/image.png)
+![](<../../../.gitbook/assets/image (1).png>)
 
 {% hint style="info" %}
 终端环境已经给 kubectl 做了alias别名，后续我们使用k

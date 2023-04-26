@@ -97,7 +97,7 @@ docker build -t <kubia可以起个名字> .
 
 如图片所示准备好Dockerfile和app.js文件，并处于同一个目录中，就可以运行docker build了
 
-![](<../../../.gitbook/assets/image (1).png>)
+![](<../../../.gitbook/assets/image (1) (1).png>)
 
 很快就完成了，list一下做好的容器镜像看看
 
