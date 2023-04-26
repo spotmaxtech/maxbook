@@ -2,8 +2,8 @@
 
 ## 需要consul解注册功能：
 
-![](<../../.gitbook/assets/image (114).png>)
+![](<../../.gitbook/assets/image (235).png>)
 
 ## 需要k8s drain功能：
 
-![](<../../.gitbook/assets/image (115).png>)
+![](<../../.gitbook/assets/image (114).png>)

@@ -8,11 +8,11 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 * 登录阿里云控制台—访问控制
 
-![](<../../.gitbook/assets/image (136).png>)
+![](<../../.gitbook/assets/image (123).png>)
 
 * 添加权限
 
-![配置策略](<../../.gitbook/assets/image (162).png>)
+![配置策略](<../../.gitbook/assets/image (186).png>)
 
 ## 权限添加
 

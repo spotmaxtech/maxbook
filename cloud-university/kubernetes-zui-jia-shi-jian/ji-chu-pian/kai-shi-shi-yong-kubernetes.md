@@ -14,7 +14,7 @@
 
 
 
-![](<../../../.gitbook/assets/image (208).png>)
+![](<../../../.gitbook/assets/image (4).png>)
 
 
 
@@ -26,7 +26,7 @@
 kubectl get nodes
 ```
 
-![](<../../../.gitbook/assets/image (214).png>)
+![](../../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
 终端环境已经给 kubectl 做了alias别名，后续我们使用k
@@ -203,7 +203,7 @@ $ while true; do wget -O- http://<39.106.128.174>:8080; sleep 1;  done
 kubectl get pods -o wide
 ```
 
-![](<../../../.gitbook/assets/image (213).png>)
+![](<../../../.gitbook/assets/image (5).png>)
 
 还可以查看pod的一些细节，还有日志，试试指令吧
 

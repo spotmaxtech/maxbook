@@ -9,17 +9,17 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 * 登录AWS控制台—>Identity and Access Management (IAM)
 * 新建自定义策略：MyCostExplorerReadOnlyAccess**（此步骤会获取账单信息，如不需要展示请忽略）**
 
-![](<../../.gitbook/assets/image (183).png>)
+![](<../../.gitbook/assets/image (188).png>)
 
-![](<../../.gitbook/assets/image (184).png>)
+![](<../../.gitbook/assets/image (94).png>)
 
-![](<../../.gitbook/assets/image (185).png>)
+![](<../../.gitbook/assets/image (12).png>)
 
-![](<../../.gitbook/assets/image (186).png>)
+![](<../../.gitbook/assets/image (206).png>)
 
 * 为用户/角色授权：AmazonEC2ReadOnlyAccess、IAMReadOnlyAccess、MyCostExplorerReadOnlyAccess
 
-![](<../../.gitbook/assets/image (201) (1) (1).png>)
+![](<../../.gitbook/assets/image (241).png>)
 
 ## **权限升级**
 

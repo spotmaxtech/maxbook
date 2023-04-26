@@ -14,13 +14,13 @@
 
 ### 逻辑：
 
-![](<../../.gitbook/assets/image (207) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (132).png>)
 
 ### 开启：
 
 进入saas平台，选中左边导航栏<mark style="color:red;">MaxGroup</mark>，点击<mark style="color:red;">迁移</mark>选中要开启热池的ASG，点击<mark style="color:red;">配置</mark>，或者点击<mark style="color:red;">批量配置</mark>，配置热池功能：
 
-![](<../../.gitbook/assets/image (206) (1) (1).png>)
+![](<../../.gitbook/assets/image (135).png>)
 
 ### 测试例子：
 
@@ -28,7 +28,7 @@
 
 ## 带有2块磁盘，需要继续保留非root盘：
 
-![](<../../.gitbook/assets/image (101).png>)
+![](<../../.gitbook/assets/image (75).png>)
 
 由于这里解决的是物理层磁盘挂载，而在系统中，需要对磁盘进行重新mount，这里提供自动化脚本植入系统，帮助完成系统层面的mount。
 
@@ -58,7 +58,7 @@ done
 
 ## 需要consul解注册功能：
 
-![](<../../.gitbook/assets/image (111).png>)
+![](<../../.gitbook/assets/image (150).png>)
 
 ## 需要k8s drain功能：
 
@@ -102,7 +102,7 @@ aws eks --region <region-code> update-kubeconfig --name <cluster_name> --kubecon
 
 cloudwatch集成了max\_group事件指标监控，可根据时间指标查询到max\_group的工作记录，如下图所示
 
-![](<../../.gitbook/assets/image (113).png>)
+![](<../../.gitbook/assets/image (166).png>)
 
 ## Duration spot使用方法
 

@@ -28,4 +28,4 @@
 
 #### 与传统弹性伸缩/弹性供应产品对比
 
-![](<../../.gitbook/assets/image (56).png>)
+![](<../../.gitbook/assets/image (92).png>)

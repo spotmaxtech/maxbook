@@ -4,7 +4,7 @@
 
 进入”应用管理“，点击 “Apply Yaml” 勾选 “将以上资源打包成一个应用”，&#x20;
 
-![](<../../../.gitbook/assets/image (209) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (177).png>)
 
 ```
 apiVersion: apps/v1
@@ -32,9 +32,9 @@ spec:
 
 在Bundle上点击 “Gitops” 按钮，复制Gitops代码
 
-![](<../../../.gitbook/assets/image (206).png>)
+![](<../../../.gitbook/assets/image (200).png>)
 
-![](<../../../.gitbook/assets/image (208) (1) (1).png>)
+![](<../../../.gitbook/assets/image (247).png>)
 
 ```
 #!/bin/bash
@@ -85,7 +85,7 @@ chmod +x v2.sh
 
 点击 Bundle -> Deployment 验证已经升级到V2版本
 
-![](<../../../.gitbook/assets/image (210) (1).png>)
+![](<../../../.gitbook/assets/image (205).png>)
 
 这个脚本也可以使用jenkins等CI/CD工具， 集成部署过程
 
@@ -93,7 +93,7 @@ chmod +x v2.sh
 
 创建Helm仓库， 这里我们使用[https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia](https://raw.githubusercontent.com/kuiche1982/helm-example/main/kubia) （已经为大家添加到了实验环境里）
 
-![](<../../../.gitbook/assets/image (213) (1).png>)
+![](<../../../.gitbook/assets/image (91).png>)
 
 部署Helm
 
@@ -106,11 +106,11 @@ kubiahelm       chenkui         1               2022-07-12 11:35:10.226574729 +0
 
 创建Helm Bundle
 
-![](<../../../.gitbook/assets/image (212).png>)
+![](<../../../.gitbook/assets/image (35).png>)
 
 配置Gitops
 
-![](<../../../.gitbook/assets/image (216) (1).png>)
+![](<../../../.gitbook/assets/image (81).png>)
 
 ```
 #!/bin/bash

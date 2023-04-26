@@ -198,7 +198,7 @@ pod/mongodb created
 
 &#x20;然后查看pod/pvc/pv等资源情况
 
-![](<../../../.gitbook/assets/image (66).png>)
+![](<../../../.gitbook/assets/image (56).png>)
 
 测试一下mongodb的服务吧
 

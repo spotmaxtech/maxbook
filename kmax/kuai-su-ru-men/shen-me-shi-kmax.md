@@ -10,13 +10,13 @@ SpotMax是一个利用弹性计算资源进行云端系统成本优化的体系�
 
 SpotMax主要包括以下部分:
 
-**MaxArch** 面向错误及面向恢复的高可用性服务设计，高可用服务框架 
+**MaxArch** 面向错误及面向恢复的高可用性服务设计，高可用服务框架&#x20;
 
-**MaxGroup** 集群智能优化及Spot集群线上管理 
+**MaxGroup** 集群智能优化及Spot集群线上管理&#x20;
 
 **MaxChaos** 混沌工程，混沌工程套件
 
-![](<../../.gitbook/assets/image (30).png>)
+![](<../../.gitbook/assets/image (80).png>)
 
 ### SpotMax特性
 
@@ -44,8 +44,8 @@ Kmax是基于SpotMax与Kubernetes的容器编排运行平台，提供开箱即�
 
 ### KMax架构
 
-![](<../../.gitbook/assets/image (61).png>)
+![](<../../.gitbook/assets/image (213).png>)
 
 ### 调度流程
 
-![](<../../.gitbook/assets/image (62).png>)
+![](<../../.gitbook/assets/image (95).png>)

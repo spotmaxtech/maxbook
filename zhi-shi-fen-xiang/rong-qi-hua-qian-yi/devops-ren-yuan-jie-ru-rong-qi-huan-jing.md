@@ -12,14 +12,14 @@ EKS使用用户方式接入，所以DevOps人员需要具备以下环境
 * 配置aws configure
 
 {% hint style="info" %}
-aws configure请使用spotmax_devops用户，如有特殊需要，请找到集群管理员操作
+aws configure请使用spotmax\_devops用户，如有特殊需要，请找到集群管理员操作
 {% endhint %}
 
-以上环境在mac上都可以使用brew安装，请google必要的文档，或参考这个 [EKS入门文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/getting-started-console.html)
+以上环境在mac上都可以使用brew安装，请google必要的文档，或参考这个 [EKS入门文档](https://docs.aws.amazon.com/zh\_cn/eks/latest/userguide/getting-started-console.html)
 
 ### DevOps用户添加到Kubernetes
 
-所有集群都默认加入了spotmax_devops角色，该角色信息请找管理员索取。如果遇到权限报错，请反馈给管理员。
+所有集群都默认加入了spotmax\_devops角色，该角色信息请找管理员索取。如果遇到权限报错，请反馈给管理员。
 
 ```bash
 # k edit configmap aws-auth --namespace kube-system
@@ -94,7 +94,7 @@ users:
 
 #### 保存到临时文件
 
-将上述文本存储到文件 \~/.kube/config_temp
+将上述文本存储到文件 \~/.kube/config\_temp
 
 {% hint style="danger" %}
 主要修改 cluster/user/context的name，以便于合并，不然前后有相同的key会有问题！
@@ -108,7 +108,7 @@ KUBECONFIG=~/.kube/config:~/.kube/config_temp kubectl config view --flatten > ~/
 
 #### 检查并覆盖默认文件
 
-仔细检查一下config_new
+仔细检查一下config\_new
 
 ```
 # cat ~/.kube/config_new
@@ -121,4 +121,4 @@ cp ~/.kube/config_new ~/.kube/config
 集群变多时需要管理好自己的配置文件，便于集群间互相切换
 {% endhint %}
 
-![](<../../.gitbook/assets/image (68).png>)
+![](<../../.gitbook/assets/image (184).png>)

@@ -8,17 +8,17 @@
 
 2、进入个人中心
 
-![](<../.gitbook/assets/image (203) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (124).png>)
 
 
 
 3、点击服务业务，成本优化
 
-![](<../.gitbook/assets/image (202) (1) (1).png>)
+![](<../.gitbook/assets/image (157).png>)
 
 4、如果用户没有填写key\&secret，进入后台中，要求用户填写key\&secret，填写完毕之后，可以进行权限检测，查看是否有权限使用
 
-![](<../.gitbook/assets/image (201) (1).png>)
+![](<../.gitbook/assets/image (54).png>)
 
 
 
@@ -28,7 +28,7 @@
 2. 进入“密钥管理”页面
 3. 填写key\&secret，点击“提交”或“更新”
 
-![](<../.gitbook/assets/image (135).png>)
+![](<../.gitbook/assets/image (26).png>)
 
 {% hint style="info" %}
 当前一个SpotMax账户仅能保存一组key\&secret，如果需要修改，则直接在SpotMax官网后台更新即可

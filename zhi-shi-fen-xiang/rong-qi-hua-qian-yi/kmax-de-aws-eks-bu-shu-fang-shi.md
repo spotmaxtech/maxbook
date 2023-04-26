@@ -30,7 +30,7 @@ master是指容器集群节点，需要事先创建好这些节点所使用的ro
 这里可以在账户里找到kmax这个iam role
 {% endhint %}
 
-![](<../../.gitbook/assets/image (84).png>)
+![](<../../.gitbook/assets/image (172).png>)
 
 #### worknode使用的role：kmax-worknode
 
@@ -40,7 +40,7 @@ worknode是指容器工作节点，同样需要事先创建好这些节点所使
 这里可以在账户里找到kmax-worknode这个iam role
 {% endhint %}
 
-![](<../../.gitbook/assets/image (85).png>)
+![](<../../.gitbook/assets/image (52).png>)
 
 
 
@@ -68,11 +68,11 @@ worknode是指容器工作节点，同样需要事先创建好这些节点所使
 EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签，这样如果我们利用标签统计成本就失效了。所以我们放弃了NodeGroup管理容器节点。
 {% endhint %}
 
-![](<../../.gitbook/assets/image (86).png>)
+![](<../../.gitbook/assets/image (160).png>)
 
 说明：上面的节点组所需大小创建时是最小是1，不能置为0的，这个可以通过后台ASG编辑解决，因为它这里实际上也是启动了一个ASG。
 
-![](<../../.gitbook/assets/image (91).png>)
+![](<../../.gitbook/assets/image (86).png>)
 
 ## 利用example的EC2模版改造自己的模版
 
@@ -80,7 +80,7 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 
 找到kmax-example-group使用的模版，使用它为模版创建一个新的模版，例如dsp-8c64g-kmax，其中\<dsp表示业务线>-<8c64g表示规格>-\<kmax搜索词>。
 
-![](<../../.gitbook/assets/image (87).png>)
+![](<../../.gitbook/assets/image (24).png>)
 
 {% hint style="danger" %}
 关于规格的说明
@@ -105,14 +105,14 @@ EKS的NodeGroup管理功能有个缺陷，无法在template里设置EC2的标签
 {% hint style="success" %}
 team标签好理解，这里还有个kubernetes.io的标签，这个标签是必须要打上的，否则EKS不会把节点注册上，尽管有了注册脚本（user-data）
 
-当然也可以在ASG里传递这个标签，在这里的优点是：结合使用max_group时，比正常走autoscaling打tag快10秒注册进EKS
+当然也可以在ASG里传递这个标签，在这里的优点是：结合使用max\_group时，比正常走autoscaling打tag快10秒注册进EKS
 {% endhint %}
 
-### **修改高级选项的IAM kmax-worknode** <a href="kmax-ping-tai-bu-shu-yu-shi-yong-gao-ji-xuan-xiang-zhong-zhu-yi-xuan-ze-iam-shi-li-pei-zhi-wen-jian" id="kmax-ping-tai-bu-shu-yu-shi-yong-gao-ji-xuan-xiang-zhong-zhu-yi-xuan-ze-iam-shi-li-pei-zhi-wen-jian"></a>
+### **修改高级选项的IAM kmax-worknode** <a href="#kmax-ping-tai-bu-shu-yu-shi-yong-gao-ji-xuan-xiang-zhong-zhu-yi-xuan-ze-iam-shi-li-pei-zhi-wen-jian" id="kmax-ping-tai-bu-shu-yu-shi-yong-gao-ji-xuan-xiang-zhong-zhu-yi-xuan-ze-iam-shi-li-pei-zhi-wen-jian"></a>
 
 点开模版的高级选项，修改IAM为我们事先指定好的kmax-worknode。
 
-![](<../../.gitbook/assets/image (88).png>)
+![](<../../.gitbook/assets/image (171).png>)
 
 {% hint style="danger" %}
 这一点很重要，NodeGroup的example模版依照kmax-worknode创建了一个新的iam配置文件，我们不用它的。
@@ -131,7 +131,7 @@ team标签好理解，这里还有个kubernetes.io的标签，这个标签是必
 
 这些标签是在模版的user数据中，也就是EC2被拉起后执行的操作。
 
-![](<../../.gitbook/assets/image (89).png>)
+![](<../../.gitbook/assets/image (154).png>)
 
 {% hint style="info" %}
 日常运维会在实例初始化是调整一下登陆用户、SUDO权限相关的脚本，也可以增加上。
@@ -235,7 +235,7 @@ CA的基本概念与详细说明请参考[说明文档](https://amazonaws-china.
 
 如果没有意外，当前worknode所使用的IAM角色已经含有了ASG权限，可以查看到
 
-![](<../../.gitbook/assets/image (90).png>)
+![](<../../.gitbook/assets/image (96).png>)
 
 ### 安装CA
 
@@ -285,7 +285,7 @@ kubectl logs -f deployment/cluster-autoscaler -n kube-system
 
 ## 启用HPA（Horizontal Pod Autoscaler）
 
-关于HPA的详细介绍可以参考[说明文档](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/horizontal-pod-autoscaler.html)
+关于HPA的详细介绍可以参考[说明文档](https://docs.aws.amazon.com/zh\_cn/eks/latest/userguide/horizontal-pod-autoscaler.html)
 
 所以让HPA可用，我们只需要在集群里安装好Metrics Server即可
 

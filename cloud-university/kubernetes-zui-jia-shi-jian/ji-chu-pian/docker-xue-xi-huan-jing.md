@@ -6,13 +6,13 @@
 
 登录MaxCloud之后，右上角切换到<mark style="color:blue;">KubernetesWorkshop</mark>团队空间
 
-![](<../../../.gitbook/assets/image (212) (1).png>)
+![](<../../../.gitbook/assets/image (237).png>)
 
-![](<../../../.gitbook/assets/image (211) (1).png>)
+![](<../../../.gitbook/assets/image (240).png>)
 
 MaxCloud -> 应用管理 -> Apply Yaml
 
-<img src="../../../.gitbook/assets/image (208) (1).png" alt="" data-size="original">
+<img src="../../../.gitbook/assets/image (185).png" alt="" data-size="original">
 
 并将下面这段代码粘贴到代码框里（代码语言为Yaml）
 
@@ -42,13 +42,13 @@ spec:
 
 ```
 
-![](<../../../.gitbook/assets/image (214) (1) (1).png>)
+![](<../../../.gitbook/assets/image (178).png>)
 
 如上图提示apply后，就会在应用管理页面初始化好环境了（我们称这个应用为：<mark style="color:blue;">Bundle</mark>），点击进入终端
 
-![](<../../../.gitbook/assets/image (210).png>)
+![](<../../../.gitbook/assets/image (219).png>)
 
-![](<../../../.gitbook/assets/image (209) (1) (1).png>)
+![](<../../../.gitbook/assets/image (181).png>)
 
 进入终端会看到黑屏就成功了，可以预装几个常用软件
 
@@ -56,7 +56,7 @@ spec:
 apk add bash vim curl
 ```
 
-![](<../../../.gitbook/assets/image (215) (1).png>)
+![](<../../../.gitbook/assets/image (199).png>)
 
 好了，到此我们准备好了docker学习环境。We are ready！
 
