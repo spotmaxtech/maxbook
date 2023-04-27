@@ -94,19 +94,17 @@
 
 ## MaxCloud
 
-***
-
-* [Demo演示](ben-di-fu-wu-ce-shi/README.md)
-  * [server服务部署](ben-di-fu-wu-ce-shi/server-fu-wu-bu-shu.md)
-  * [web服务部署](ben-di-fu-wu-ce-shi/web-fu-wu-bu-shu.md)
-  * [效果展示](ben-di-fu-wu-ce-shi/xiao-guo-zhan-shi.md)
-* [使用手册](shi-yong-shou-ce/README.md)
-  * [用户管理](shi-yong-shou-ce/yong-hu-guan-li/README.md)
-    * [用户列表](shi-yong-shou-ce/yong-hu-guan-li/yong-hu-lie-biao.md)
-  * [集群管理](shi-yong-shou-ce/ji-qun-guan-li/README.md)
-    * [集群列表](shi-yong-shou-ce/ji-qun-guan-li/ji-qun-lie-biao.md)
-  * [项目管理](shi-yong-shou-ce/xiang-mu-guan-li/README.md)
-    * [项目列表](shi-yong-shou-ce/xiang-mu-guan-li/xiang-mu-lie-biao.md)
+* [Demo演示](maxcloud/ben-di-fu-wu-ce-shi/README.md)
+  * [server服务部署](maxcloud/ben-di-fu-wu-ce-shi/server-fu-wu-bu-shu.md)
+  * [web服务部署](maxcloud/ben-di-fu-wu-ce-shi/web-fu-wu-bu-shu.md)
+  * [效果展示](maxcloud/ben-di-fu-wu-ce-shi/xiao-guo-zhan-shi.md)
+* [使用手册](maxcloud/shi-yong-shou-ce/README.md)
+  * [用户管理](maxcloud/shi-yong-shou-ce/yong-hu-guan-li/README.md)
+    * [用户列表](maxcloud/shi-yong-shou-ce/yong-hu-guan-li/yong-hu-lie-biao.md)
+  * [集群管理](maxcloud/shi-yong-shou-ce/ji-qun-guan-li/README.md)
+    * [集群列表](maxcloud/shi-yong-shou-ce/ji-qun-guan-li/ji-qun-lie-biao.md)
+  * [项目管理](maxcloud/shi-yong-shou-ce/xiang-mu-guan-li/README.md)
+    * [项目列表](maxcloud/shi-yong-shou-ce/xiang-mu-guan-li/xiang-mu-lie-biao.md)
 
 ## LocalDNS
 

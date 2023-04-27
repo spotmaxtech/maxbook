@@ -12,7 +12,7 @@
 
 登录MaxCloud账号进入课程实验环境，切换团队到KubernetesWorkshop团队，创建自己的项目，关联集群MC-KubernetesWorkshop-playground-new，添加自己的命名空间。我们目前提供的是基于公有云低成本集群（如亚马逊、阿里云）。大家可以通过MaxCloud -> 系统管理->项目管理->终端 来进行后续操作。
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
 
 如上图进入终端后测试一下环境，下述指令可以看到集群含有哪些节点
 
@@ -20,7 +20,7 @@
 kubectl get nodes
 ```
 
-![](<../../../.gitbook/assets/image (1).png>)
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 终端环境已经给 kubectl 做了alias别名，后续我们使用k
@@ -197,7 +197,7 @@ $ while true; do wget -O- http://<39.106.128.174>:8080; sleep 1;  done
 kubectl get pods -o wide
 ```
 
-![](<../../../.gitbook/assets/image (5).png>)
+![](<../../../.gitbook/assets/image (100).png>)
 
 还可以查看pod的一些细节，还有日志，试试指令吧
 

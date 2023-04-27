@@ -47,7 +47,7 @@ webapp           webapp-0.1.0.tgz
 
 上传到仓库中
 
-![](<../../../../.gitbook/assets/image (221).png>)
+![](<../../../../.gitbook/assets/image (229).png>)
 
 刷一下仓库中的chart列表
 
@@ -87,7 +87,7 @@ NOTES:
 
 查看资源以及可以在maxcloud做个绑定
 
-![](<../../../../.gitbook/assets/image (198).png>)
+![](<../../../../.gitbook/assets/image (208).png>)
 
 设置image版本升级一下试试
 

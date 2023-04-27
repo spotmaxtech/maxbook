@@ -153,7 +153,7 @@ wget -O- http://10.32.100.48:<30123换成你自己的端口30XXX>
 
 效果如图
 
-![](<../../../.gitbook/assets/image (145).png>)
+![](<../../../.gitbook/assets/image (152).png>)
 
 ### 使用负载均衡器
 

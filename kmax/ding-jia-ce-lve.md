@@ -2,7 +2,7 @@
 
 ## 使用流程
 
-![](<../.gitbook/assets/image (79).png>)
+![](<../.gitbook/assets/image (70).png>)
 
 ## 详细步骤
 

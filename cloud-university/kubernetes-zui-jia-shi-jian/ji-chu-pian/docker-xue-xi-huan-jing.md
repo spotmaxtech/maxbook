@@ -46,7 +46,7 @@ spec:
 
 如上图提示apply后，就会在应用管理页面初始化好环境了（我们称这个应用为：<mark style="color:blue;">Bundle</mark>），点击进入终端
 
-![](<../../../.gitbook/assets/image (219).png>)
+![](<../../../.gitbook/assets/image (231).png>)
 
 ![](<../../../.gitbook/assets/image (181).png>)
 
@@ -64,4 +64,3 @@ apk add bash vim curl
 
 > * 这里提到的Bundle是什么？
 > * Yaml的语法风格是？
-

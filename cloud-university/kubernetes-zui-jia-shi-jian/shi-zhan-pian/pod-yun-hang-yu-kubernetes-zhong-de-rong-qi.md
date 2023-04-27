@@ -69,6 +69,12 @@ $ k logs kubia-manual -c kubia
 Kubia server starting...
 ```
 
+MaxClloud也提供了较为全面的Pod管理方式，类似终端访问、日志查看等操作也可以借助MaxCloud来完成。
+
+<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+
 ### 本地访问容器服务
 
 我们在基础篇使用了LoadBalancer来访问服务，但这个是要花钱的，同时我们绝大多数服务是内网环境。所以我们试下更安全的方式，这次不用LB（LoadBalancer简称）了。
@@ -132,7 +138,7 @@ kubectl delete namespace custom-namespace
 此实验容易在多人环境中名字冲突，大家可以尝试自定义命名空间。如果理解了，也可以不用做，毕竟命名空间操作的时候并不多。
 {% endhint %}
 
-![](<../../../.gitbook/assets/image (84).png>)
+![](<../../../.gitbook/assets/image (75).png>)
 
 ## 给pod打上标签
 

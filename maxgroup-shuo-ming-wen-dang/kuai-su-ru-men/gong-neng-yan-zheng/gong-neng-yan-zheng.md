@@ -4,26 +4,26 @@
 
 #### 创建fleet
 
-![](<../../../.gitbook/assets/image (30).png>)
-
-![](<../../../.gitbook/assets/image (203).png>)
-
-![](<../../../.gitbook/assets/image (234).png>)
-
-![](<../../../.gitbook/assets/image (31).png>)
-
-创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
-
-![](<../../../.gitbook/assets/image (58).png>)
+![](<../../../.gitbook/assets/image (22).png>)
 
 ![](<../../../.gitbook/assets/image (212).png>)
 
+![](<../../../.gitbook/assets/image (246).png>)
+
+![](<../../../.gitbook/assets/image (21).png>)
+
+创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
+
+![](<../../../.gitbook/assets/image (48).png>)
+
+![](<../../../.gitbook/assets/image (222).png>)
+
 附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
 
-![](<../../../.gitbook/assets/image (142).png>)
+![](<../../../.gitbook/assets/image (148).png>)
 
-![](<../../../.gitbook/assets/image (161).png>)
+![](<../../../.gitbook/assets/image (167).png>)
 
 提交以后，max\_group就开始工作了，等待instance replace结束，可以在autoscaling的**活动历史记录**中查看替换详情
 
-![](<../../../.gitbook/assets/image (110).png>)
+![](<../../../.gitbook/assets/image (116).png>)

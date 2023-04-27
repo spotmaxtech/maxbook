@@ -11,7 +11,7 @@
 
 基于项目复杂度不高，Helm的必要性不强，MaxCloud平台自身并没有使用Helm管理，下图是我们的应用展示
 
-![](<../../../../.gitbook/assets/image (229).png>)
+![](<../../../../.gitbook/assets/image (241).png>)
 
 {% hint style="info" %}
 更多技巧、更复杂模版，需要系统学一下Helm官方教程

@@ -17,7 +17,7 @@ docker run --rm busybox echo "Hello world"
 docker run <image>:<tag>
 ```
 
-![](<../../../.gitbook/assets/image (19).png>)
+![](<../../../.gitbook/assets/image (10).png>)
 
 第一次运行时，会自动拉取最新的镜像，后面会解释更多
 
@@ -93,15 +93,15 @@ ENTRYPOINT ["node", "app.js"]
 docker build -t <kubia可以起个名字> .
 ```
 
-![](<../../../.gitbook/assets/image (2).png>)
+![](<../../../.gitbook/assets/image (90).png>)
 
 如图片所示准备好Dockerfile和app.js文件，并处于同一个目录中，就可以运行docker build了
 
-![](<../../../.gitbook/assets/image (1) (1).png>)
+![](<../../../.gitbook/assets/image (96).png>)
 
 很快就完成了，list一下做好的容器镜像看看
 
-![](<../../../.gitbook/assets/image (7).png>)
+![](<../../../.gitbook/assets/image (101).png>)
 
 {% hint style="warning" %}
 如果大家共用一个docker环境，需要避免名字冲突，如镜像名字、容器名字
@@ -125,7 +125,7 @@ docker run --rm --name kubia-container -p 8080:8080 -d luksa/kubia
 
 访问一下8080试试吧
 
-![](<../../../.gitbook/assets/image (6).png>)
+![](<../../../.gitbook/assets/image (92).png>)
 
 ## 探索运行容器的内部
 
@@ -144,7 +144,7 @@ ps aux | grep app.js
 ls /
 ```
 
-![](<../../../.gitbook/assets/image (8).png>)
+![](<../../../.gitbook/assets/image (93).png>)
 
 可以知道容器就是把应用完整的环境封装起来运行了，和外部环境是独立的
 
@@ -179,7 +179,7 @@ docker push luksa/kubia
 
 最后，我们可以清理下docker环境了，课上不再用到了
 
-![](<../../../.gitbook/assets/image (3).png>)
+![](<../../../.gitbook/assets/image (97).png>)
 
 ## 思考题
 
