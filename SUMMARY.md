@@ -43,16 +43,6 @@
   * [阿里云](saas-gong-neng-jie-shao/zhi-neng-cun-chu/e-li-yun.md)
 * [MaxGroup批量配置](saas-gong-neng-jie-shao/maxgroup-pi-liang-pei-zhi.md)
 
-## KMAX
-
-* [产品简介](kmax/kuai-su-ru-men/README.md)
-  * [相关概念](kmax/kuai-su-ru-men/shen-me-shi-kmax.md)
-  * [产品优势](kmax/kuai-su-ru-men/he-xin-gong-neng.md)
-  * [定价策略](kmax/kuai-su-ru-men/ding-jia-ce-lve.md)
-* [快速入门](kmax/ding-jia-ce-lve.md)
-* [常见问题](kmax/chan-pin-jia-gou.md)
-* [相关协议](kmax/xiang-guan-xie-yi.md)
-
 ## LocalDNS
 
 * [最佳实践](localdns/zui-jia-shi-jian/README.md)
