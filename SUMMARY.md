@@ -42,10 +42,3 @@
   * [产品介绍](saas-gong-neng-jie-shao/zhi-neng-cun-chu/ji-chu-jie-shao.md)
   * [阿里云](saas-gong-neng-jie-shao/zhi-neng-cun-chu/e-li-yun.md)
 * [MaxGroup批量配置](saas-gong-neng-jie-shao/maxgroup-pi-liang-pei-zhi.md)
-
-## LocalDNS
-
-* [最佳实践](localdns/zui-jia-shi-jian/README.md)
-  * [产品简介](localdns/zui-jia-shi-jian/chan-pin-jian-jie/README.md)
-    * [Page 1](localdns/zui-jia-shi-jian/chan-pin-jian-jie/page-1.md)
-* [快速入门](localdns/kuai-su-ru-men.md)
