@@ -92,20 +92,6 @@
   * [扩容容器磁盘（PV）](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/kuo-rong-rong-qi-ci-pan-pv.md)
   * [接入华为容器集群](zhi-shi-fen-xiang/rong-qi-hua-qian-yi/jie-ru-hua-wei-rong-qi-ji-qun.md)
 
-## MaxCloud
-
-* [Demo演示](maxcloud/ben-di-fu-wu-ce-shi/README.md)
-  * [server服务部署](maxcloud/ben-di-fu-wu-ce-shi/server-fu-wu-bu-shu.md)
-  * [web服务部署](maxcloud/ben-di-fu-wu-ce-shi/web-fu-wu-bu-shu.md)
-  * [效果展示](maxcloud/ben-di-fu-wu-ce-shi/xiao-guo-zhan-shi.md)
-* [使用手册](maxcloud/shi-yong-shou-ce/README.md)
-  * [用户管理](maxcloud/shi-yong-shou-ce/yong-hu-guan-li/README.md)
-    * [用户列表](maxcloud/shi-yong-shou-ce/yong-hu-guan-li/yong-hu-lie-biao.md)
-  * [集群管理](maxcloud/shi-yong-shou-ce/ji-qun-guan-li/README.md)
-    * [集群列表](maxcloud/shi-yong-shou-ce/ji-qun-guan-li/ji-qun-lie-biao.md)
-  * [项目管理](maxcloud/shi-yong-shou-ce/xiang-mu-guan-li/README.md)
-    * [项目列表](maxcloud/shi-yong-shou-ce/xiang-mu-guan-li/xiang-mu-lie-biao.md)
-
 ## LocalDNS
 
 * [最佳实践](localdns/zui-jia-shi-jian/README.md)
