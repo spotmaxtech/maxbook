@@ -24,7 +24,7 @@
 
 ![](<../../.gitbook/assets/image (251).png>)
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (5) (1).png>)
 
 点击 完成，用户创建成功，如下内容：
 

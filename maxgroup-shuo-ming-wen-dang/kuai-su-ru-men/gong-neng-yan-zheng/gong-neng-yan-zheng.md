@@ -4,13 +4,23 @@
 
 #### 创建fleet
 
-![](<../../../.gitbook/assets/image (22).png>)
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../../.gitbook/assets/image (212).png>)
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../../.gitbook/assets/image (246).png>)
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ![](<../../../.gitbook/assets/image (21).png>)
+
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 创建fleet完成后，可以查看fleet中启动的instance。等待instance状态为running后，将instance attach到autoscaling中
 
@@ -20,7 +30,7 @@
 
 附加到asg后，修改fleet数量，让机器数量减少而出发interrupt。
 
-![](<../../../.gitbook/assets/image (148).png>)
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ![](<../../../.gitbook/assets/image (167).png>)
 
