@@ -13,7 +13,7 @@ SpotMax SaaS后台会读取用户云商资源并分析使用情况，以提供�
 
 ![](<../../.gitbook/assets/image (85).png>)
 
-![](<../../.gitbook/assets/image (4) (1).png>)
+![](<../../.gitbook/assets/image (4) (1) (1).png>)
 
 ![](<../../.gitbook/assets/image (216).png>)
 
